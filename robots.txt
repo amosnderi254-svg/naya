@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Block admin panel from all crawlers
+Disallow: /admin.html
+Disallow: /admin/
+
+# Block any API endpoints if exposed directly
+Disallow: /api/
+
+# Sitemap location
+Sitemap: https://tinyversesolutions.com/sitemap.xml
+
+# Crawl-delay to be respectful (in seconds)
+Crawl-delay: 1

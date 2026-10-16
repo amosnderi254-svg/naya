@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>UI/UX Design | Tinyverse Solutions</title>
+<meta name="description" content="UI/UX design for digital products. User research, wireframes, prototypes, and final design files handed off ready for development.">
+<meta name="keywords" content="UI UX design Kenya, user experience design, product design, wireframes, Figma, Tinyverse Solutions">
+<meta property="og:title" content="UI/UX Design | Tinyverse Solutions">
+<meta property="og:description" content="UI/UX design for digital products. User research, wireframes, prototypes, and dev-ready design files.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tinyverse Solutions">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="UI/UX Design | Tinyverse Solutions">
+<meta name="twitter:description" content="UI/UX design: user research, wireframes, prototypes, and final design files.">
+<link rel="canonical" href="https://tinyversesolutions.com/service-ux.html">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"UI/UX Design","provider":{"@type":"LocalBusiness","name":"Tinyverse Solutions","address":{"@type":"PostalAddress","addressLocality":"Nairobi","addressCountry":"KE"},"telephone":"+254790784084"},"areaServed":"Kenya","description":"UI/UX design for digital products. User research, wireframes, prototypes, and dev-ready files."}
+</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
+<style>
+:root {
+  --bg-base:#07070F; --bg-card:#111120; --bg-raised:#1C1C2A;
+  --gold:#FFD000; --purple:#8B6BFF;
+  --fg-body:#F2F0FF; --fg-muted:rgba(242,240,255,0.72); --fg-subtle:rgba(242,240,255,0.45);
+  --border:rgba(242,240,255,0.12); --border-gold:rgba(245,200,0,0.25);
+  --wa:#25D366;
+  --bg-off-white:#F7F5EE; --bg-cream:#EDE9DF;
+  --on-light:#0D0D18; --on-light-muted:#56536E; --on-light-subtle:rgba(13,13,24,0.32);
+  --border-on-light:rgba(13,13,24,0.09); --purple-on-light:#6044E0;
+  color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg-base);color:var(--fg-body);line-height:1.6;}
+#progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--gold),#FFE066,var(--gold));background-size:200% 100%;animation:shimmer 1.5s infinite;z-index:9999;transition:width 0.1s;}
+@keyframes shimmer{0%{background-position:200% 0;}100%{background-position:-200% 0;}}
+nav#main-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:100;background:rgba(13,13,24,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px;}
+.logo{font-weight:800;font-size:1.1rem;color:var(--fg-body);text-decoration:none;letter-spacing:-0.02em;flex-shrink:0;}
+.logo-gold{color:var(--gold);}
+.logo-sub{color:var(--fg-muted);font-weight:700;}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+.nav-links a{color:var(--fg-muted);text-decoration:none;font-size:0.875rem;font-weight:500;transition:color 0.2s;}
+.nav-links a:hover{color:var(--fg-body);}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 22px;border-radius:8px;font-size:0.875rem;font-weight:700;text-decoration:none;cursor:pointer;border:none;font-family:'Plus Jakarta Sans',system-ui,sans-serif;transition:all 0.2s;}
+.btn-gold{background:var(--gold);color:#0D0D18;}
+.btn-gold:hover{opacity:0.9;}
+.btn-sm{padding:8px 16px;font-size:0.8rem;}
+.btn-wa{background:rgba(37,211,102,0.12);color:var(--wa);border:1px solid rgba(37,211,102,0.25);}
+.btn-wa:hover{background:rgba(37,211,102,0.2);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--fg-body);border-radius:2px;transition:all 0.3s;}
+@media(max-width:768px){.nav-links,.btn.btn-gold.btn-sm{display:none;}.hamburger{display:flex;}}
+.drawer{position:fixed;inset:0;z-index:200;pointer-events:none;}
+.drawer.open{pointer-events:auto;}
+.drawer-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.6);opacity:0;transition:opacity 0.3s;}
+.drawer.open .drawer-backdrop{opacity:1;}
+.drawer-panel{position:absolute;top:0;right:0;width:min(320px,90vw);height:100%;background:var(--bg-card);border-left:1px solid var(--border);padding:24px;display:flex;flex-direction:column;gap:24px;transform:translateX(100%);transition:transform 0.3s cubic-bezier(0.4,0,0.2,1);}
+.drawer.open .drawer-panel{transform:translateX(0);}
+.drawer-header{display:flex;align-items:center;justify-content:space-between;}
+.drawer-close{cursor:pointer;font-size:1.2rem;color:var(--fg-muted);padding:4px;}
+.drawer-links{display:flex;flex-direction:column;gap:4px;}
+.drawer-links a{color:var(--fg-body);text-decoration:none;font-size:1rem;font-weight:600;padding:12px 0;border-bottom:1px solid var(--border);}
+.drawer-links a:hover{color:var(--gold);}
+.drawer-cta{margin-top:auto;}
+.section{padding:72px 0;}
+.section-inner{max-width:1140px;margin:0 auto;padding:0 24px;}
+.section-label{font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;}
+.section-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800;letter-spacing:-0.025em;text-wrap:balance;margin-bottom:8px;}
+.section-sub{font-size:0.95rem;color:var(--fg-muted);margin-bottom:40px;max-width:560px;}
+.hero{padding:80px 24px 72px;max-width:1140px;margin:0 auto;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;}
+.hero h1{font-size:clamp(2.2rem,5vw,3.6rem);font-weight:800;line-height:1.1;letter-spacing:-0.03em;text-wrap:balance;max-width:780px;margin-bottom:20px;}
+.hero h1 em{font-style:normal;color:var(--gold);}
+.hero-sub{font-size:1.05rem;color:var(--fg-muted);max-width:600px;margin-bottom:36px;line-height:1.7;}
+.deliverables-wrap{overflow-x:auto;border:1px solid var(--border);border-radius:12px;}
+table{width:100%;border-collapse:collapse;font-size:0.925rem;}
+thead tr{background:var(--bg-raised);border-bottom:1px solid var(--border);}
+thead th{padding:14px 20px;text-align:left;font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--fg-muted);}
+tbody tr{border-bottom:1px solid var(--border);transition:background 0.15s;}
+tbody tr:last-child{border-bottom:none;}
+tbody tr:hover{background:var(--bg-raised);}
+.row-num{padding:16px 20px;font-size:0.78rem;font-weight:700;color:var(--gold);font-variant-numeric:tabular-nums;white-space:nowrap;width:56px;}
+.row-text{padding:16px 20px 16px 0;color:var(--fg-body);line-height:1.5;}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-top:48px;}
+.strip-cell{background:var(--bg-card);padding:28px 24px;display:flex;flex-direction:column;gap:8px;}
+.strip-icon{font-size:1.1rem;color:var(--gold);margin-bottom:4px;}
+.strip-label{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--fg-muted);}
+.strip-val{font-size:1rem;font-weight:700;color:var(--fg-body);line-height:1.3;}
+.not-included{margin-top:48px;background:rgba(245,160,0,0.12);border:1px solid rgba(245,160,0,0.40);border-radius:12px;padding:28px 32px;}
+.not-included-head{display:flex;align-items:center;gap:10px;font-size:0.8rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#F5A000;margin-bottom:14px;}
+.not-included ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+.not-included li{display:flex;align-items:flex-start;gap:10px;font-size:0.9rem;color:var(--on-light-muted);line-height:1.5;}
+.not-included li::before{content:'x';color:#F5A000;flex-shrink:0;margin-top:1px;}
+.faq-section{background:var(--bg-cream);border-top:1px solid var(--border-on-light);border-bottom:1px solid var(--border-on-light);}
+.faq-section .section-label{color:var(--purple-on-light);}
+.faq-section .section-title{color:var(--on-light);}
+.faq-section .section-sub{color:var(--on-light-muted);}
+.faq-list{display:flex;flex-direction:column;gap:2px;border:1px solid var(--border-on-light);border-radius:12px;overflow:hidden;}
+.faq-item{background:#fff;}
+.faq-trigger{width:100%;background:none;border:none;border-bottom:1px solid var(--border-on-light);padding:20px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;cursor:pointer;text-align:left;color:var(--on-light);font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-size:0.95rem;font-weight:600;transition:background 0.15s;}
+.faq-trigger:hover{background:rgba(13,13,24,0.04);}
+.faq-item:last-child .faq-trigger{border-bottom:none;}
+.faq-icon{color:var(--on-light-subtle);flex-shrink:0;font-size:0.8rem;transition:transform 0.25s;}
+.faq-trigger[aria-expanded="true"] .faq-icon{transform:rotate(180deg);}
+.faq-body{display:none;padding:0 24px 20px;font-size:0.9rem;color:var(--on-light-muted);line-height:1.7;}
+.faq-body.open{display:block;}
+.cta-section{padding:80px 24px;text-align:center;}
+.cta-inner{max-width:600px;margin:0 auto;}
+.cta-title{font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-0.03em;text-wrap:balance;margin-bottom:16px;}
+.cta-sub{color:var(--fg-muted);font-size:1rem;margin-bottom:32px;line-height:1.6;}
+.deliverables-bg{background:var(--bg-off-white);border-top:1px solid var(--border-on-light);border-bottom:1px solid var(--border-on-light);}
+.deliverables-bg .section-label{color:var(--purple-on-light);}
+.deliverables-bg .section-title{color:var(--on-light);}
+.deliverables-bg .section-sub{color:var(--on-light-muted);}
+.deliverables-bg .deliverables-wrap{border-color:var(--border-on-light);}
+.deliverables-bg thead tr{background:#f0ede6;border-bottom-color:var(--border-on-light);}
+.deliverables-bg thead th{color:var(--on-light-subtle);}
+.deliverables-bg tbody tr{border-bottom-color:var(--border-on-light);}
+.deliverables-bg tbody tr:hover{background:rgba(13,13,24,0.04);}
+.deliverables-bg .row-num{color:var(--purple-on-light);}
+.deliverables-bg .row-text{color:var(--on-light);}
+.deliverables-bg .strip{background:var(--border-on-light);border-color:var(--border-on-light);}
+.deliverables-bg .strip-cell{background:#fff;}
+.deliverables-bg .strip-icon{color:var(--purple-on-light);}
+.deliverables-bg .strip-label{color:var(--on-light-subtle);}
+.deliverables-bg .strip-val{color:var(--on-light);}
+.img-ph{position:relative;overflow:hidden;border-radius:16px;background:var(--bg-raised);}
+.img-ph::after{content:'';position:absolute;inset:0;border:1.5px dashed rgba(245,200,0,0.22);border-radius:inherit;pointer-events:none;}
+.img-ph-inner{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;justify-content:center;height:100%;gap:14px;padding:32px;text-align:center;}
+.img-ph-icon{width:56px;height:56px;border-radius:50%;background:rgba(245,200,0,0.1);border:1.5px solid rgba(245,200,0,0.3);display:flex;align-items:center;justify-content:center;font-size:22px;color:var(--gold);flex-shrink:0;}
+.img-ph-label{font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(245,200,0,0.55);}
+.img-ph-desc{font-size:13px;color:rgba(232,230,240,0.35);max-width:220px;line-height:1.5;}
+.img-ph-corner{position:absolute;width:18px;height:18px;border-color:rgba(245,200,0,0.4);border-style:solid;pointer-events:none;}
+.img-ph-corner-tl{top:14px;left:14px;border-width:2px 0 0 2px;border-radius:3px 0 0 0;}
+.img-ph-corner-tr{top:14px;right:14px;border-width:2px 2px 0 0;border-radius:0 3px 0 0;}
+.img-ph-corner-bl{bottom:14px;left:14px;border-width:0 0 2px 2px;border-radius:0 0 0 3px;}
+.img-ph-corner-br{bottom:14px;right:14px;border-width:0 2px 2px 0;border-radius:0 0 3px 0;}
+.service-hero-img-ph{width:100%;height:320px;border-radius:0;margin-top:32px;}
+.closing-img-ph{width:100%;height:360px;border-radius:20px;}
+@media(max-width:768px){.service-hero-img-ph{height:200px;}.closing-img-ph{height:220px;}}
+footer{background:linear-gradient(160deg,#080810 0%,var(--bg-base) 100%);border-top:1px solid rgba(245,200,0,0.1);padding:64px 0 32px;}
+.footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-brand .logo{display:block;margin-bottom:12px;}
+.footer-tagline{font-size:13px;font-weight:600;color:var(--fg-muted);line-height:1.6;}
+.footer-socials{display:flex;gap:10px;margin-top:20px;}
+.footer-socials a{width:36px;height:36px;border-radius:50%;background:rgba(245,200,0,0.08);border:1px solid rgba(245,200,0,0.15);display:flex;align-items:center;justify-content:center;color:rgba(245,200,0,0.5);text-decoration:none;font-size:14px;transition:all 0.2s;}
+.footer-socials a:hover{background:var(--gold);color:#0D0D18;}
+.footer-col h4{font-size:11px;font-weight:900;color:var(--fg-muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;}
+.footer-col{display:flex;flex-direction:column;gap:10px;}
+.footer-col a{font-size:13px;font-weight:600;color:rgba(232,230,240,0.55);text-decoration:none;transition:color 0.15s;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{font-size:12px;font-weight:600;color:rgba(255,255,255,0.25);}
+.footer-bottom a{font-size:12px;font-weight:600;color:rgba(255,255,255,0.25);text-decoration:none;transition:color 0.15s;}
+.footer-bottom a:hover{color:var(--gold);}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.5s,transform 0.5s;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+@media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;gap:32px;}.strip{grid-template-columns:1fr;}}
+@media(max-width:768px){.footer-inner{grid-template-columns:1fr;gap:24px;}footer{padding:48px 0 24px;}}
+@media(max-width:700px){.hero{padding:48px 20px 56px;}.section{padding:56px 0;}}
+
+/* ══ DESIGN LIFT ══ */
+.hero, section.hero {
+  background:
+    radial-gradient(ellipse 70% 60% at 20% 50%, rgba(255,208,0,0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 30%, rgba(139,107,255,0.2) 0%, transparent 55%),
+    linear-gradient(135deg, #07070F 0%, #0D0A1E 60%, #09090F 100%);
+}
+.hero-glow { background: radial-gradient(ellipse at center, rgba(255,208,0,0.22) 0%, transparent 65%); width: 80%; height: 120%; }
+.hero-glow-right { background: radial-gradient(ellipse at center, rgba(139,107,255,0.25) 0%, transparent 65%); width: 60%; height: 90%; }
+.eyebrow { color: #FFD000; text-shadow: 0 0 12px rgba(255,208,0,0.35); }
+.btn-gold { background: linear-gradient(135deg,#FFD000 0%,#FFA500 100%); color: #07070F; box-shadow: 0 4px 20px rgba(255,208,0,0.25); }
+.btn-gold:hover { background: linear-gradient(135deg,#FFE040 0%,#FFB020 100%); box-shadow: 0 8px 32px rgba(255,208,0,0.4); transform: translateY(-2px); }
+.btn-wa { background: linear-gradient(135deg,#25D366 0%,#1DA851 100%); box-shadow: 0 4px 16px rgba(37,211,102,0.3); }
+.btn-wa:hover { background: linear-gradient(135deg,#2EDB72 0%,#20B558 100%); box-shadow: 0 8px 28px rgba(37,211,102,0.45); transform: translateY(-2px); }
+.gold { color: #FFD000; }
+h2.display-lg .gold, h1.display-xl .gold {
+  background: linear-gradient(135deg,#FFD000 0%,#FFA500 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.section-title{background:linear-gradient(135deg,#FFD000 0%,#FFA500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.deliverables-bg .section-title,.faq-section .section-title{background:none;-webkit-text-fill-color:var(--on-light);color:var(--on-light);}
+.cta-section .cta-title{background:none;-webkit-text-fill-color:inherit;}
+.hero h1 em,.hero h1 .gold{background:linear-gradient(135deg,#FFD000 0%,#FFA500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal;}
+.cta-strip { background: linear-gradient(135deg,#0D0A1E 0%,#120E25 50%,#0A1018 100%); border-top: 1px solid rgba(255,208,0,0.12); }
+.cta-glow { background: radial-gradient(ellipse at center, rgba(255,208,0,0.25) 0%, transparent 65%); width:100%; height:300%; top:-50%; }
+footer { background: linear-gradient(180deg,#0E0E1C 0%,#0A0A14 100%); }
+@keyframes waPulse { 0%,100%{box-shadow:0 8px 32px rgba(37,211,102,0.4),0 0 0 0 rgba(37,211,102,0.3)} 50%{box-shadow:0 12px 40px rgba(37,211,102,0.5),0 0 0 8px rgba(37,211,102,0)} }
+.wa-fab { animation: waPulse 3s ease-in-out infinite; }
+
+</style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NEV7YBMBD"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-9NEV7YBMBD",{cookie_flags:"SameSite=None;Secure"});</script>
+</head>
+<body>
+
+<div id="progress-bar"></div>
+
+<nav id="main-nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo" aria-label="Tinyverse Solutions home">
+      tiny<span class="logo-gold">verse</span><span class="logo-sub">Solutions</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="btn btn-gold btn-sm" href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Solutions!%20I'd%20like%20to%20learn%20more%20about%20your%20services" target="_blank" rel="noopener">Get a quote</a>
+    <div class="hamburger" id="hamburger" role="button" aria-label="Open menu" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <div class="drawer-panel">
+    <div class="drawer-header">
+      <span class="logo">tiny<span class="logo-gold">verse</span><span class="logo-sub">Solutions</span></span>
+      <span class="drawer-close" id="drawer-close" tabindex="0" role="button" aria-label="Close menu">&#x2715;</span>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="work.html">Work</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="drawer-cta">
+      <a class="btn btn-wa" href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Solutions!%20I'd%20like%20to%20learn%20more%20about%20your%20services" target="_blank" rel="noopener" style="width:100%;justify-content:center;">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<section class="hero reveal">
+  <div class="hero-eyebrow"><i class="fa-solid fa-pen-ruler"></i> UI/UX Design</div>
+  <h1>Design that makes <em>users succeed.</em></h1>
+  <p class="hero-sub">From first wireframe to dev-ready files. Research-informed design that reduces confusion and increases conversion.</p>
+  <a href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Solutions!%20I'm%20interested%20in%20UI%2FUX%20Design." class="btn btn-wa" target="_blank" rel="noopener">
+    <i class="fa-brands fa-whatsapp"></i> Start this service
+  </a>
+</section>
+
+<div class="service-hero-img-ph img-ph" style="background:#0D0D18;border-radius:16px;overflow:hidden;position:relative;min-height:380px;display:flex;align-items:center;justify-content:center;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" style="width:100%;height:100%;position:absolute;inset:0;" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <radialGradient id="ux-bg" cx="50%" cy="50%" r="70%">
+        <stop offset="0%" stop-color="#110d1e"/>
+        <stop offset="100%" stop-color="#0D0D18"/>
+      </radialGradient>
+      <filter id="ux-glow"><feGaussianBlur stdDeviation="3" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    
+    <style>
+      @keyframes cursorBlink{0%,100%{opacity:1}50%{opacity:0}}
+      @keyframes wireframeShimmer{0%,100%{opacity:0.15}50%{opacity:0.4}}
+      @keyframes colourFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-6px) scale(1.04)}}
+      @keyframes rulerSlide{0%{transform:translateX(-10px)}100%{transform:translateX(0)}}
+    </style>
+    </defs>
+    <rect width="900" height="420" fill="url(#ux-bg)"/>
+    <!-- Wireframe browser window (left) -->
+    <rect x="60" y="70" width="380" height="290" rx="8" fill="rgba(255,255,255,0.03)" stroke="rgba(139,107,255,0.3)" stroke-width="1.5"/>
+    <rect x="60" y="70" width="380" height="32" rx="8" fill="rgba(139,107,255,0.12)"/>
+    <circle cx="82" cy="86" r="6" fill="rgba(255,255,255,0.15)"/>
+    <circle cx="100" cy="86" r="6" fill="rgba(255,255,255,0.15)"/>
+    <circle cx="118" cy="86" r="6" fill="rgba(255,255,255,0.15)"/>
+    <rect x="140" y="78" width="260" height="16" rx="8" fill="rgba(255,255,255,0.08)"/>
+    <!-- Wireframe content -->
+    <rect x="75" y="115" width="350" height="50" rx="4" fill="rgba(139,107,255,0.15)" stroke="rgba(139,107,255,0.2)" stroke-width="1" style="animation:wireframeShimmer 2.5s ease-in-out infinite"/>
+    <rect x="85" y="125" width="150" height="10" rx="5" fill="rgba(139,107,255,0.4)"/>
+    <rect x="85" y="141" width="100" height="8" rx="4" fill="rgba(139,107,255,0.2)"/>
+    <rect x="75" y="175" width="165" height="100" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <rect x="250" y="175" width="175" height="100" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+    <rect x="85" y="185" width="80" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
+    <rect x="85" y="200" width="130" height="6" rx="3" fill="rgba(255,255,255,0.07)"/>
+    <rect x="85" y="213" width="110" height="6" rx="3" fill="rgba(255,255,255,0.07)"/>
+    <rect x="85" y="226" width="90" height="6" rx="3" fill="rgba(255,255,255,0.07)"/>
+    <rect x="85" y="250" width="60" height="18" rx="9" fill="rgba(139,107,255,0.4)"/>
+    <rect x="260" y="185" width="80" height="8" rx="4" fill="rgba(255,255,255,0.12)"/>
+    <rect x="260" y="200" width="140" height="6" rx="3" fill="rgba(255,255,255,0.07)"/>
+    <rect x="260" y="213" width="120" height="6" rx="3" fill="rgba(255,255,255,0.07)"/>
+    <rect x="260" y="226" width="100" height="6" rx="3" fill="rgba(255,255,255,0.07)"/>
+    <rect x="260" y="250" width="60" height="18" rx="9" fill="rgba(139,107,255,0.2)"/>
+    <rect x="75" y="285" width="350" height="60" rx="4" fill="rgba(255,208,0,0.08)" stroke="rgba(255,208,0,0.15)" stroke-width="1"/>
+    <rect x="85" y="295" width="200" height="8" rx="4" fill="rgba(255,208,0,0.3)"/>
+    <rect x="85" y="310" width="280" height="6" rx="3" fill="rgba(255,255,255,0.07)"/>
+    <rect x="85" y="323" width="220" height="6" rx="3" fill="rgba(255,255,255,0.07)"/>
+    <!-- Design tools (right) -->
+    <g transform="translate(580,210)">
+      <!-- Pencil -->
+      <rect x="-80" y="-140" width="20" height="90" rx="3" fill="#FFD000" opacity="0.8" transform="rotate(-30)"/>
+      <polygon points="-80,-50 -60,-50 -70,-30" fill="#FFA500" transform="rotate(-30,-70,-50)"/>
+      <!-- Ruler -->
+      <rect x="20" y="-80" width="120" height="22" rx="3" fill="rgba(139,107,255,0.6)" stroke="#8B6BFF" stroke-width="1"/>
+      <g stroke="rgba(255,255,255,0.4)" stroke-width="1">
+        <line x1="30" y1="-80" x2="30" y2="-68"/><line x1="42" y1="-80" x2="42" y2="-72"/>
+        <line x1="54" y1="-80" x2="54" y2="-68"/><line x1="66" y1="-80" x2="66" y2="-72"/>
+        <line x1="78" y1="-80" x2="78" y2="-68"/><line x1="90" y1="-80" x2="90" y2="-72"/>
+        <line x1="102" y1="-80" x2="102" y2="-68"/><line x1="114" y1="-80" x2="114" y2="-72"/>
+        <line x1="126" y1="-80" x2="126" y2="-68"/>
+      </g>
+      <!-- Figma-style colour circles -->
+      <circle cx="40" cy="40" r="30" fill="#FFD000" opacity="0.3" filter="url(#ux-glow)" style="transform-origin:40px 40px;animation:colourFloat 3s ease-in-out infinite"/>
+      <circle cx="65" cy="40" r="30" fill="#8B6BFF" opacity="0.3" filter="url(#ux-glow)" style="transform-origin:65px 40px;animation:colourFloat 3s ease-in-out infinite 0.7s"/>
+      <circle cx="52" cy="55" r="20" fill="#FFA500" opacity="0.4" filter="url(#ux-glow)" style="transform-origin:52px 55px;animation:colourFloat 3s ease-in-out infinite 1.4s"/>
+      <!-- Cursor -->
+      <polygon points="80,80 80,115 90,108 98,125 105,122 97,105 112,103" fill="white" opacity="0.7" style="animation:cursorBlink 1.2s ease-in-out infinite"/>
+    </g>
+    <text x="450" y="400" text-anchor="middle" font-size="13" fill="rgba(139,107,255,0.5)" font-family="monospace" letter-spacing="4">USER EXPERIENCE DESIGN</text>
+  </svg>
+</div>
+
+<section class="section deliverables-bg reveal">
+  <div class="section-inner">
+    <div class="section-label">What's included</div>
+    <h2 class="section-title">Deliverables per project</h2>
+    <p class="section-sub">Scope is confirmed at kickoff. Every project ends with files your developers can use without interpretation.</p>
+
+    <div class="deliverables-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Deliverable</th></tr></thead>
+        <tbody>
+          <tr><td class="row-num">01</td><td class="row-text">Discovery session: user goals, business objectives, and technical constraints documented</td></tr>
+          <tr><td class="row-num">02</td><td class="row-text">User flows and information architecture mapped before any screens are designed</td></tr>
+          <tr><td class="row-num">03</td><td class="row-text">Low-fidelity wireframes for all primary screens, reviewed with you before refinement</td></tr>
+          <tr><td class="row-num">04</td><td class="row-text">High-fidelity designs in Figma with your brand colours, typography, and component library</td></tr>
+          <tr><td class="row-num">05</td><td class="row-text">Interactive prototype for user testing or stakeholder sign-off</td></tr>
+          <tr><td class="row-num">06</td><td class="row-text">Responsive designs: mobile, tablet, and desktop states for every screen</td></tr>
+          <tr><td class="row-num">07</td><td class="row-text">Developer handoff: annotated Figma file with spacing, tokens, and interaction notes</td></tr>
+          <tr><td class="row-num">08</td><td class="row-text">Two revision rounds after initial high-fidelity delivery</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="strip">
+      <div class="strip-cell">
+        <div class="strip-icon"><i class="fa-brands fa-figma"></i></div>
+        <div class="strip-label">Design tool</div>
+        <div class="strip-val">Figma file delivered; yours to keep</div>
+      </div>
+      <div class="strip-cell">
+        <div class="strip-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+        <div class="strip-label">Screens covered</div>
+        <div class="strip-val">Mobile, tablet, and desktop</div>
+      </div>
+      <div class="strip-cell">
+        <div class="strip-icon"><i class="fa-regular fa-handshake"></i></div>
+        <div class="strip-label">Pricing</div>
+        <div class="strip-val">Scope agreed per engagement</div>
+      </div>
+    </div>
+
+    <div class="not-included">
+      <div class="not-included-head"><i class="fa-solid fa-triangle-exclamation"></i> Not included</div>
+      <ul>
+        <li>Front-end development or coding (handled by the Web &amp; Systems service)</li>
+        <li>Branding or logo design (handled by the Graphics Design service)</li>
+        <li>User research recruitment (we design the research plan; recruiting participants is on your side)</li>
+        <li>Ongoing design support after handoff (can be scoped separately)</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="section faq-section reveal">
+  <div class="section-inner">
+    <div class="section-label">Common questions</div>
+    <h2 class="section-title">Before you start</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">Do I need to have a developer ready before starting?<i class="fa-solid fa-chevron-down faq-icon"></i></button>
+        <div class="faq-body">No. Many clients use the design phase to finalise scope before hiring developers. We can pair this with the Web &amp; Systems service if you need us to build it too.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">What if I already have a brand or style guide?<i class="fa-solid fa-chevron-down faq-icon"></i></button>
+        <div class="faq-body">We work within it. Share your brand assets at kickoff and we apply them consistently throughout the design. If your brand guide is incomplete, we'll flag gaps early rather than make assumptions.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">Who owns the Figma files at the end?<i class="fa-solid fa-chevron-down faq-icon"></i></button>
+        <div class="faq-body">You do. The full Figma file is transferred to your account at handoff, including the component library. You can edit it directly or share it with any future design team.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" aria-expanded="false">Can you redesign an existing product?<i class="fa-solid fa-chevron-down faq-icon"></i></button>
+        <div class="faq-body">Yes. Redesigns follow the same process: we review the existing product, identify pain points, and design solutions. We'll document what's changing and why so your team understands the decisions.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section reveal">
+  <div class="cta-inner">
+    <h2 class="cta-title">Ready to design?</h2>
+    <p class="cta-sub">Message us on WhatsApp. We'll discuss your product, your users, and what scope makes sense.</p>
+    <a href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Solutions!%20I'm%20interested%20in%20UI%2FUX%20Design." class="btn btn-wa" target="_blank" rel="noopener">
+      <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+    </a>
+  </div>
+</section>
+
+<section style="padding:0 24px 64px;max-width:1140px;margin:0 auto;">
+  <div class="closing-img-ph img-ph" style="background:#0D0D18;border-radius:16px;overflow:hidden;position:relative;min-height:340px;display:flex;align-items:center;justify-content:center;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380" style="width:100%;height:100%;position:absolute;inset:0;" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <radialGradient id="fig-bg" cx="50%" cy="50%" r="65%">
+        <stop offset="0%" stop-color="#110d1e"/>
+        <stop offset="100%" stop-color="#0D0D18"/>
+      </radialGradient>
+      <filter id="fig-glow"><feGaussianBlur stdDeviation="4" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    
+    <style>
+      @keyframes frameFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+      @keyframes navDot{0%,100%{opacity:0.5}50%{opacity:1}}
+      @keyframes layerHighlight{0%,80%,100%{fill:rgba(255,208,0,0.1)}40%{fill:rgba(255,208,0,0.2)}}
+    </style>
+    </defs>
+    <rect width="900" height="380" fill="url(#fig-bg)"/>
+    <!-- Back frame -->
+    <rect x="240" y="50" width="200" height="300" rx="12" fill="rgba(139,107,255,0.08)" stroke="rgba(139,107,255,0.2)" stroke-width="1" transform="rotate(-6,340,200)" style="transform-origin:340px 200px;animation:frameFloat 3.5s ease-in-out infinite 0.3s"/>
+    <!-- Middle frame -->
+    <rect x="310" y="45" width="200" height="300" rx="12" fill="rgba(255,208,0,0.06)" stroke="rgba(255,208,0,0.2)" stroke-width="1" transform="rotate(-2,410,195)"/>
+    <!-- Front mobile frame -->
+    <rect x="350" y="40" width="200" height="305" rx="14" fill="rgba(255,255,255,0.05)" stroke="rgba(139,107,255,0.5)" stroke-width="2" style="transform-origin:450px 192px;animation:frameFloat 3s ease-in-out infinite"/>
+    <!-- Phone notch -->
+    <rect x="415" y="48" width="70" height="10" rx="5" fill="rgba(139,107,255,0.3)"/>
+    <!-- App screens inside front phone -->
+    <rect x="358" y="68" width="184" height="268" rx="8" fill="rgba(255,255,255,0.02)"/>
+    <rect x="358" y="68" width="184" height="44" rx="4" fill="rgba(139,107,255,0.2)"/>
+    <rect x="368" y="76" width="80" height="10" rx="5" fill="rgba(255,255,255,0.4)"/>
+    <rect x="368" y="92" width="50" height="8" rx="4" fill="rgba(255,255,255,0.2)"/>
+    <!-- App content cards -->
+    <rect x="365" y="122" width="177" height="60" rx="6" fill="rgba(255,208,0,0.12)" stroke="rgba(255,208,0,0.2)" stroke-width="1"/>
+    <rect x="372" y="130" width="70" height="8" rx="4" fill="rgba(255,208,0,0.4)"/>
+    <rect x="372" y="145" width="150" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+    <rect x="372" y="158" width="120" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+    <rect x="365" y="192" width="82" height="70" rx="6" fill="rgba(139,107,255,0.15)" stroke="rgba(139,107,255,0.2)" stroke-width="1"/>
+    <rect x="375" y="202" width="60" height="8" rx="4" fill="rgba(139,107,255,0.5)"/>
+    <rect x="375" y="216" width="55" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+    <rect x="375" y="228" width="45" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+    <rect x="457" y="192" width="82" height="70" rx="6" fill="rgba(255,208,0,0.1)" stroke="rgba(255,208,0,0.15)" stroke-width="1"/>
+    <rect x="467" y="202" width="60" height="8" rx="4" fill="rgba(255,208,0,0.4)"/>
+    <!-- Nav bar -->
+    <rect x="358" y="308" width="184" height="28" rx="4" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <circle cx="400" cy="322" r="6" fill="rgba(139,107,255,0.5)" style="animation:navDot 1.5s ease-in-out infinite"/>
+    <circle cx="450" cy="322" r="6" fill="rgba(255,255,255,0.15)" style="animation:navDot 1.5s ease-in-out infinite 0.5s"/>
+    <circle cx="500" cy="322" r="6" fill="rgba(255,255,255,0.15)" style="animation:navDot 1.5s ease-in-out infinite 1s"/>
+    <!-- Layer panel (right) -->
+    <rect x="620" y="60" width="220" height="270" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>
+    <rect x="620" y="60" width="220" height="32" rx="10" fill="rgba(139,107,255,0.1)"/>
+    <text x="730" y="80" text-anchor="middle" font-size="11" fill="rgba(139,107,255,0.8)" font-family="monospace">LAYERS</text>
+    <g font-family="monospace" font-size="10">
+      <text x="640" y="108" fill="rgba(255,208,0,0.7)">Frame / Dashboard</text>
+      <text x="648" y="126" fill="rgba(255,255,255,0.4)">Nav Bar</text>
+      <text x="648" y="144" fill="rgba(255,255,255,0.4)">Hero Card</text>
+      <text x="656" y="162" fill="rgba(255,208,0,0.5)">Title Text</text>
+      <text x="656" y="180" fill="rgba(139,107,255,0.5)">Button</text>
+      <text x="648" y="198" fill="rgba(255,255,255,0.4)">Content Grid</text>
+      <text x="656" y="216" fill="rgba(255,255,255,0.3)">Card A</text>
+      <text x="656" y="234" fill="rgba(255,255,255,0.3)">Card B</text>
+      <text x="648" y="252" fill="rgba(255,255,255,0.4)">Footer Nav</text>
+      <text x="648" y="270" fill="rgba(255,255,255,0.3)">Icons</text>
+    </g>
+    <!-- Selected indicator -->
+    <rect x="633" y="95" width="198" height="16" rx="3" fill="rgba(255,208,0,0.1)" stroke="rgba(255,208,0,0.3)" stroke-width="1" style="animation:layerHighlight 3s ease-in-out infinite"/>
+    <text x="450" y="358" text-anchor="middle" font-size="13" fill="rgba(139,107,255,0.5)" font-family="monospace" letter-spacing="3">DESIGNS IN PROGRESS</text>
+  </svg>
+</div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">tiny<span class="logo-gold">verse</span><span class="logo-sub">Solutions</span></div>
+        <p class="footer-tagline">One team. Everything digital.<br>Results you can measure.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/tinyversestudio" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/tinyversestudio" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/tinyversestudio" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="service-web.html">Web &amp; Systems Development</a>
+        <a href="service-pm.html">Product Management</a>
+        <a href="service-ai.html">AI &amp; Automations</a>
+        <a href="service-seo.html">SEO &amp; Content</a>
+        <a href="service-ux.html">UI/UX Design</a>
+        <a href="service-graphics.html">Graphics Design</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="work.html">Our Work</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="https://wa.me/254790784084" target="_blank" rel="noopener"><i class="fab fa-whatsapp" style="margin-right:6px;"></i>0790 784 084</a>
+        <a href="mailto:hello@tinyversesolutions.com"><i class="fas fa-envelope" style="margin-right:6px;"></i>hello@tinyversesolutions.com</a>
+        <div style="margin-top:20px;padding:14px;background:rgba(245,200,0,0.06);border:1px solid rgba(245,200,0,0.15);border-radius:8px;">
+          <div style="font-size:11px;font-weight:700;color:var(--fg-subtle);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;"><i class="fas fa-location-dot" style="color:var(--gold);margin-right:5px;"></i>Based in</div>
+          <div style="font-size:13px;font-weight:800;color:var(--fg-body);">Nairobi, Kenya</div>
+          <div style="font-size:12px;font-weight:600;color:var(--fg-muted);margin-top:2px;">Serving clients across East Africa</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; 2026 Tinyverse Solutions. Built for global clients.</p>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){var bar=document.getElementById('progress-bar');function update(){var s=window.scrollY,h=document.body.scrollHeight-window.innerHeight;bar.style.width=(h>0?Math.min(100,s/h*100):0)+'%';}window.addEventListener('scroll',update,{passive:true});})();
+(function(){var ham=document.getElementById('hamburger'),drawer=document.getElementById('drawer'),backdrop=document.getElementById('drawer-backdrop'),closeBtn=document.getElementById('drawer-close');function open(){drawer.classList.add('open');document.body.style.overflow='hidden';}function close(){drawer.classList.remove('open');document.body.style.overflow='';}if(ham)ham.addEventListener('click',open);if(backdrop)backdrop.addEventListener('click',close);if(closeBtn)closeBtn.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();
+(function(){var obs=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});},{threshold:0.1});document.querySelectorAll('.reveal').forEach(function(el){obs.observe(el);});})();
+document.querySelectorAll('.faq-trigger').forEach(function(btn){btn.addEventListener('click',function(){var expanded=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',!expanded);btn.nextElementSibling.classList.toggle('open',!expanded);});});
+</script>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | Tinyverse Solutions</title>
+<meta name="description" content="Tinyverse Solutions privacy policy. How we collect, use and protect your data.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://tinyversesolutions.com/privacy.html">
+<meta property="og:title" content="Privacy Policy | Tinyverse Solutions">
+<meta property="og:description" content="Tinyverse Solutions privacy policy. How we collect, use and protect your data.">
+<meta property="og:url" content="https://tinyversesolutions.com/privacy.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://tinyversesolutions.com/og-image.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230D0D18'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='18' fill='%23F5C800'>tv</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg-base:#07070F;--bg-card:#111120;--bg-raised:#1C1C2A;
+  --gold:#FFD000;--purple:#8B6BFF;
+  --fg-body:#F2F0FF;--fg-muted:rgba(242,240,255,0.72);--fg-subtle:rgba(242,240,255,0.45);
+  --border:rgba(242,240,255,0.12);--border-gold:rgba(245,200,0,0.25);
+  color-scheme:dark;
+}
+html{scroll-behavior:smooth;}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg-base);color:var(--fg-body);line-height:1.6;padding-top:3px;}
+
+/* PROGRESS BAR */
+body::before{content:'';display:block;height:3px;background:linear-gradient(90deg,#C89200,#F5C800,#FFED4A,#F5C800,#C89200);background-size:200% 100%;animation:shimmer 3s linear infinite;position:fixed;top:0;left:0;right:0;z-index:9999;}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+
+/* NAV */
+#main-nav{position:sticky;top:3px;z-index:100;background:rgba(13,13,24,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--border-gold);padding:0;}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:64px;}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+.logo{font-size:20px;font-weight:900;color:#fff;text-decoration:none;letter-spacing:-0.5px;white-space:nowrap;}
+.logo-gold{color:var(--gold);}
+.logo-sub{font-size:13px;font-weight:700;color:var(--fg-muted);margin-left:2px;}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
+.nav-links a{font-size:14px;font-weight:700;color:var(--fg-muted);text-decoration:none;transition:color 0.15s;}
+.nav-links a:hover{color:#fff;}
+.btn{display:inline-flex;align-items:center;gap:7px;font-family:'Plus Jakarta Sans',system-ui,sans-serif;font-weight:800;border-radius:8px;text-decoration:none;transition:all 0.2s;}
+.btn-gold{background:var(--gold);color:#0D0D18;box-shadow:0 0 20px rgba(245,200,0,0.25);}
+.btn-gold:hover{background:#E0A800;transform:translateY(-1px);}
+.btn-sm{font-size:13px;padding:9px 18px;}
+.nav-quote{white-space:nowrap;}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:1px;}
+@media(max-width:768px){.nav-links{display:none;}.hamburger{display:flex;}}
+
+/* DRAWER */
+.drawer{display:none;position:fixed;inset:0;z-index:200;}
+.drawer.open{display:block;}
+.drawer-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.7);}
+.drawer-panel{position:absolute;top:0;right:0;width:min(320px,90vw);height:100%;background:var(--bg-card);display:flex;flex-direction:column;box-shadow:-4px 0 32px rgba(0,0,0,0.5);}
+.drawer-header{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border);}
+.drawer-close{font-size:20px;cursor:pointer;color:var(--fg-muted);line-height:1;}
+.drawer-links{display:flex;flex-direction:column;padding:16px 24px;gap:4px;}
+.drawer-links a{font-size:16px;font-weight:700;color:var(--fg-body);text-decoration:none;padding:12px 0;border-bottom:1px solid var(--border);}
+.drawer-links a:last-child{border-bottom:none;}
+.drawer-cta{padding:24px;margin-top:auto;}
+.btn-wa{background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.25);color:#25D366;font-size:14px;padding:12px 20px;border-radius:8px;display:inline-flex;align-items:center;gap:8px;text-decoration:none;font-weight:800;font-family:'Plus Jakarta Sans',system-ui,sans-serif;}
+
+/* PAGE */
+.page-hero{padding:100px 0 80px;}
+.hero-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);background:rgba(245,200,0,0.1);border-left:3px solid var(--gold);padding:4px 12px 4px 10px;border-radius:0 4px 4px 0;margin-bottom:24px;}
+.page-hero h1{font-size:clamp(36px,5vw,64px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-2px;margin-bottom:20px;}
+.page-hero h1 span{color:var(--gold);}
+.page-hero p{font-size:18px;font-weight:500;color:var(--fg-muted);max-width:560px;line-height:1.7;}
+.section-sweep{height:1px;background:linear-gradient(90deg,transparent,rgba(245,200,0,0.2),transparent);}
+.section{padding:80px 0;}
+.legal-body{max-width:720px;}
+.legal-body h2{font-size:20px;font-weight:900;color:#fff;margin:36px 0 12px;padding-top:16px;border-top:1px solid rgba(245,200,0,0.08);}
+.legal-body h2:first-child{border-top:none;margin-top:0;}
+.legal-body p{font-size:14px;color:var(--fg-body);line-height:1.8;margin-bottom:12px;}
+.legal-body ul{font-size:14px;color:var(--fg-body);line-height:1.8;margin-bottom:12px;padding-left:20px;}
+.legal-body li{margin-bottom:6px;}
+.legal-body a{color:var(--gold);font-weight:700;}
+.legal-last{font-size:12px;font-weight:700;color:var(--fg-muted);margin-top:40px;padding-top:20px;border-top:1px solid var(--border);}
+
+/* FOOTER */
+footer{background:linear-gradient(160deg,#080810 0%,#0D0D18 100%);border-top:1px solid rgba(245,200,0,0.1);padding:64px 0 32px;}
+.footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-brand .logo{display:block;margin-bottom:12px;}
+.footer-tagline{font-size:13px;font-weight:600;color:var(--fg-muted);line-height:1.6;margin-bottom:20px;}
+.footer-socials{display:flex;gap:10px;margin-top:20px;}
+.footer-socials a{width:36px;height:36px;border-radius:50%;background:rgba(245,200,0,0.08);border:1px solid rgba(245,200,0,0.15);display:flex;align-items:center;justify-content:center;color:rgba(245,200,0,0.5);text-decoration:none;font-size:14px;transition:all 0.2s;}
+.footer-socials a:hover{background:var(--gold);color:#0D0D18;}
+.footer-col h4{font-size:11px;font-weight:900;color:var(--fg-subtle);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;}
+.footer-col a{display:block;font-size:13px;font-weight:600;color:var(--fg-muted);text-decoration:none;margin-bottom:10px;transition:color 0.15s;}
+.footer-col a:hover{color:var(--gold);}
+.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{font-size:12px;font-weight:600;color:var(--fg-subtle);}
+.footer-bottom a{font-size:12px;font-weight:600;color:var(--fg-subtle);text-decoration:none;transition:color 0.15s;}
+.footer-bottom a:hover{color:var(--gold);}
+@media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;gap:32px;}}
+@media(max-width:600px){.footer-inner{grid-template-columns:1fr;gap:24px;}.page-hero{padding:64px 0 48px;}.section{padding:48px 0;}}
+
+/* ══ DESIGN LIFT ══ */
+.hero, section.hero {
+  background:
+    radial-gradient(ellipse 70% 60% at 20% 50%, rgba(255,208,0,0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 30%, rgba(139,107,255,0.2) 0%, transparent 55%),
+    linear-gradient(135deg, #07070F 0%, #0D0A1E 60%, #09090F 100%);
+}
+.hero-glow { background: radial-gradient(ellipse at center, rgba(255,208,0,0.22) 0%, transparent 65%); width: 80%; height: 120%; }
+.hero-glow-right { background: radial-gradient(ellipse at center, rgba(139,107,255,0.25) 0%, transparent 65%); width: 60%; height: 90%; }
+.eyebrow { color: #FFD000; text-shadow: 0 0 12px rgba(255,208,0,0.35); }
+.btn-gold { background: linear-gradient(135deg,#FFD000 0%,#FFA500 100%); color: #07070F; box-shadow: 0 4px 20px rgba(255,208,0,0.25); }
+.btn-gold:hover { background: linear-gradient(135deg,#FFE040 0%,#FFB020 100%); box-shadow: 0 8px 32px rgba(255,208,0,0.4); transform: translateY(-2px); }
+.btn-wa { background: linear-gradient(135deg,#25D366 0%,#1DA851 100%); box-shadow: 0 4px 16px rgba(37,211,102,0.3); }
+.btn-wa:hover { background: linear-gradient(135deg,#2EDB72 0%,#20B558 100%); box-shadow: 0 8px 28px rgba(37,211,102,0.45); transform: translateY(-2px); }
+.gold { color: #FFD000; }
+h2.display-lg .gold, h1.display-xl .gold {
+  background: linear-gradient(135deg,#FFD000 0%,#FFA500 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.section-title{background:linear-gradient(135deg,#FFD000 0%,#FFA500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.deliverables-bg .section-title,.faq-section .section-title{background:none;-webkit-text-fill-color:var(--on-light);color:var(--on-light);}
+.cta-section .cta-title{background:none;-webkit-text-fill-color:inherit;}
+.hero h1 em,.hero h1 .gold{background:linear-gradient(135deg,#FFD000 0%,#FFA500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal;}
+.cta-strip { background: linear-gradient(135deg,#0D0A1E 0%,#120E25 50%,#0A1018 100%); border-top: 1px solid rgba(255,208,0,0.12); }
+.cta-glow { background: radial-gradient(ellipse at center, rgba(255,208,0,0.25) 0%, transparent 65%); width:100%; height:300%; top:-50%; }
+footer { background: linear-gradient(180deg,#0E0E1C 0%,#0A0A14 100%); }
+@keyframes waPulse { 0%,100%{box-shadow:0 8px 32px rgba(37,211,102,0.4),0 0 0 0 rgba(37,211,102,0.3)} 50%{box-shadow:0 12px 40px rgba(37,211,102,0.5),0 0 0 8px rgba(37,211,102,0)} }
+.wa-fab { animation: waPulse 3s ease-in-out infinite; }
+
+</style>
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NEV7YBMBD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9NEV7YBMBD', { cookie_flags: 'SameSite=None;Secure' });
+</script>
+</head>
+<body>
+
+<nav id="main-nav">
+  <div class="wrap nav-inner">
+    <a href="index.html" class="logo" aria-label="Tinyverse Solutions home">
+      tiny<span class="logo-gold">verse</span><span class="logo-sub">Solutions</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="btn btn-gold btn-sm nav-quote" href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Solutions!%20I'd%20like%20to%20learn%20more%20about%20your%20services" target="_blank" rel="noopener">Get a quote</a>
+    <div class="hamburger" id="hamburger" role="button" aria-label="Open menu" tabindex="0">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<!-- MOBILE DRAWER -->
+<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <div class="drawer-panel">
+    <div class="drawer-header">
+      <span class="logo">tiny<span class="logo-gold">verse</span><span class="logo-sub">Solutions</span></span>
+      <span class="drawer-close" id="drawer-close" tabindex="0" role="button" aria-label="Close menu">&#x2715;</span>
+    </div>
+    <nav class="drawer-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="work.html">Work</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="drawer-cta">
+      <a class="btn btn-wa" href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Solutions!%20I'd%20like%20to%20learn%20more%20about%20your%20services" target="_blank" rel="noopener" style="width:100%;justify-content:center;">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="wrap page-hero">
+  <div class="hero-label"><i class="fas fa-shield-halved"></i> Legal</div>
+  <h1>Privacy <span>Policy</span></h1>
+  <p>How we collect, use and protect your information.</p>
+</div>
+
+<div class="section-sweep"></div>
+
+<div class="section">
+  <div class="wrap">
+    <div class="legal-body">
+      <h2>Who we are</h2>
+      <p>Tinyverse Solutions is a digital services company. We operate this website and deliver digital services to clients. You can reach us at <a href="mailto:hello@tinyversesolutions.com">hello@tinyversesolutions.com</a>.</p>
+
+      <h2>What we collect</h2>
+      <p>When you contact us or fill in a form, we collect:</p>
+      <ul>
+        <li>Your name and email address</li>
+        <li>Any information you include in your message</li>
+      </ul>
+      <p>Our website also uses Google Analytics to collect anonymous usage data: pages visited, time on site, device type and approximate location (city level). No personally identifiable information is included in analytics data.</p>
+
+      <h2>How we use it</h2>
+      <ul>
+        <li>To respond to your enquiry or deliver services you requested</li>
+        <li>To understand how the website is used and improve it</li>
+        <li>We do not sell, rent or share your personal data with third parties for marketing</li>
+      </ul>
+
+      <h2>Cookies</h2>
+      <p>We use analytics cookies only. See our <a href="cookies.html">Cookie Policy</a> for details. You can disable cookies in your browser at any time without affecting core site functionality.</p>
+
+      <h2>Data retention</h2>
+      <p>We keep contact enquiries for up to 24 months. Analytics data is retained as per Google Analytics default settings. You can request deletion at any time.</p>
+
+      <h2>Your rights</h2>
+      <p>You have the right to access, correct or delete your personal data. Email us at <a href="mailto:hello@tinyversesolutions.com">hello@tinyversesolutions.com</a> and we will respond within 30 days.</p>
+
+      <h2>Third-party services</h2>
+      <p>We use Google Analytics (analytics), WhatsApp (communications) and standard email providers. Each has its own privacy policy governing how they handle data.</p>
+
+      <h2>Changes</h2>
+      <p>We may update this policy. Material changes will be noted here with an updated date.</p>
+
+      <h2>Contact</h2>
+      <p>Questions about your data: <a href="mailto:hello@tinyversesolutions.com">hello@tinyversesolutions.com</a> or <a href="https://wa.me/254790784084" target="_blank" rel="noopener">WhatsApp us</a>.</p>
+
+      <p class="legal-last">Last updated: October 2026</p>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo">tiny<span class="logo-gold">verse</span><span class="logo-sub">Solutions</span></div>
+        <p class="footer-tagline">One team. Everything digital.<br>Results you can measure.</p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/tinyversestudio" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/tinyversestudio" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.facebook.com/tinyversestudio" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="service-web.html">Web &amp; Systems Development</a>
+        <a href="service-pm.html">Product Management</a>
+        <a href="service-ai.html">AI &amp; Automations</a>
+        <a href="service-seo.html">SEO &amp; Content</a>
+        <a href="service-ux.html">UI/UX Design</a>
+        <a href="service-graphics.html">Graphics Design</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="about.html">About Us</a>
+        <a href="work.html">Our Work</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get in touch</h4>
+        <a href="https://wa.me/254790784084" target="_blank" rel="noopener"><i class="fab fa-whatsapp" style="margin-right:6px;"></i>0790 784 084</a>
+        <a href="mailto:hello@tinyversesolutions.com"><i class="fas fa-envelope" style="margin-right:6px;"></i>hello@tinyversesolutions.com</a>
+        <div style="margin-top:20px;padding:14px;background:rgba(245,200,0,0.06);border:1px solid rgba(245,200,0,0.15);border-radius:8px;">
+          <div style="font-size:11px;font-weight:700;color:var(--fg-subtle);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;"><i class="fas fa-location-dot" style="color:var(--gold);margin-right:5px;"></i>Based in</div>
+          <div style="font-size:13px;font-weight:800;color:var(--fg-body);">Nairobi, Kenya</div>
+          <div style="font-size:12px;font-weight:600;color:var(--fg-muted);margin-top:2px;">Serving clients across East Africa</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&#169; 2026 Tinyverse Solutions. Built for global clients.</p>
+      <a href="privacy.html">Privacy Policy</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ham = document.getElementById('hamburger');
+  var drawer = document.getElementById('drawer');
+  var backdrop = document.getElementById('drawer-backdrop');
+  var closeBtn = document.getElementById('drawer-close');
+  function openDrawer(){ drawer.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeDrawer(){ drawer.classList.remove('open'); document.body.style.overflow=''; }
+  if(ham) ham.addEventListener('click', openDrawer);
+  if(backdrop) backdrop.addEventListener('click', closeDrawer);
+  if(closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeDrawer(); });
+})();
+</script>
+</body>
+</html>
