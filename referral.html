@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refer & Earn  -  Tinyverse Solutions</title>
+<meta name="description" content="Refer a business to Tinyverse Solutions. Earn KSh 5,000 per confirmed client. Paid to your M-Pesa within 48 hours.">
+<link rel="canonical" href="https://tinyversesolutions.com/referral.html">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230D0D18'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='18' fill='%23F5C800'>tv</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0D0D18; --navy2:#14141F; --navy3:#1C1C2A;
+  --gold:#FFD000; --gold2:rgba(245,200,0,0.12); --gold3:rgba(245,200,0,0.25);
+  --red:#EC3237;
+  --green:#22C55E;
+  --white:#FFFFFF;
+  --ink:rgba(255,255,255,0.9);
+  --soft:rgba(255,255,255,0.5);
+  --muted:rgba(255,255,255,0.3);
+  --border:rgba(255,255,255,0.08);
+  --font:'Plus Jakarta Sans',system-ui,sans-serif;
+  --r:12px;
+}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--ink);font-family:var(--font);-webkit-font-smoothing:antialiased;line-height:1.6}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:900;height:64px;display:flex;align-items:center;padding:0 40px;gap:32px;background:rgba(13,13,24,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);}
+.logo{font-size:1.2rem;font-weight:900;letter-spacing:-.02em}.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:4px;flex:1}
+.nav-link{font-size:13px;font-weight:600;color:var(--soft);padding:6px 12px;border-radius:6px;transition:color .18s}
+.nav-link:hover,.nav-link.on{color:var(--white)}
+.nav-link.gold{color:var(--gold)}
+.nav-btn{display:inline-flex;align-items:center;gap:7px;background:var(--gold);color:var(--navy);font-weight:800;font-size:13px;padding:9px 18px;border-radius:8px}
+.nav-btn.ghost{background:transparent;border:1.5px solid var(--gold3);color:var(--gold);margin-right:6px}
+@media(max-width:768px){.nav-links,.nav-btn.ghost{display:none}}
+
+/* ── HERO ── */
+.hero{position:relative;min-height:92vh;display:grid;grid-template-columns:1fr 1fr;overflow:hidden}
+.hero-left{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;padding:80px 56px 80px 48px}
+.hero-right{position:relative;overflow:hidden}
+.hero-right img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.hero-right::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 0%,transparent 40%)}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:var(--gold2);border:1px solid var(--gold3);border-radius:999px;padding:5px 14px;font-size:11px;font-weight:700;color:var(--gold);letter-spacing:.08em;text-transform:uppercase;margin-bottom:22px;width:fit-content}
+.hero h1{font-size:clamp(2.4rem,4.5vw,3.6rem);font-weight:900;line-height:1.08;letter-spacing:-.03em;margin-bottom:20px}
+.hero h1 span{color:var(--gold)}
+.earn-pill{display:inline-block;background:var(--gold2);border:1.5px solid var(--gold3);border-radius:14px;padding:18px 24px;margin-bottom:28px}
+.earn-pill .amount{font-size:2.6rem;font-weight:900;color:var(--gold);line-height:1}
+.earn-pill .sub{font-size:12px;color:var(--soft);margin-top:5px}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;background:var(--gold);color:var(--navy);font-weight:800;font-size:14px;padding:14px 24px;border-radius:10px;border:none;cursor:pointer;font-family:var(--font);transition:opacity .18s}
+.btn-gold:hover{opacity:.88}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--gold);font-weight:700;font-size:14px;padding:14px 24px;border-radius:10px;border:1.5px solid var(--gold3);cursor:pointer;font-family:var(--font);transition:all .18s}
+.btn-ghost:hover{background:var(--gold2)}
+@media(max-width:860px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-left{padding:60px 24px}
+  .hero-right{height:280px}
+  .hero-right::after{background:linear-gradient(0deg,var(--navy) 0%,transparent 50%)}
+}
+
+/* ── STEPS ── */
+.steps-section{padding:80px 48px;background:var(--navy2)}
+.steps-inner{max-width:1060px;margin:0 auto}
+.sec-tag{display:inline-flex;align-items:center;gap:7px;font-size:10px;font-weight:700;color:var(--gold);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.sec-h2{font-size:clamp(1.7rem,3vw,2.4rem);font-weight:900;line-height:1.15;letter-spacing:-.02em;margin-bottom:40px}
+.sec-h2 span{color:var(--gold)}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.step-card{background:var(--navy3);border:1px solid var(--border);border-radius:var(--r);overflow:hidden;position:relative}
+.step-img{width:100%;height:160px;object-fit:cover;object-position:center}
+.step-body{padding:20px}
+.step-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--navy);font-weight:900;font-size:15px;margin-bottom:12px}
+.step-title{font-size:14px;font-weight:800;color:var(--white);margin-bottom:6px}
+.step-desc{font-size:12px;color:var(--soft);line-height:1.6}
+@media(max-width:760px){.steps-section{padding:60px 20px}.steps-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.steps-grid{grid-template-columns:1fr}}
+
+/* ── EARN ── */
+.earn-section{padding:80px 48px}
+.earn-inner{max-width:1060px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.earn-img-wrap{border-radius:16px;overflow:hidden;height:420px;position:relative}
+.earn-img-wrap img{width:100%;height:100%;object-fit:cover}
+.earn-img-wrap::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,var(--navy) 100%)}
+.earn-content{}
+.earn-table{width:100%;border-collapse:collapse;margin-top:24px}
+.earn-table th{font-size:10px;font-weight:700;color:var(--soft);letter-spacing:.07em;text-transform:uppercase;padding:10px 14px;text-align:left;border-bottom:1px solid var(--border)}
+.earn-table td{padding:11px 14px;border-bottom:1px solid var(--border);font-size:13px;color:var(--ink)}
+.earn-table td:last-child{color:var(--gold);font-weight:800;text-align:right}
+.earn-table tr:last-child td{border-bottom:none;font-weight:800;font-size:14px;color:var(--gold)}
+.till-box{display:flex;align-items:center;gap:14px;background:rgba(255,255,255,0.04);border:1px solid var(--border);border-radius:10px;padding:16px 18px;margin-top:20px}
+.till-icon{font-size:26px;color:var(--gold)}
+.till-label{font-size:10px;color:var(--soft);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.till-value{font-size:17px;font-weight:900;color:var(--white)}
+.till-name{font-size:11px;color:var(--soft)}
+@media(max-width:860px){.earn-section{padding:60px 20px}.earn-inner{grid-template-columns:1fr}.earn-img-wrap{height:260px}}
+
+/* ── WHAT WE DO ── */
+.services-section{padding:80px 48px;background:var(--navy2)}
+.services-inner{max-width:1060px;margin:0 auto}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:36px}
+.svc-card{background:var(--navy3);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.svc-top{display:flex;align-items:center;gap:12px;margin-bottom:12px}
+.svc-icon{width:40px;height:40px;border-radius:9px;background:var(--gold2);border:1px solid var(--gold3);display:flex;align-items:center;justify-content:center;font-size:17px;color:var(--gold);flex-shrink:0}
+.svc-name{font-size:13px;font-weight:800;color:var(--white)}
+.svc-bullets{list-style:none;padding:0}
+.svc-bullets li{font-size:12px;color:var(--soft);padding:3px 0;display:flex;align-items:flex-start;gap:7px;line-height:1.45}
+.svc-bullets li::before{content:'›';color:var(--gold);font-weight:700;flex-shrink:0}
+.price-bar{display:flex;align-items:center;justify-content:space-between;background:var(--gold2);border:1px solid var(--gold3);border-radius:10px;padding:16px 22px;margin-top:28px;flex-wrap:wrap;gap:14px}
+.price-bar-left .label{font-size:11px;color:var(--soft);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.price-bar-left .price{font-size:1.7rem;font-weight:900;color:var(--gold)}
+.price-bar-left .sub{font-size:11px;color:var(--soft)}
+@media(max-width:860px){.services-section{padding:60px 20px}.services-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.services-grid{grid-template-columns:1fr}}
+
+/* ── SIGNUP ── */
+.signup-section{padding:80px 48px}
+.signup-inner{max-width:560px;margin:0 auto;text-align:center}
+.signup-form{background:var(--navy2);border:1px solid var(--border);border-radius:16px;padding:36px;margin-top:36px;text-align:left}
+.form-row{margin-bottom:16px}
+.form-label{display:block;font-size:11px;font-weight:700;color:var(--soft);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px}
+.form-input{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px 14px;font-size:14px;font-family:var(--font);color:var(--white);outline:none;transition:border-color .18s}
+.form-input:focus{border-color:rgba(245,200,0,.5)}
+.form-input::placeholder{color:var(--muted)}
+.form-select{width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:12px 14px;font-size:14px;font-family:var(--font);color:var(--white);outline:none;appearance:none}
+.form-select option{background:#14141F}
+.form-note{font-size:11px;color:var(--muted);margin-top:5px}
+.otp-box{display:none;margin-bottom:16px;padding:16px;background:rgba(245,200,0,0.06);border:1px solid var(--gold3);border-radius:10px}
+.otp-row{display:flex;gap:10px;align-items:center;margin-top:10px}
+.otp-input{width:120px;font-size:22px;font-weight:900;letter-spacing:.2em;text-align:center}
+.otp-resend{background:transparent;border:1px solid var(--border);border-radius:7px;padding:9px 14px;font-size:12px;font-weight:700;color:var(--soft);cursor:pointer;font-family:var(--font);white-space:nowrap}
+.otp-msg{font-size:11px;color:var(--soft);margin-top:8px}
+.ref-result{display:none;margin-top:20px;background:rgba(245,200,0,.07);border:1.5px solid var(--gold3);border-radius:10px;padding:18px 20px}
+.ref-result-label{font-size:10px;font-weight:700;color:var(--gold);letter-spacing:.07em;text-transform:uppercase;margin-bottom:8px}
+.ref-result-url{font-size:13px;font-weight:700;color:var(--white);word-break:break-all;margin-bottom:12px;background:rgba(0,0,0,.2);padding:8px 12px;border-radius:6px}
+.ref-result-actions{display:flex;gap:8px;flex-wrap:wrap}
+.btn-copy{display:inline-flex;align-items:center;gap:6px;background:var(--gold);color:var(--navy);font-weight:800;font-size:13px;padding:9px 16px;border-radius:7px;border:none;cursor:pointer;font-family:var(--font)}
+.btn-wa{display:inline-flex;align-items:center;gap:6px;background:#25D366;color:#fff;font-weight:700;font-size:13px;padding:9px 16px;border-radius:7px;border:none;cursor:pointer;font-family:var(--font);text-decoration:none}
+@media(max-width:860px){.signup-section{padding:60px 20px}}
+
+/* ── TERMS ── */
+.terms-section{padding:80px 48px;background:var(--navy2)}
+.terms-inner{max-width:1060px;margin:0 auto}
+.terms-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;margin-top:36px}
+.terms-card{background:var(--navy3);border:1px solid var(--border);border-radius:var(--r);padding:22px}
+.terms-card h4{font-size:13px;font-weight:800;color:var(--white);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.terms-card h4 i{color:var(--gold)}
+.terms-card ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:6px}
+.terms-card ul li{font-size:12px;color:var(--soft);display:flex;align-items:flex-start;gap:8px;line-height:1.5}
+.terms-card ul li::before{content:'›';color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px}
+@media(max-width:860px){.terms-section{padding:60px 20px}.terms-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.terms-grid{grid-template-columns:1fr}}
+
+/* ── FAQ ── */
+.faq-section{padding:80px 48px}
+.faq-inner{max-width:720px;margin:0 auto}
+.faq-list{margin-top:36px;display:flex;flex-direction:column;gap:8px}
+.faq-item{background:var(--navy2);border:1px solid var(--border);border-radius:var(--r);overflow:hidden}
+.faq-q{padding:16px 20px;font-size:13px;font-weight:700;color:var(--white);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.faq-q i{color:var(--gold);transition:transform .22s;flex-shrink:0}
+.faq-a{font-size:13px;color:var(--soft);line-height:1.7;padding:0 20px 16px;display:none}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .faq-q i{transform:rotate(45deg)}
+@media(max-width:860px){.faq-section{padding:60px 20px}}
+
+/* ── FINAL CTA ── */
+.cta-section{padding:100px 48px;text-align:center;background:linear-gradient(135deg,var(--navy2) 0%,#111108 100%);position:relative;overflow:hidden}
+.cta-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(245,200,0,.07) 0%,transparent 65%);pointer-events:none}
+.cta-section h2{font-size:clamp(2rem,4vw,3rem);font-weight:900;margin-bottom:14px;position:relative}
+.cta-section h2 span{color:var(--gold)}
+.cta-section p{font-size:1rem;color:var(--soft);max-width:480px;margin:0 auto 36px;position:relative}
+@media(max-width:860px){.cta-section{padding:60px 20px}}
+
+/* ── FOOTER ── */
+.ref-footer{background:var(--navy);border-top:1px solid var(--border);padding:24px 48px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px}
+.ref-footer .brand{font-size:13px;font-weight:700;color:var(--soft)}.ref-footer .brand span{color:var(--gold)}
+.ref-footer-links{display:flex;gap:18px}
+.ref-footer-links a{font-size:12px;color:var(--muted);transition:color .18s}
+.ref-footer-links a:hover{color:var(--white)}
+@media(max-width:600px){.ref-footer{flex-direction:column;text-align:center;padding:24px 20px}}
+
+/* ══ DESIGN LIFT ══ */
+.hero, section.hero {
+  background:
+    radial-gradient(ellipse 70% 60% at 20% 50%, rgba(255,208,0,0.16) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 80% at 80% 30%, rgba(139,107,255,0.2) 0%, transparent 55%),
+    linear-gradient(135deg, #07070F 0%, #0D0A1E 60%, #09090F 100%);
+}
+.hero-glow { background: radial-gradient(ellipse at center, rgba(255,208,0,0.22) 0%, transparent 65%); width: 80%; height: 120%; }
+.hero-glow-right { background: radial-gradient(ellipse at center, rgba(139,107,255,0.25) 0%, transparent 65%); width: 60%; height: 90%; }
+.eyebrow { color: #FFD000; text-shadow: 0 0 12px rgba(255,208,0,0.35); }
+.btn-gold { background: linear-gradient(135deg,#FFD000 0%,#FFA500 100%); color: #07070F; box-shadow: 0 4px 20px rgba(255,208,0,0.25); }
+.btn-gold:hover { background: linear-gradient(135deg,#FFE040 0%,#FFB020 100%); box-shadow: 0 8px 32px rgba(255,208,0,0.4); transform: translateY(-2px); }
+.btn-wa { background: linear-gradient(135deg,#25D366 0%,#1DA851 100%); box-shadow: 0 4px 16px rgba(37,211,102,0.3); }
+.btn-wa:hover { background: linear-gradient(135deg,#2EDB72 0%,#20B558 100%); box-shadow: 0 8px 28px rgba(37,211,102,0.45); transform: translateY(-2px); }
+.gold { color: #FFD000; }
+h2.display-lg .gold, h1.display-xl .gold {
+  background: linear-gradient(135deg,#FFD000 0%,#FFA500 100%);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.section-title{background:linear-gradient(135deg,#FFD000 0%,#FFA500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.deliverables-bg .section-title,.faq-section .section-title{background:none;-webkit-text-fill-color:var(--on-light);color:var(--on-light);}
+.cta-section .cta-title{background:none;-webkit-text-fill-color:inherit;}
+.hero h1 em,.hero h1 .gold{background:linear-gradient(135deg,#FFD000 0%,#FFA500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal;}
+.cta-strip { background: linear-gradient(135deg,#0D0A1E 0%,#120E25 50%,#0A1018 100%); border-top: 1px solid rgba(255,208,0,0.12); }
+.cta-glow { background: radial-gradient(ellipse at center, rgba(255,208,0,0.25) 0%, transparent 65%); width:100%; height:300%; top:-50%; }
+footer { background: linear-gradient(180deg,#0E0E1C 0%,#0A0A14 100%); }
+@keyframes waPulse { 0%,100%{box-shadow:0 8px 32px rgba(37,211,102,0.4),0 0 0 0 rgba(37,211,102,0.3)} 50%{box-shadow:0 12px 40px rgba(37,211,102,0.5),0 0 0 8px rgba(37,211,102,0)} }
+.wa-fab { animation: waPulse 3s ease-in-out infinite; }
+
+</style>
+  
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NEV7YBMBD"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-9NEV7YBMBD', { cookie_flags: 'SameSite=None;Secure' });
+</script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">tiny<span class="logo-gold">verse</span><span class="logo-sub">Solutions</span></a>
+  <div class="nav-links">
+    <a href="index.html#services" class="nav-link">Services</a>
+    <a href="work.html" class="nav-link">Work</a>
+    <a href="about.html" class="nav-link">About</a>
+    <a href="referral.html" class="nav-link gold on"><i class="fa-solid fa-gift"></i> Refer & Earn</a>
+    <a href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Solutions!%20I%27d%20like%20to%20book%20a%20discovery%20call." class="nav-link">Contact</a>
+  </div>
+  <a href="referral.html" class="nav-btn ghost"><i class="fa-solid fa-gift"></i> Refer & Earn</a>
+  <a href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Solutions!%20I%27d%20like%20to%20book%20a%20discovery%20call." class="nav-btn"><i class="fa-solid fa-calendar-check"></i> Book a call</a>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag"><i class="fa-solid fa-hand-holding-dollar"></i> Partner Referral Program</div>
+    <h1>Know a business<br>that needs to grow?<br><span>Get paid for it.</span></h1>
+    <div class="earn-pill">
+      <div class="amount">KSh 5,000</div>
+      <div class="sub">Per confirmed client · Paid to your M-Pesa within 48 hrs</div>
+    </div>
+    <div class="hero-btns">
+      <button class="btn-gold" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">
+        <i class="fa-solid fa-link"></i> Get My Referral Link
+      </button>
+      <a href="#how-it-works" class="btn-ghost">
+        <i class="fa-solid fa-play"></i> How it works
+      </a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=900&q=80&auto=format&fit=crop" alt="Business team collaborating"
+      onerror="this.style.background='#1C1C2A';this.removeAttribute('onerror')">
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ──────────────────────────────────────────────────────── -->
+<section class="steps-section" id="how-it-works">
+  <div class="steps-inner">
+    <div class="sec-tag"><i class="fa-solid fa-route"></i> 4 Simple Steps</div>
+    <h2 class="sec-h2">From sharing a link<br><span>to money in your M-Pesa</span></h2>
+    <div class="steps-grid">
+      <div class="step-card">
+        <img class="step-img" src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&q=80&auto=format&fit=crop" alt="Signing up on phone">
+        <div class="step-body">
+          <div class="step-num">1</div>
+          <div class="step-title">Verify & get your link</div>
+          <div class="step-desc">Sign up in 60 seconds. Verify your WhatsApp. Your unique referral link is generated instantly.</div>
+        </div>
+      </div>
+      <div class="step-card">
+        <img class="step-img" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&q=80&auto=format&fit=crop" alt="Sharing on phone">
+        <div class="step-body">
+          <div class="step-num">2</div>
+          <div class="step-title">Share with a business</div>
+          <div class="step-desc">Send your link via WhatsApp, Instagram, or anywhere. Every click is tracked back to you for 30 days.</div>
+        </div>
+      </div>
+      <div class="step-card">
+        <img class="step-img" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&q=80&auto=format&fit=crop" alt="Team working">
+        <div class="step-body">
+          <div class="step-num">3</div>
+          <div class="step-title">We close the deal</div>
+          <div class="step-desc">We handle everything  -  discovery call, proposal, onboarding. You get WhatsApp updates at each stage.</div>
+        </div>
+      </div>
+      <div class="step-card">
+        <img class="step-img" src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=400&q=80&auto=format&fit=crop" alt="M-Pesa payment">
+        <div class="step-body">
+          <div class="step-num">4</div>
+          <div class="step-title">Get paid to M-Pesa</div>
+          <div class="step-desc">Client confirms and pays → KSh 5,000 hits your M-Pesa within 48 hours. Till No. 5002337.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EARN ──────────────────────────────────────────────────────────────── -->
+<section class="earn-section" id="earn">
+  <div class="earn-inner">
+    <div class="earn-img-wrap">
+      <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=600&q=80&auto=format&fit=crop" alt="Counting money earnings">
+    </div>
+    <div class="earn-content">
+      <div class="sec-tag"><i class="fa-solid fa-coins"></i> Earning Potential</div>
+      <h2 class="sec-h2">No cap.<br><span>Every referral pays.</span></h2>
+      <ul class="svc-bullets" style="margin-bottom:8px;">
+        <li>KSh 5,000 per confirmed client  -  no limit on referrals</li>
+        <li>Refer 10 in a month  -  that's KSh 50,000</li>
+        <li>Paid within 48 hours of client confirmation</li>
+        <li>No sales skills needed  -  just share your link</li>
+        <li>Track every click and lead in real time</li>
+      </ul>
+      <table class="earn-table">
+        <thead><tr><th>Referrals / month</th><th>You earn</th></tr></thead>
+        <tbody>
+          <tr><td>1 referral</td><td>KSh 5,000</td></tr>
+          <tr><td>3 referrals</td><td>KSh 15,000</td></tr>
+          <tr><td>5 referrals</td><td>KSh 25,000</td></tr>
+          <tr><td>10 referrals</td><td>KSh 50,000</td></tr>
+        </tbody>
+      </table>
+      <div class="till-box">
+        <div class="till-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+        <div>
+          <div class="till-label">Payments via M-Pesa</div>
+          <div class="till-value">Till No. 5002337</div>
+          <div class="till-name">Yumtyme Solutions</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHAT WE DELIVER ───────────────────────────────────────────────────── -->
+<section class="services-section" id="what-we-do">
+  <div class="services-inner">
+    <div class="sec-tag"><i class="fa-solid fa-box-open"></i> What Your Referral Gets</div>
+    <h2 class="sec-h2">6 services.<br><span>One team. One flat fee.</span></h2>
+    <div class="services-grid">
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-icon"><i class="fa-solid fa-palette"></i></div><div class="svc-name">Brand Identity</div></div>
+        <ul class="svc-bullets">
+          <li>Logo & visual identity</li>
+          <li>Brand voice & guidelines</li>
+          <li>Templates & assets</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-icon"><i class="fa-solid fa-globe"></i></div><div class="svc-name">Website Design</div></div>
+        <ul class="svc-bullets">
+          <li>Mobile-first, SEO-ready</li>
+          <li>Up to 19 service pages</li>
+          <li>WhatsApp booking on every page</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-icon"><i class="fa-brands fa-instagram"></i></div><div class="svc-name">Social Media</div></div>
+        <ul class="svc-bullets">
+          <li>20+ posts per month</li>
+          <li>Facebook, Instagram, WhatsApp Business</li>
+          <li>Community management</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-icon"><i class="fa-solid fa-pen-nib"></i></div><div class="svc-name">Content & Copy</div></div>
+        <ul class="svc-bullets">
+          <li>Blog posts & newsletters</li>
+          <li>WhatsApp broadcast scripts</li>
+          <li>Staff spotlights & FAQs</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-icon"><i class="fa-solid fa-bullhorn"></i></div><div class="svc-name">Paid Advertising</div></div>
+        <ul class="svc-bullets">
+          <li>Google & Meta Ads</li>
+          <li>Retargeting campaigns</li>
+          <li>Monthly performance reports</li>
+        </ul>
+      </div>
+      <div class="svc-card">
+        <div class="svc-top"><div class="svc-icon"><i class="fa-solid fa-robot"></i></div><div class="svc-name">AI & Automation</div></div>
+        <ul class="svc-bullets">
+          <li>WhatsApp booking bot</li>
+          <li>Appointment reminders</li>
+          <li>Analytics dashboard</li>
+        </ul>
+      </div>
+    </div>
+    <div class="price-bar">
+      <div class="price-bar-left">
+        <div class="label">All 6 services bundled</div>
+        <div class="price">KSh 49,999<span style="font-size:1rem;font-weight:700;color:var(--soft)">/month</span></div>
+        <div class="sub">Cancel anytime · No lock-in · One team</div>
+      </div>
+      <a href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Solutions!%20I%27d%20like%20to%20book%20a%20discovery%20call." class="btn-gold" style="font-size:13px;padding:12px 20px;">
+        <i class="fa-solid fa-calendar-check"></i> Book a free call
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── SIGNUP FORM ────────────────────────────────────────────────────────── -->
+<section class="signup-section" id="signup">
+  <div class="signup-inner">
+    <div class="sec-tag" style="justify-content:center;"><i class="fa-solid fa-link"></i> Get Your Link</div>
+    <h2 class="sec-h2" style="text-align:center;">Get your unique<br><span>referral link now</span></h2>
+    <p style="color:var(--soft);font-size:14px;text-align:center;margin-top:8px;">60 seconds. Verify your number. Start sharing and earning.</p>
+    <div class="signup-form">
+      <div class="form-row">
+        <label class="form-label">Full Name *</label>
+        <input type="text" id="ref-name" class="form-input" placeholder="e.g. Jane Wanjiku">
+      </div>
+      <div class="form-row">
+        <label class="form-label">WhatsApp Number *</label>
+        <input type="tel" id="ref-phone" class="form-input" placeholder="e.g. 0712 345 678">
+        <div class="form-note">A 4-digit verification code will be sent here.</div>
+      </div>
+      <div class="form-row">
+        <label class="form-label">M-Pesa Number *</label>
+        <input type="tel" id="ref-mpesa" class="form-input" placeholder="e.g. 0712 345 678">
+        <div class="form-note">Where we send your KSh 5,000 commission.</div>
+      </div>
+      <div class="form-row">
+        <label class="form-label">How will you refer? (optional)</label>
+        <select id="ref-method" class="form-select">
+          <option value="">Select...</option>
+          <option value="WhatsApp">WhatsApp</option>
+          <option value="Social Media">Social media</option>
+          <option value="My Network">Professional network</option>
+          <option value="In-person">In-person</option>
+          <option value="Multiple">Multiple channels</option>
+        </select>
+      </div>
+
+      <!-- OTP step -->
+      <div class="otp-box" id="otp-step">
+        <div style="font-size:12px;font-weight:700;color:rgba(255,255,255,.7);">
+          <i class="fa-brands fa-whatsapp" style="color:#25D366;"></i>
+          Enter the 4-digit code sent to your WhatsApp
+        </div>
+        <div class="otp-row">
+          <input type="text" id="ref-otp" class="form-input otp-input" maxlength="4" placeholder="••••">
+          <button class="otp-resend" onclick="resendOTP()" id="resend-btn">Resend</button>
+        </div>
+        <div class="otp-msg" id="otp-msg"></div>
+      </div>
+
+      <button class="btn-gold" id="verify-btn" style="width:100%;justify-content:center;font-size:15px;padding:15px;" onclick="requestOTP()">
+        <i class="fa-solid fa-mobile-screen-button"></i> Verify My Number
+      </button>
+      <button class="btn-gold" id="generate-btn" style="width:100%;justify-content:center;font-size:15px;padding:15px;display:none;" onclick="generateRefLink()">
+        <i class="fa-solid fa-bolt"></i> Generate My Referral Link
+      </button>
+
+      <!-- Result -->
+      <div class="ref-result" id="ref-link-box">
+        <div class="ref-result-label"><i class="fa-solid fa-check-circle"></i> Your unique referral link</div>
+        <div class="ref-result-url" id="ref-link-url"></div>
+        <div class="ref-result-actions">
+          <button class="btn-copy" onclick="copyRefLink()"><i class="fa-solid fa-copy"></i> Copy</button>
+          <a class="btn-wa" id="ref-wa-share" href="#" target="_blank"><i class="fa-brands fa-whatsapp"></i> Share on WhatsApp</a>
+        </div>
+        <p style="margin-top:12px;font-size:11px;color:var(--muted);">
+          <i class="fa-solid fa-circle-info" style="color:var(--gold);"></i>
+          Save this link. Every click is tracked. You earn KSh 5,000 when the business confirms.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TERMS ─────────────────────────────────────────────────────────────── -->
+<section class="terms-section" id="terms">
+  <div class="terms-inner">
+    <div class="sec-tag"><i class="fa-solid fa-file-contract"></i> Terms & Conditions</div>
+    <h2 class="sec-h2">The rules.<br><span>Short and simple.</span></h2>
+    <div class="terms-grid">
+      <div class="terms-card">
+        <h4><i class="fa-solid fa-circle-check"></i> Eligibility</h4>
+        <ul>
+          <li>Open to anyone 18+ with a valid Kenyan M-Pesa number</li>
+          <li>One referral account per person</li>
+          <li>Tinyverse employees are not eligible</li>
+          <li>Accurate details required  -  fake info = disqualification</li>
+        </ul>
+      </div>
+      <div class="terms-card">
+        <h4><i class="fa-solid fa-coins"></i> Commission</h4>
+        <ul>
+          <li>KSh 5,000 per confirmed client  -  no cap</li>
+          <li>Paid after client signs retainer and first invoice clears</li>
+          <li>Payment within 48 hours via Till No. 5002337</li>
+          <li>Suspected fraud = payment withheld pending review</li>
+        </ul>
+      </div>
+      <div class="terms-card">
+        <h4><i class="fa-solid fa-ban"></i> Not Allowed</h4>
+        <ul>
+          <li>Self-referrals  -  you cannot refer yourself</li>
+          <li>Spam, cold-calling, or misleading prospects</li>
+          <li>Creating fake signups to inflate counts</li>
+          <li>Impersonating Tinyverse Solutions staff</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ───────────────────────────────────────────────────────────────── -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="sec-tag"><i class="fa-solid fa-circle-question"></i> FAQ</div>
+    <h2 class="sec-h2">Quick answers</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">When exactly do I get paid? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Within 48 hours of the client confirming and paying their first invoice. You'll get a WhatsApp notification at every stage  -  call booked, proposal sent, confirmed, and paid.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Is there a limit on how many I can refer? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">No limit. KSh 5,000 per confirmed referral, every time. Refer 1 or refer 50  -  the commission is the same.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What if someone clicks my link but signs up later? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Your link stays active for 30 days. If they click today and sign up within 30 days, you still get the commission.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What types of businesses can I refer? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Any business that needs to grow online  -  clinics, restaurants, schools, salons, real estate agencies, fintechs, NGOs, logistics companies. If they run a business, they're a potential fit.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do I need to be involved in the sales process? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Not at all. Share your link, we handle everything else. You just get paid when it closes.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">I lost my referral link  -  how do I get it back? <i class="fa-solid fa-plus"></i></div>
+        <div class="faq-a">Your link is saved in your browser. Visit this page and it will auto-fill. If you've cleared your browser, WhatsApp us at +254 790 784 084 with your registered name and we'll resend it immediately.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FINAL CTA ──────────────────────────────────────────────────────────── -->
+<section class="cta-section">
+  <h2>Ready to start <span>earning</span>?</h2>
+  <p>Get your link in 60 seconds. Share it. Get paid. That's it.</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
+    <button class="btn-gold" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">
+      <i class="fa-solid fa-link"></i> Get My Referral Link
+    </button>
+    <a href="https://wa.me/254790784084?text=Hi%20Tinyverse%2C%20I%27m%20interested%20in%20the%20referral%20program" class="btn-ghost" target="_blank">
+      <i class="fa-brands fa-whatsapp"></i> Ask us on WhatsApp
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ─────────────────────────────────────────────────────────────── -->
+<footer class="ref-footer">
+  <div class="brand">tinyverse Solutions · Referral Program</div>
+  <div class="ref-footer-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="work.html">Work</a>
+    <a href="blog.html">Blog</a>
+    <a href="#terms">Terms</a>
+    <a href="privacy.html">Privacy</a>
+    <a href="cookies.html">Cookies</a>
+    <a href="https://wa.me/254790784084" target="_blank">WhatsApp</a>
+  </div>
+</footer>
+
+<script>
+
+// ── OTP Verification  -  SERVER-SIDE (Apps Script CacheService) ─────────────
+// OTP is generated and validated on the server. No code lives in browser source.
+var _otpVerified = false;
+var _sessionToken = null;
+var _verifiedPhone = null;
+
+function requestOTP() {
+  const name  = document.getElementById('ref-name').value.trim();
+  const phone = document.getElementById('ref-phone').value.trim();
+  const mpesa = document.getElementById('ref-mpesa').value.trim();
+
+  if (!name)  { alert('Please enter your full name.'); return; }
+  if (!phone) { alert('Please enter your WhatsApp number.'); return; }
+  if (!mpesa) { alert('Please enter your M-Pesa number.'); return; }
+
+  // Normalise phone
+  let e164 = phone.replace(/\D/g, '');
+  if (e164.startsWith('0')) e164 = '254' + e164.slice(1);
+  if (!e164.startsWith('254') || e164.length < 12) {
+    alert('Please enter a valid Kenyan phone number (e.g. 0712 345 678).');
+    return;
+  }
+
+  const sheetsUrl = getSheetsUrl();
+  const verifyBtn = document.getElementById('verify-btn');
+  verifyBtn.disabled = true;
+  verifyBtn.textContent = 'Sending…';
+
+  if (sheetsUrl) {
+    // ── SERVER-SIDE: OTP generated and sent by Apps Script ──────────────
+    const url = sheetsUrl + '?action=otp_request&phone=' + encodeURIComponent(e164) + '&name=' + encodeURIComponent(name);
+    fetch(url)
+      .then(r => r.json())
+      .then(data => {
+        if (data.ok) {
+          document.getElementById('otp-step').style.display = 'block';
+          document.getElementById('verify-btn').style.display = 'none';
+          document.getElementById('otp-msg').textContent =
+            'Code sent to ' + phone.slice(0,4) + '****. Check your WhatsApp  -  it may take up to 1 minute.';
+        } else {
+          alert('Could not send code: ' + (data.error || 'Unknown error'));
+          verifyBtn.disabled = false;
+          verifyBtn.textContent = 'Send Verification Code';
+        }
+      })
+      .catch(() => {
+        // Fallback: show OTP step, open WhatsApp for manual send by admin
+        _fallbackOTP(name, e164, phone, verifyBtn);
+      });
+  } else {
+    // ── FALLBACK: no Sheets URL configured yet (pre-launch) ─────────────
+    _fallbackOTP(name, e164, phone, verifyBtn);
+  }
+}
+
+function _fallbackOTP(name, e164, displayPhone, btn) {
+  // Pre-launch fallback: admin manually relays the OTP via WhatsApp
+  // Generate local OTP  -  NOTE: this is the insecure path, only used before Sheets is configured
+  var tempCode = String(Math.floor(1000 + Math.random() * 9000));
+  window._fallbackCode = tempCode; // stored only for pre-launch testing
+  window._fallbackPhone = e164;
+  const adminMsg = 'SEND THIS TO ' + e164 + ':\nHi ' + name + ', your Tinyverse Solutions verification code is: *' + tempCode + '*';
+  window.open('https://wa.me/254790784084?text=' + encodeURIComponent(adminMsg), '_blank');
+  document.getElementById('otp-step').style.display = 'block';
+  document.getElementById('verify-btn').style.display = 'none';
+  document.getElementById('otp-msg').textContent =
+    'Code sent to ' + displayPhone + '. Check your WhatsApp  -  it may take up to 1 minute.';
+  btn.disabled = false;
+  btn.textContent = 'Send Verification Code';
+}
+
+function resendOTP() {
+  _otpVerified = false;
+  _sessionToken = null;
+  document.getElementById('verify-btn').style.display = 'block';
+  document.getElementById('otp-step').style.display = 'none';
+  document.getElementById('ref-otp').value = '';
+  requestOTP();
+}
+
+function verifyOTP() {
+  const entered = document.getElementById('ref-otp').value.trim();
+  const msg     = document.getElementById('otp-msg');
+  const phone   = document.getElementById('ref-phone').value.trim();
+  let e164 = phone.replace(/\D/g, '');
+  if (e164.startsWith('0')) e164 = '254' + e164.slice(1);
+
+  const sheetsUrl = getSheetsUrl();
+
+  if (sheetsUrl) {
+    // ── SERVER-SIDE VERIFY ──────────────────────────────────────────────
+    const otpInput = document.getElementById('ref-otp');
+    if (otpInput) otpInput.disabled = true;
+    const url = sheetsUrl + '?action=otp_verify&phone=' + encodeURIComponent(e164) + '&code=' + encodeURIComponent(entered);
+    fetch(url)
+      .then(r => r.json())
+      .then(data => {
+        if (data.ok) {
+          _otpVerified = true;
+          _sessionToken = data.token;
+          _verifiedPhone = data.phone || e164;
+          msg.style.color = '#22C55E';
+          msg.textContent = '✓ Number verified!';
+          if (otpInput) otpInput.disabled = true;
+          document.getElementById('generate-btn').style.display = 'block';
+        } else {
+          msg.style.color = '#FF6B6B';
+          msg.textContent = data.error || 'Incorrect code. Try again.';
+          if (otpInput) otpInput.disabled = false;
+        }
+      })
+      .catch(() => {
+        // If Sheets unreachable, fall back to client check
+        _clientSideVerifyFallback(entered, msg);
+      });
+    return true; // async  -  return optimistically
+  } else {
+    // ── PRE-LAUNCH FALLBACK VERIFY ──────────────────────────────────────
+    return _clientSideVerifyFallback(entered, msg);
+  }
+}
+
+function _clientSideVerifyFallback(entered, msg) {
+  if (window._fallbackCode && entered === window._fallbackCode) {
+    _otpVerified = true;
+    _verifiedPhone = window._fallbackPhone;
+    msg.style.color = '#22C55E';
+    msg.textContent = '✓ Number verified!';
+    const otpInput = document.getElementById('ref-otp');
+    if (otpInput) otpInput.disabled = true;
+    document.getElementById('generate-btn').style.display = 'block';
+    return true;
+  } else {
+    msg.style.color = '#FF6B6B';
+    msg.textContent = 'Incorrect code. Try again.';
+    return false;
+  }
+}
+
+// Auto-verify as user types 4 digits
+document.addEventListener('DOMContentLoaded', function() {
+  const otpInput = document.getElementById('ref-otp');
+  if (otpInput) {
+    otpInput.addEventListener('input', function() {
+      if (this.value.replace(/\D/g,'').length === 4) verifyOTP();
+    });
+  }
+});
+
+// ── Unique link generator ─────────────────────────────────────────────────
+function generateRefCode(name, phone) {
+  // Create a deterministic code from name + phone
+  const raw  = (name.trim().toLowerCase().replace(/\s+/g,'') + phone.replace(/\D/g,'')).slice(0,16);
+  const seed = raw.split('').reduce((acc,c) => acc + c.charCodeAt(0), 0);
+  const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let code = '';
+  let s = seed;
+  for (let i = 0; i < 7; i++) {
+    s = (s * 1664525 + 1013904223) & 0xFFFFFFFF;
+    code += chars[Math.abs(s) % chars.length];
+  }
+  return code;
+}
+
+// Get the Apps Script web app URL from shared localStorage
+function getSheetsUrl() {
+  try {
+    var cfg = JSON.parse(localStorage.getItem('tv_sheets_config') || '{}');
+    return (cfg.connected && cfg.webAppUrl) ? cfg.webAppUrl : null;
+  } catch(e) { return null; }
+}
+
+// Build the tracking link  -  routes via Apps Script redirect for click counting
+function buildTrackingLink(code) {
+  var sheetsUrl = getSheetsUrl();
+  // If Sheets is connected, use the redirect endpoint for click tracking
+  if (sheetsUrl) {
+    // Strip ?action=... from URL and use ?track= instead
+    var base = sheetsUrl.split('?')[0];
+    return base + '?track=' + code;
+  }
+  // Fallback: direct link (no click tracking but still works)
+  return 'https://tinyversesolutions.com/studio/?ref=' + code;
+}
+
+function generateRefLink() {
+  // ── Security gate: must be OTP-verified ──────────────────────────────
+  if (!_otpVerified) { return; }
+
+  const name  = document.getElementById('ref-name').value.trim();
+  const phone = document.getElementById('ref-phone').value.trim();
+  const mpesa = document.getElementById('ref-mpesa').value.trim();
+  const method= document.getElementById('ref-method') ? document.getElementById('ref-method').value : '';
+
+  if (!name) { alert('Please enter your full name.'); return; }
+  if (!phone) { alert('Please enter your WhatsApp number.'); return; }
+  if (!mpesa) { alert('Please enter your M-Pesa number.'); return; }
+
+  let e164 = phone.replace(/\D/g, '');
+  if (e164.startsWith('0')) e164 = '254' + e164.slice(1);
+
+  const sheetsUrl = getSheetsUrl();
+  const genBtn = document.getElementById('generate-btn');
+  if (genBtn) { genBtn.disabled = true; genBtn.textContent = 'Generating…'; }
+
+  if (sheetsUrl && _sessionToken) {
+    // ── SERVER-SIDE: link generated and saved by Apps Script ────────────
+    const url = sheetsUrl + '?action=gen_ref'
+      + '&phone=' + encodeURIComponent(e164)
+      + '&name='  + encodeURIComponent(name)
+      + '&mpesa=' + encodeURIComponent(mpesa)
+      + '&token=' + encodeURIComponent(_sessionToken);
+    fetch(url)
+      .then(r => r.json())
+      .then(data => {
+        if (data.ok) {
+          _showRefLink(name, data.link, data.code);
+          try {
+            localStorage.setItem('tv_ref_code', data.code);
+            localStorage.setItem('tv_ref_name', name);
+            localStorage.setItem('tv_ref_phone', phone);
+            localStorage.setItem('tv_ref_link', data.link);
+          } catch(e) {}
+        } else {
+          alert('Could not generate link: ' + (data.error || 'Try again.'));
+          if (genBtn) { genBtn.disabled = false; genBtn.textContent = 'Get My Referral Link'; }
+        }
+      })
+      .catch(() => {
+        // Fallback to client-side generation
+        _clientSideGenRefLink(name, phone, mpesa, method, genBtn);
+      });
+  } else {
+    // ── FALLBACK: client-side generation (pre-launch or Sheets not connected) ──
+    _clientSideGenRefLink(name, phone, mpesa, method, genBtn);
+  }
+}
+
+function _clientSideGenRefLink(name, phone, mpesa, method, genBtn) {
+  const code = generateRefCode(name, phone);
+  const link = buildTrackingLink(code);
+  try {
+    localStorage.setItem('tv_ref_code',  code);
+    localStorage.setItem('tv_ref_name',  name);
+    localStorage.setItem('tv_ref_phone', phone);
+    localStorage.setItem('tv_ref_mpesa', mpesa);
+    localStorage.setItem('tv_ref_link',  link);
+  } catch(e) {}
+  _showRefLink(name, link, code);
+  registerReferral({ name, phone, mpesa, method, code, link });
+  if (genBtn) { genBtn.disabled = false; genBtn.textContent = 'Get My Referral Link'; }
+}
+
+function _showRefLink(name, link, code) {
+  document.getElementById('ref-link-url').textContent = link;
+  const waText = encodeURIComponent(
+    'Hi! 👋 I want to refer you to *Tinyverse Solutions*  -  they handle everything digital for businesses (website, social media, ads, AI automation) for *KSh 49,999/month*.\n\n' +
+    'Use my referral link to get started:\n' + link + '\n\n' +
+    'They offer a *free 20-minute strategy call*  -  no commitment. Check it out!'
+  );
+  document.getElementById('ref-wa-share').href = 'https://wa.me/?text=' + waText;
+  document.getElementById('ref-link-box').style.display = 'block';
+  document.getElementById('ref-link-box').scrollIntoView({ behavior:'smooth', block:'center' });
+  // Notify master shell
+  try { window.parent.postMessage({ type: 'tv:referral_generated', name: name, code: code }, '*'); } catch(e) {}
+  _ga4ReferralSignup(name, code);
+}
+
+// ── GA4: fire referral_signup after link is generated ─────────────────────
+function _ga4ReferralSignup(name, code) {
+  try {
+    if (typeof gtag === 'function') {
+      gtag('event', 'referral_signup', {
+        referral_code: code,
+        participant_name: name.split(' ')[0] // first name only for privacy
+      });
+    }
+  } catch(e) {}
+}
+
+function copyRefLink() {
+  const url = document.getElementById('ref-link-url').textContent;
+  navigator.clipboard.writeText(url).then(() => {
+    const btn = document.querySelector('.ref-copy-btn');
+    btn.innerHTML = '<i class="fa-solid fa-check"></i> Copied!';
+    setTimeout(() => { btn.innerHTML = '<i class="fa-solid fa-copy"></i> Copy Link'; }, 2000);
+  });
+}
+
+// ── Register referral partner in Sheets ───────────────────────────────────
+async function registerReferral(data) {
+  const sheetsUrl = getSheetsUrl();
+
+  const row = {
+    timestamp:   new Date().toISOString(),
+    name:        data.name,
+    phone:       data.phone,
+    mpesa:       data.mpesa,
+    method:      data.method || '',
+    code:        data.code,
+    link:        data.link,
+    status:      'Active',
+    referrals:   0,
+    paid_amount: 0,
+    paid_date:   '',
+    clicks:      0,
+    wa_sent:     '',
+  };
+
+  // Always save to localStorage (admin reads this too)
+  try {
+    var existing = JSON.parse(localStorage.getItem('tv_referrals') || '[]');
+    // Avoid duplicates by code
+    var idx = existing.findIndex(r => r.code === data.code);
+    if (idx >= 0) existing[idx] = row;
+    else existing.push(row);
+    localStorage.setItem('tv_referrals', JSON.stringify(existing));
+  } catch(e) {}
+
+  // Send to Sheets if connected  -  the Apps Script trigger will fire WhatsApp
+  if (sheetsUrl) {
+    try {
+      var resp = await fetch(sheetsUrl + '?action=append&sheet=Referrals&row=' + encodeURIComponent(JSON.stringify(row)));
+      var result = await resp.json();
+      if (result.ok) {
+        // Show confirmation that WhatsApp will be sent
+        var note = document.createElement('div');
+        note.style.cssText = 'margin-top:12px;padding:10px 14px;background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.3);border-radius:8px;font-size:12px;color:#fff;';
+        note.innerHTML = '<i class="fa-brands fa-whatsapp" style="color:#25D366;"></i> <strong>Your referral link has been sent to your WhatsApp</strong>  -  check ' + data.phone + ' now. If it does not arrive within 2 minutes, use the Copy Link button above.';
+        document.getElementById('ref-link-box').appendChild(note);
+      }
+    } catch(e) { /* silent  -  link still displayed on screen */ }
+  } else {
+    // Sheets not connected  -  show manual instruction
+    var note = document.createElement('div');
+    note.style.cssText = 'margin-top:12px;padding:10px 14px;background:rgba(245,200,0,0.1);border:1px solid rgba(245,200,0,0.3);border-radius:8px;font-size:12px;color:rgba(255,255,255,0.8);';
+    note.innerHTML = '<i class="fa-solid fa-circle-info" style="color:#F5C800;"></i> Copy your link above and save it. You can also click <strong>Share on WhatsApp</strong> to send it to yourself for safekeeping.';
+    document.getElementById('ref-link-box').appendChild(note);
+  }
+}
+
+// ── Track incoming referral code from URL ─────────────────────────────────
+(function trackRef() {
+  const params = new URLSearchParams(window.location.search);
+  const ref    = params.get('ref');
+  if (ref) {
+    sessionStorage.setItem('tv_inbound_ref', ref);
+    // Store for 30 days
+    const exp = Date.now() + 30 * 24 * 60 * 60 * 1000;
+    document.cookie = 'tv_ref=' + ref + ';expires=' + new Date(exp).toUTCString() + ';path=/';
+  }
+})();
+
+// ── FAQ accordion ─────────────────────────────────────────────────────────
+function toggleFaq(el) {
+  const item = el.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// ── Restore link if returning ─────────────────────────────────────────────
+(function restoreLink() {
+  const code = localStorage.getItem('tv_ref_code');
+  const name = localStorage.getItem('tv_ref_name');
+  const phone= localStorage.getItem('tv_ref_phone');
+  if (code && name && phone) {
+    const link = localStorage.getItem('tv_ref_link') || buildTrackingLink(code);
+    if (name)  document.getElementById('ref-name').value  = name;
+    if (phone) document.getElementById('ref-phone').value = phone;
+    const mpesa = localStorage.getItem('tv_ref_mpesa');
+    if (mpesa) document.getElementById('ref-mpesa').value = mpesa;
+    document.getElementById('ref-link-url').textContent = link;
+    const waText = encodeURIComponent('Hi! Refer a business using my Tinyverse Solutions link and we both win: ' + link);
+    document.getElementById('ref-wa-share').href = 'https://wa.me/?text=' + waText;
+    document.getElementById('ref-link-box').style.display = 'block';
+  }
+})();
+</script>
+</body>
+</html>

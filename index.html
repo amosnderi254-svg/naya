@@ -1,4 +1,4 @@
-<title>Tinyverse Solutions</title>
+<title>Tinyverse Solutions | Specialist Digital Agency</title>
 
 <!-- Schema: LocalBusiness + FAQPage + 6 Service entries -->
 <script type="application/ld+json">
@@ -274,10 +274,10 @@ img { max-width: 100%; display: block; }
 /* ─── HEADINGS ─── */
 h1, h2, h3 { text-wrap: balance; line-height: 1.12; }
 .display-xl {
-  font-size: clamp(44px, 7vw, 80px);
+  font-size: clamp(32px, 7vw, 80px);
   font-weight: 800;
   letter-spacing: -0.03em;
-  line-height: 1.05;
+  line-height: 1.1;
 }
 .display-lg {
   font-size: clamp(32px, 5vw, 52px);
@@ -453,6 +453,13 @@ nav.scrolled {
   padding-block: 80px 60px;
   overflow: hidden;
 }
+@media (max-width: 900px) {
+  .hero {
+    min-height: unset;
+    padding-block: 60px 48px;
+    align-items: flex-start;
+  }
+}
 .hero-glow {
   position: absolute;
   top: -20%;
@@ -480,9 +487,15 @@ nav.scrolled {
   z-index: 1;
 }
 @media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 48px; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
 }
 .hero-left { max-width: 560px; }
+@media (max-width: 900px) {
+  .hero-left { max-width: 100%; }
+}
 .hero-tag {
   display: inline-flex;
   align-items: center;
@@ -539,16 +552,25 @@ nav.scrolled {
   font-weight: 800;
 }
 
-/* ─── HERO CARDS (right side) ─── */
+/* ─── HERO right image ─── */
 .hero-right {
   position: relative;
-  height: 380px;
+  height: 420px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 20px;
+  overflow: hidden;
 }
 @media (max-width: 900px) {
-  .hero-right { height: 280px; justify-content: flex-start; }
+  .hero-right {
+    height: 240px;
+    width: 100%;
+    order: -1;
+  }
+}
+@media (max-width: 560px) {
+  .hero-right { height: 200px; }
 }
 .hero-float-stack {
   position: relative;
@@ -1034,7 +1056,7 @@ footer {
   flex-shrink: 0;
 }
 @media (max-width: 900px) {
-  .hero-visual { width: 100%; max-width: 360px; height: 320px; }
+  .hero-visual { width: 100%; max-width: 100%; height: 280px; }
 }
 .hv-main {
   background: var(--bg-card);
@@ -1201,7 +1223,8 @@ footer {
 }
 .about-stats {
   display: flex;
-  gap: 32px;
+  gap: 24px;
+  flex-wrap: wrap;
   margin-top: 36px;
   padding-top: 28px;
   border-top: 1px solid var(--border);
@@ -1680,7 +1703,7 @@ h2.display-lg .gold {
 <!-- NAV -->
 <nav id="main-nav">
   <div class="wrap nav-inner">
-    <a href="#" class="logo" aria-label="Tinyverse Solutions home">
+    <a href="index.html" class="logo" aria-label="Tinyverse Solutions home">
       tiny<span class="logo-gold">verse</span><span class="logo-sub">Solutions</span>
     </a>
     <ul class="nav-links" role="list">
@@ -1748,7 +1771,7 @@ h2.display-lg .gold {
 
     <!-- HERO IMAGE -->
     <div class="hero-right">
-      <img src="hero-woman-laptop.jpg" alt="Digital professional working on a laptop" style="width:100%;height:100%;object-fit:cover;border-radius:20px;display:block;">
+      <img src="hero-woman-laptop.jpg" alt="Digital professional working on a laptop" style="width:100%;height:100%;object-fit:cover;border-radius:20px;display:block;position:absolute;inset:0;">
     </div>
   </div>
 </section>
@@ -2177,7 +2200,7 @@ h2.display-lg .gold {
         <h4>Get in touch</h4>
         <a href="https://wa.me/254790784084" target="_blank" rel="noopener"><i class="fab fa-whatsapp" style="margin-right:6px;"></i>0790 784 084</a>
         <a href="mailto:hello@tinyversesolutions.com"><i class="fas fa-envelope" style="margin-right:6px;"></i>hello@tinyversesolutions.com</a>
-        <a href="#book"><i class="fas fa-calendar-days" style="margin-right:6px;"></i>Book a free call</a>
+        <a href="https://wa.me/254790784084?text=Hi%20Tinyverse%2C%20I%27d%20like%20to%20book%20a%20free%20discovery%20call" target="_blank" rel="noopener"><i class="fas fa-calendar-days" style="margin-right:6px;"></i>Book a free call</a>
         <div style="margin-top:20px;padding:14px;background:rgba(245,200,0,0.06);border:1px solid rgba(245,200,0,0.15);border-radius:8px;">
           <div style="font-size:11px;font-weight:700;color:var(--fg-subtle);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;"><i class="fas fa-location-dot" style="color:var(--gold);margin-right:5px;"></i>Based in</div>
           <div style="font-size:13px;font-weight:800;color:var(--fg-body);">Nairobi, Kenya</div>
@@ -2186,7 +2209,7 @@ h2.display-lg .gold {
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 Tinyverse Solutions. Built for global clients.</p>
+      <p>© 2026 Tinyverse Solutions. Serving clients across East Africa.</p>
       <a href="privacy.html">Privacy Policy</a>
     </div>
   </div>
