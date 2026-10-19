@@ -1,336 +1,378 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-XXXXXXXXXX"); // TODO: replace G-XXXXXXXXXX with your real GA4 Measurement ID
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Work | Tinyverse Solutions</title>
-<meta name="description" content="Live projects built and managed by Tinyverse Solutions for businesses worldwide. Web development, design, and AI automation delivered with precision.">
+<title>Our Work | Tinyverse Solutions Nairobi</title>
+<meta name="description" content="Live projects built and managed by Tinyverse Solutions for Nairobi businesses. Web development, design, social media and AI automation delivered monthly.">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://tinyversesolutions.com/work.html">
-<meta property="og:title" content="Our Work | Tinyverse Solutions">
-<meta property="og:description" content="Live projects built and managed by Tinyverse Solutions for businesses worldwide.">
-<meta property="og:url" content="https://tinyversesolutions.com/work.html">
+<link rel="canonical" href="https://mytinyverse.com/work.html">
+<meta property="og:title" content="Our Work | Tinyverse Solutions Nairobi">
+<meta property="og:description" content="Live projects built and managed by Tinyverse Solutions for Nairobi businesses. Web development, design, social media and AI automation delivered monthly.">
+<meta property="og:url" content="https://mytinyverse.com/work.html">
 <meta property="og:type" content="website">
-<meta property="og:image" content="https://tinyversesolutions.com/og-image.jpg">
+<meta property="og:image" content="https://mytinyverse.com/og-image.jpg">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230D0D18'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='18' fill='%23F5C800'>tv</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  color-scheme:dark;
-  --bg-base:#07070F;--bg-card:#111120;--bg-raised:#1C1C2A;
-  --gold:#FFD000;--purple:#8B6BFF;
-  --fg-body:#F2F0FF;--fg-muted:rgba(242,240,255,0.72);--fg-subtle:rgba(242,240,255,0.45);
-  --border:rgba(242,240,255,0.12);--border-gold:rgba(245,200,0,0.25);
-  --font:'Plus Jakarta Sans',system-ui,sans-serif;
+  --yellow:#F5C800; --amber:#E0A800; --ink:#0D0D18; --card:#14141F;
+  --raised:#1C1C2A; --text:#FFFFFF; --body:#E8E6F0; --muted:#9896A8;
+  --border:rgba(245,200,0,0.12); --font:'Plus Jakarta Sans',system-ui,sans-serif;
+  --mono:'Space Mono',monospace;
 }
 html{scroll-behavior:smooth;}
-body{font-family:var(--font);background:var(--bg-base);color:var(--fg-body);line-height:1.6;padding-top:3px;}
+body{
+  overflow-x: hidden;font-family:var(--font);background:var(--ink);color:var(--body);line-height:1.6;padding-top:3px;}
 body::before{content:'';display:block;height:3px;background:linear-gradient(90deg,#C89200,#F5C800,#FFED4A,#F5C800,#C89200);background-size:200% 100%;animation:shimmer 3s linear infinite;position:fixed;top:0;left:0;right:0;z-index:9999;}
 @keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
-#main-nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:100;background:rgba(13,13,24,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:0 24px;}
-.wrap{max-width:1140px;margin:0 auto;}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;height:64px;gap:24px;}
-.logo{font-weight:800;font-size:1.1rem;color:var(--fg-body);text-decoration:none;letter-spacing:-0.02em;flex-shrink:0;}
-.logo-gold{color:var(--gold);}
-.logo-sub{color:rgba(232,230,240,0.5);font-weight:600;font-size:0.88em;}
-.nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
-.nav-links a{color:var(--fg-muted);text-decoration:none;font-size:0.875rem;font-weight:500;transition:color 0.15s;}
-.nav-links a:hover{color:var(--fg-body);}
-.btn{display:inline-flex;align-items:center;gap:8px;font-family:inherit;font-weight:700;text-decoration:none;border:none;cursor:pointer;border-radius:50px;transition:all 0.2s;}
-.btn-gold{background:var(--gold);color:#0D0D18;}
-.btn-gold:hover{opacity:0.88;}
-.btn-sm{font-size:0.82rem;padding:8px 18px;}
-.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--fg-body);padding:10px 22px;}
-.btn-ghost:hover{border-color:var(--gold);color:var(--gold);}
-.btn-wa{background:#25D366;color:#fff;display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:50px;font-weight:700;text-decoration:none;}
-.nav-quote{flex-shrink:0;}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;}
-.hamburger span{display:block;width:22px;height:2px;background:var(--fg-body);border-radius:2px;transition:all 0.3s;}
-.drawer{position:fixed;inset:0;z-index:200;pointer-events:none;}
-.drawer.open{pointer-events:all;}
-.drawer-backdrop{position:absolute;inset:0;background:rgba(0,0,0,0.6);opacity:0;transition:opacity 0.3s;}
-.drawer.open .drawer-backdrop{opacity:1;}
-.drawer-panel{position:absolute;top:0;right:0;width:min(320px,88vw);height:100%;background:var(--bg-raised);padding:24px;display:flex;flex-direction:column;gap:0;transform:translateX(100%);transition:transform 0.3s cubic-bezier(.4,0,.2,1);}
-.drawer.open .drawer-panel{transform:translateX(0);}
-.drawer-header{display:flex;align-items:center;justify-content:space-between;padding-bottom:20px;border-bottom:1px solid var(--border);margin-bottom:20px;}
-.drawer-close{font-size:18px;cursor:pointer;color:var(--fg-muted);line-height:1;padding:4px;}
-.drawer-links{display:flex;flex-direction:column;gap:4px;}
-.drawer-links a{color:var(--fg-body);text-decoration:none;font-size:1rem;font-weight:600;padding:10px 8px;border-radius:8px;transition:background 0.15s;}
-.drawer-links a:hover{background:var(--bg-base);}
-.drawer-cta{margin-top:auto;padding-top:24px;}
-@media(max-width:768px){.nav-links{display:none;}.nav-quote{display:none;}.hamburger{display:flex;}}
-footer{background:var(--bg-card);border-top:1px solid var(--border);padding:64px 0 32px;}
-.footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
-.footer-brand .logo{display:block;margin-bottom:12px;}
-.footer-tagline{font-size:13px;color:var(--fg-muted);line-height:1.6;}
+
+/* NAV */
+nav{position:sticky;top:3px;z-index:100;background:rgba(8,8,16,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,200,0,0.1);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 2px 32px rgba(0,0,0,0.5);}
+.nav-logo{font-family:var(--font);font-size:20px;font-weight:900;color:#fff;text-decoration:none;letter-spacing:-0.5px;}
+.nav-logo span{color:var(--yellow);}
+.nav-studio{font-size:13px;font-weight:700;color:var(--muted);margin-left:2px;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-link{font-size:14px;font-weight:700;color:var(--muted);text-decoration:none;transition:color 0.15s;}
+.nav-link:hover,.nav-link.active{color:#fff;}
+.nav-cta{display:inline-flex;align-items:center;gap:7px;background:var(--yellow);color:var(--ink);font-family:var(--font);font-size:13px;font-weight:900;padding:9px 18px;border-radius:8px;text-decoration:none;transition:all 0.2s;box-shadow:0 0 20px rgba(245,200,0,0.25);}
+.nav-cta:hover{background:var(--amber);transform:translateY(-1px);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:1px;transition:all 0.2s;}
+.nav-drawer{display:none;position:fixed;top:67px;left:0;right:0;background:#0D0D18;border-bottom:1px solid rgba(245,200,0,0.12);padding:20px 24px;flex-direction:column;gap:4px;z-index:99;}
+.nav-drawer.open{display:flex;}
+.nav-drawer-link{font-size:15px;font-weight:700;color:var(--body);text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.nav-drawer-wa{display:flex;align-items:center;gap:8px;background:rgba(37,211,102,0.12);color:#25D366;font-weight:800;font-size:14px;padding:12px 16px;border-radius:8px;text-decoration:none;margin-top:8px;}
+@media(max-width:768px){.nav-links{display:none;}.nav-hamburger{display:flex;}}
+
+/* FOOTER */
+.footer{background:linear-gradient(160deg,#080810 0%,#0D0D18 100%);border-top:1px solid rgba(245,200,0,0.1);padding:64px 48px 32px;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-logo{font-family:var(--font);font-size:22px;font-weight:900;color:#fff;text-decoration:none;display:block;margin-bottom:12px;}
+.footer-logo span{color:var(--yellow);}
+.footer-tagline{font-size:13px;font-weight:600;color:var(--muted);line-height:1.6;margin-bottom:20px;}
+.footer-wa-cta{display:inline-flex;align-items:center;gap:8px;background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.25);color:#25D366;font-weight:800;font-size:13px;padding:10px 16px;border-radius:8px;text-decoration:none;margin-bottom:20px;transition:all 0.2s;}
+.footer-wa-cta:hover{background:rgba(37,211,102,0.2);}
 .footer-socials{display:flex;gap:10px;}
-.footer-socials a{width:36px;height:36px;border-radius:50%;background:rgba(245,200,0,0.08);border:1px solid rgba(245,200,0,0.15);display:flex;align-items:center;justify-content:center;color:rgba(245,200,0,0.6);text-decoration:none;font-size:14px;transition:all 0.2s;}
-.footer-socials a:hover{background:var(--gold);color:#0D0D18;}
-.footer-col h4{font-size:11px;font-weight:700;color:var(--fg-subtle);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;}
-.footer-col a{display:block;font-size:13px;font-weight:500;color:var(--fg-muted);text-decoration:none;margin-bottom:10px;transition:color 0.15s;}
-.footer-col a:hover{color:var(--gold);}
-.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
-.footer-bottom p{font-size:12px;color:var(--fg-subtle);}
-.footer-bottom a{font-size:12px;color:var(--fg-subtle);text-decoration:none;transition:color 0.15s;}
-.footer-bottom a:hover{color:var(--gold);}
-@media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;gap:32px;}}
-@media(max-width:600px){.footer-inner{grid-template-columns:1fr;gap:24px;}footer{padding:48px 0 24px;}}
-.page-hero{padding:100px 0 80px;}
-.page-hero-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);background:rgba(245,200,0,0.1);border-left:3px solid var(--gold);padding:4px 12px 4px 10px;border-radius:0 4px 4px 0;margin-bottom:24px;}
-.page-hero h1{font-size:clamp(36px,5vw,64px);font-weight:900;color:var(--fg-body);line-height:1.05;letter-spacing:-2px;margin-bottom:20px;}
-.page-hero h1 .accent{color:var(--gold);}
-.page-hero p{font-size:18px;font-weight:500;color:var(--fg-muted);max-width:560px;line-height:1.7;}
-.section{padding:80px 0;}
+.footer-social-link{width:36px;height:36px;border-radius:50%;background:rgba(245,200,0,0.08);border:1px solid rgba(245,200,0,0.15);display:flex;align-items:center;justify-content:center;color:rgba(245,200,0,0.5);text-decoration:none;font-size:14px;transition:all 0.2s;}
+.footer-social-link:hover{background:#F5C800;color:#0D0D18;}
+.footer-col h4{font-size:11px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-link{font-size:13px;font-weight:600;color:rgba(232,230,240,0.55);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color 0.15s;}
+.footer-link:hover{color:var(--yellow);}
+.footer-link i{font-size:10px;color:rgba(255,255,255,0.2);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:12px;font-weight:600;color:rgba(255,255,255,0.25);}
+.footer-legal{display:flex;gap:20px;}
+.footer-legal a{font-size:12px;font-weight:600;color:rgba(255,255,255,0.25);text-decoration:none;transition:color 0.15s;}
+.footer-legal a:hover{color:var(--yellow);}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;gap:32px;}}
+@media(max-width:600px){nav{padding:0 20px;}.footer{padding:48px 20px 24px;}.footer-top{grid-template-columns:1fr;gap:24px;}}
+
+/* SHARED INNER PAGE STYLES */
+.page-hero{padding:100px 48px 80px;max-width:1100px;margin:0 auto;}
+.page-hero-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;color:var(--yellow);background:rgba(245,200,0,0.1);border-left:3px solid var(--yellow);padding:4px 12px 4px 10px;border-radius:0 4px 4px 0;margin-bottom:24px;}
+.page-hero h1{font-size:clamp(36px,5vw,64px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-2px;margin-bottom:20px;}
+.page-hero h1 .accent{color:var(--yellow);}
+.page-hero p{font-size:18px;font-weight:500;color:var(--muted);max-width:560px;line-height:1.7;}
+.glow-line{width:60px;height:4px;background:var(--yellow);border-radius:2px;box-shadow:0 0 16px rgba(245,200,0,0.5);margin-bottom:20px;}
+.section{padding:80px 48px;max-width:1100px;margin:0 auto;}
 .section-sweep{height:1px;background:linear-gradient(90deg,transparent,rgba(245,200,0,0.2),transparent);}
-.glow-line{width:60px;height:4px;background:var(--gold);border-radius:2px;box-shadow:0 0 16px rgba(245,200,0,0.5);margin-bottom:20px;}
-@media(max-width:600px){.page-hero{padding:64px 0 48px;}.section{padding:48px 0;}}
+@media(max-width:600px){.page-hero{padding:64px 20px 48px;}.section{padding:48px 20px;}}
+
 .work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
-.work-card{background:var(--bg-card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all 0.2s;}
-.work-card:hover{transform:translateY(-4px);border-color:var(--border-gold);box-shadow:0 16px 40px rgba(0,0,0,0.4);}
+.work-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all 0.2s;}
+.work-card:hover{transform:translateY(-4px);border-color:rgba(245,200,0,0.3);box-shadow:0 16px 40px rgba(0,0,0,0.4);}
 .work-img{height:200px;overflow:hidden;position:relative;border-bottom:2px solid rgba(245,200,0,0.1);}
 .work-img img{width:100%;height:100%;object-fit:cover;opacity:0.75;transition:opacity 0.3s;}
 .work-card:hover .work-img img{opacity:0.9;}
 .work-img-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 40%,rgba(13,13,24,0.8) 100%);}
-.work-badge{position:absolute;top:12px;left:12px;background:rgba(13,13,24,0.85);border:1px solid var(--border-gold);color:var(--gold);font-size:10px;font-weight:900;padding:3px 9px;border-radius:4px;text-transform:uppercase;letter-spacing:0.08em;}
+.work-badge{position:absolute;top:12px;left:12px;background:rgba(13,13,24,0.85);border:1px solid rgba(245,200,0,0.3);color:var(--yellow);font-size:10px;font-weight:900;padding:3px 9px;border-radius:4px;text-transform:uppercase;letter-spacing:0.08em;}
 .work-body{padding:20px 22px 24px;}
-.work-tag{font-size:10px;font-weight:900;color:var(--gold);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;}
-.work-name{font-size:18px;font-weight:900;color:var(--fg-body);margin-bottom:8px;}
-.work-desc{font-size:13px;color:var(--fg-muted);line-height:1.6;margin-bottom:16px;}
+.work-tag{font-size:10px;font-weight:900;color:var(--yellow);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:8px;}
+.work-name{font-size:18px;font-weight:900;color:#fff;margin-bottom:8px;}
+.work-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:16px;}
 .work-services{display:flex;flex-wrap:wrap;gap:6px;}
-.work-service-pill{font-size:10px;font-weight:800;padding:3px 8px;border-radius:4px;background:rgba(245,200,0,0.08);color:var(--gold);border:1px solid rgba(245,200,0,0.15);}
+.work-service-pill{font-size:10px;font-weight:800;padding:3px 8px;border-radius:4px;background:rgba(245,200,0,0.08);color:var(--yellow);border:1px solid rgba(245,200,0,0.15);}
 .process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;}
 .process-step{text-align:center;padding:24px 16px;}
-.process-num{font-size:40px;font-weight:700;color:rgba(245,200,0,0.15);line-height:1;margin-bottom:12px;}
-.process-step h3{font-size:14px;font-weight:900;color:var(--fg-body);margin-bottom:6px;}
-.process-step p{font-size:12px;color:var(--fg-muted);}
-.cta-band{padding:80px 0;text-align:center;}
-.cta-band h2{font-size:clamp(28px,4vw,48px);font-weight:900;color:var(--fg-body);margin-bottom:12px;letter-spacing:-1px;}
-.cta-band p{font-size:16px;color:var(--fg-muted);margin-bottom:32px;}
-.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
-.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
-.reveal.visible{opacity:1;transform:none;}
+.process-num{font-family:var(--mono);font-size:40px;font-weight:700;color:rgba(245,200,0,0.15);line-height:1;margin-bottom:12px;}
+.process-step h3{font-size:14px;font-weight:900;color:#fff;margin-bottom:6px;}
+.process-step p{font-size:12px;color:var(--muted);}
 @media(max-width:900px){.work-grid{grid-template-columns:repeat(2,1fr);}.process-grid{grid-template-columns:repeat(2,1fr);}}
 @media(max-width:600px){.work-grid{grid-template-columns:1fr;}.process-grid{grid-template-columns:1fr 1fr;}}
-
-/* ══ DESIGN LIFT ══ */
-.hero, section.hero {
-  background:
-    radial-gradient(ellipse 70% 60% at 20% 50%, rgba(255,208,0,0.16) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 80% at 80% 30%, rgba(139,107,255,0.2) 0%, transparent 55%),
-    linear-gradient(135deg, #07070F 0%, #0D0A1E 60%, #09090F 100%);
-}
-.hero-glow { background: radial-gradient(ellipse at center, rgba(255,208,0,0.22) 0%, transparent 65%); width: 80%; height: 120%; }
-.hero-glow-right { background: radial-gradient(ellipse at center, rgba(139,107,255,0.25) 0%, transparent 65%); width: 60%; height: 90%; }
-.eyebrow { color: #FFD000; text-shadow: 0 0 12px rgba(255,208,0,0.35); }
-.btn-gold { background: linear-gradient(135deg,#FFD000 0%,#FFA500 100%); color: #07070F; box-shadow: 0 4px 20px rgba(255,208,0,0.25); }
-.btn-gold:hover { background: linear-gradient(135deg,#FFE040 0%,#FFB020 100%); box-shadow: 0 8px 32px rgba(255,208,0,0.4); transform: translateY(-2px); }
-.btn-wa { background: linear-gradient(135deg,#25D366 0%,#1DA851 100%); box-shadow: 0 4px 16px rgba(37,211,102,0.3); }
-.btn-wa:hover { background: linear-gradient(135deg,#2EDB72 0%,#20B558 100%); box-shadow: 0 8px 28px rgba(37,211,102,0.45); transform: translateY(-2px); }
-.gold { color: #FFD000; }
-h2.display-lg .gold, h1.display-xl .gold {
-  background: linear-gradient(135deg,#FFD000 0%,#FFA500 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-.section-title{background:linear-gradient(135deg,#FFD000 0%,#FFA500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.deliverables-bg .section-title,.faq-section .section-title{background:none;-webkit-text-fill-color:var(--on-light);color:var(--on-light);}
-.cta-section .cta-title{background:none;-webkit-text-fill-color:inherit;}
-.hero h1 em,.hero h1 .gold{background:linear-gradient(135deg,#FFD000 0%,#FFA500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal;}
-.cta-strip { background: linear-gradient(135deg,#0D0A1E 0%,#120E25 50%,#0A1018 100%); border-top: 1px solid rgba(255,208,0,0.12); }
-.cta-glow { background: radial-gradient(ellipse at center, rgba(255,208,0,0.25) 0%, transparent 65%); width:100%; height:300%; top:-50%; }
-footer { background: linear-gradient(180deg,#0E0E1C 0%,#0A0A14 100%); }
-@keyframes waPulse { 0%,100%{box-shadow:0 8px 32px rgba(37,211,102,0.4),0 0 0 0 rgba(37,211,102,0.3)} 50%{box-shadow:0 12px 40px rgba(37,211,102,0.5),0 0 0 8px rgba(37,211,102,0)} }
-.wa-fab { animation: waPulse 3s ease-in-out infinite; }
-
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NEV7YBMBD"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-9NEV7YBMBD',{cookie_flags:'SameSite=None;Secure'});</script>
 </head>
-<body>
-<nav id="main-nav">
-  <div class="wrap nav-inner">
-    <a href="index.html" class="logo" aria-label="Tinyverse Solutions home">tiny<span class="logo-gold">verse</span><span class="logo-sub">Solutions</span></a>
-    <ul class="nav-links" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="work.html">Work</a></li>
-      <li><a href="blog.html">Blog</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a class="btn btn-gold btn-sm nav-quote" href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Solutions!%20I'd%20like%20to%20learn%20more%20about%20your%20services" target="_blank" rel="noopener">Get a quote</a>
-    <div class="hamburger" id="hamburger" role="button" aria-label="Open menu" tabindex="0"><span></span><span></span><span></span></div>
+<body class="">
+<nav>
+  <a href="/" class="nav-logo">tiny<span>verse</span> <span class="nav-studio">Solutions</span></a>
+  <div class="nav-links">
+    <a href="/#works" class="nav-link">Services</a>
+    <a href="/work.html" class="nav-link">Work</a>
+    <a href="/about.html" class="nav-link">About</a>
+    <a href="/#book" class="nav-link">Contact</a>
   </div>
+  <a href="/#book" class="nav-cta"><i class="fa-solid fa-calendar-check"></i> Book free call</a>
+  <button class="nav-hamburger" id="nav-hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
-<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation">
-  <div class="drawer-backdrop" id="drawer-backdrop"></div>
-  <div class="drawer-panel">
-    <div class="drawer-header">
-      <span class="logo">tiny<span class="logo-gold">verse</span><span class="logo-sub">Solutions</span></span>
-      <span class="drawer-close" id="drawer-close" tabindex="0" role="button" aria-label="Close menu">&#x2715;</span>
-    </div>
-    <nav class="drawer-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="index.html#services">Services</a>
-      <a href="work.html">Work</a>
-      <a href="blog.html">Blog</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="drawer-cta">
-      <a class="btn btn-wa" href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Solutions!%20I'd%20like%20to%20learn%20more%20about%20your%20services" target="_blank" rel="noopener" style="width:100%;justify-content:center;"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
-    </div>
-  </div>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="/" class="nav-drawer-link" onclick="closeNav()">Home</a>
+  <a href="/#works" class="nav-drawer-link" onclick="closeNav()">Services</a>
+  <a href="/work.html" class="nav-drawer-link" onclick="closeNav()">Work</a>
+  <a href="/about.html" class="nav-drawer-link" onclick="closeNav()">About</a>
+  <a href="/blog.html" class="nav-drawer-link" onclick="closeNav()">Blog</a>
+  <a href="https://wa.me/254790784084" class="nav-drawer-wa" target="_blank" onclick="closeNav()">
+    <i class="fa-brands fa-whatsapp"></i> WhatsApp us
+  </a>
 </div>
 
-<div class="wrap">
-  <div class="page-hero reveal">
-    <div class="page-hero-label"><i class="fas fa-briefcase"></i> Our work</div>
-    <h1>Built with care.<br><span class="accent">Delivered with precision.</span></h1>
-    <p>A look at what we have built and launched for clients across different industries.</p>
-  </div>
+<div class="page-hero">
+  <div class="page-hero-label"><i class="fa-solid fa-briefcase"></i> Our work</div>
+  <h1>Built and managed.<br><span class="accent">Every month.</span></h1>
+  <p>Live work we build, maintain and grow for Nairobi businesses: not one-off projects.</p>
 </div>
 <div class="section-sweep"></div>
 
-<div class="wrap">
-  <div class="section">
-    <div class="work-grid">
-      <div class="work-card reveal">
-        <div class="work-img">
-          <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=82" alt="My1Health medical tourism platform" loading="lazy">
-          <div class="work-img-overlay"></div>
-          <div class="work-badge">Live</div>
-        </div>
-        <div class="work-body">
-          <div class="work-tag">Health &amp; Medical Tourism</div>
-          <div class="work-name">My1Health</div>
-          <div class="work-desc">Connecting African patients to world-class hospitals globally.</div>
-          <div class="work-services"><span class="work-service-pill">Web Dev</span><span class="work-service-pill">UX/UI</span><span class="work-service-pill">Strategy</span></div>
-        </div>
+<div class="section">
+  <div class="work-grid">
+    <div class="work-card">
+      <div class="work-img">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=82" alt="My1Health medical tourism platform Nairobi">
+        <div class="work-img-overlay"></div>
+        <div class="work-badge">Live</div>
       </div>
-      <div class="work-card reveal">
-        <div class="work-img">
-          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=82" alt="Ganji Payments fintech" loading="lazy">
-          <div class="work-img-overlay"></div>
-          <div class="work-badge">Live</div>
-        </div>
-        <div class="work-body">
-          <div class="work-tag">Fintech</div>
-          <div class="work-name">Ganji Payments</div>
-          <div class="work-desc">Payments and banking tools built for East Africa.</div>
-          <div class="work-services"><span class="work-service-pill">Web Dev</span><span class="work-service-pill">Graphic Design</span><span class="work-service-pill">Social Media</span></div>
-        </div>
+      <div class="work-body">
+        <div class="work-tag">Health &amp; Medical Tourism</div>
+        <div class="work-name">My1Health</div>
+        <div class="work-desc">Connecting African patients to world-class hospitals globally.</div>
+        <div class="work-services"><span class="work-service-pill">Web Dev</span><span class="work-service-pill">UX/UI</span><span class="work-service-pill">Strategy</span></div>
       </div>
-      <div class="work-card reveal">
-        <div class="work-img">
-          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=82" alt="Riverbank Solutions" loading="lazy">
-          <div class="work-img-overlay"></div>
-          <div class="work-badge">Live</div>
-        </div>
-        <div class="work-body">
-          <div class="work-tag">Logistics</div>
-          <div class="work-name">Riverbank Solutions</div>
-          <div class="work-desc">A modern platform for lending, payments and community finance.</div>
-          <div class="work-services"><span class="work-service-pill">AI Automation</span><span class="work-service-pill">Web Dev</span><span class="work-service-pill">Branding</span></div>
-        </div>
+    </div>
+    <div class="work-card">
+      <div class="work-img">
+        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=82" alt="Ganji Payments fintech Nairobi">
+        <div class="work-img-overlay"></div>
+        <div class="work-badge">Live</div>
+      </div>
+      <div class="work-body">
+        <div class="work-tag">Fintech</div>
+        <div class="work-name">Ganji Payments</div>
+        <div class="work-desc">Payments and banking tools built for East Africa.</div>
+        <div class="work-services"><span class="work-service-pill">Web Dev</span><span class="work-service-pill">Graphic Design</span><span class="work-service-pill">Social Media</span></div>
+      </div>
+    </div>
+    <div class="work-card">
+      <div class="work-img">
+        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&q=82" alt="Riverbank Solutions logistics Nairobi">
+        <div class="work-img-overlay"></div>
+        <div class="work-badge">Live</div>
+      </div>
+      <div class="work-body">
+        <div class="work-tag">Logistics</div>
+        <div class="work-name">Riverbank Solutions</div>
+        <div class="work-desc">Kenya's super-app for lending, payments and chamas.</div>
+        <div class="work-services"><span class="work-service-pill">AI Automation</span><span class="work-service-pill">Web Dev</span><span class="work-service-pill">Branding</span></div>
       </div>
     </div>
   </div>
 </div>
 <div class="section-sweep"></div>
 
-<div class="wrap">
-  <div class="section reveal">
-    <div class="glow-line"></div>
-    <h2 style="font-size:clamp(22px,2.8vw,36px);font-weight:900;color:var(--fg-body);letter-spacing:-0.8px;margin-bottom:8px;">How a project works</h2>
-    <p style="color:var(--fg-muted);margin-bottom:0;">From first call to launched product.</p>
-    <div class="process-grid">
-      <div class="process-step"><div class="process-num">01</div><h3>Discovery call</h3><p>We learn your business and set clear goals together.</p></div>
-      <div class="process-step"><div class="process-num">02</div><h3>Scoping and plan</h3><p>A clear project plan with timelines and deliverables.</p></div>
-      <div class="process-step"><div class="process-num">03</div><h3>Build and review</h3><p>We build iteratively with your feedback at every stage.</p></div>
-      <div class="process-step"><div class="process-num">04</div><h3>Launch and grow</h3><p>Go live, then keep improving based on real results.</p></div>
-    </div>
+<div class="section">
+  <div class="glow-line"></div>
+  <h2 style="font-size:clamp(22px,2.8vw,36px);font-weight:900;color:#fff;letter-spacing:-0.8px;margin-bottom:8px;">How a project works</h2>
+  <p style="color:var(--muted);margin-bottom:0;">From onboarding to live: in week one.</p>
+  <div class="process-grid">
+    <div class="process-step"><div class="process-num">01</div><h3>Onboarding call</h3><p>20 minutes. We map your business and set month-one priorities.</p></div>
+    <div class="process-step"><div class="process-num">02</div><h3>Portal goes live</h3><p>Same day. Submit your first tasks immediately.</p></div>
+    <div class="process-step"><div class="process-num">03</div><h3>48 to 72 hour delivery</h3><p>Every task drafted, reviewed and shipped within the window.</p></div>
+    <div class="process-step"><div class="process-num">04</div><h3>Monthly review</h3><p>What worked, what's next. Repeat.</p></div>
   </div>
 </div>
 <div class="section-sweep"></div>
 
-<div class="wrap">
-  <div class="cta-band reveal">
-    <h2>Want results like these?</h2>
-    <p>Tell us about your business and we will tell you exactly what we can build together.</p>
-    <div class="cta-btns">
-      <a href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Solutions!%20I%20saw%20your%20work%20and%20would%20like%20to%20discuss%20my%20business" class="btn btn-gold" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Let's talk</a>
-      <a href="contact.html" class="btn btn-ghost">Get in touch</a>
-    </div>
+<div class="cta-band">
+  <h2>Want results like these?</h2>
+  <p>Tell us about your business. We will tell you honestly what month one looks like.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/254790784084?text=Hi%20Tinyverse!%20I%20saw%20your%20work%20and%20would%20like%20to%20discuss%20my%20business" class="btn-yellow" target="_blank"><i class="fa-brands fa-whatsapp"></i> Let's talk</a>
+    <a href="/#book" class="btn-outline-y"><i class="fa-solid fa-calendar-check"></i> Book a free call</a>
   </div>
 </div>
 
-<footer>
-  <div class="wrap">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="logo">tiny<span class="logo-gold">verse</span><span class="logo-sub">Solutions</span></div>
-        <p class="footer-tagline">One team. Everything digital.<br>Results you can measure.</p>
-        <div class="footer-socials" style="margin-top:20px;">
-          <a href="https://www.instagram.com/tinyversestudio" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/tinyversestudio" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.facebook.com/tinyversestudio" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-col footer-brand">
+        <a href="/" class="footer-logo">tiny<span>verse</span> <span class="nav-studio">Solutions</span></a>
+        <p class="footer-tagline">One team. Everything digital.<br>One flat fee.</p>
+        <a href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Studio%21%20I%27m%20interested%20in%20The%20Works" class="footer-wa-cta" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> Start on WhatsApp
+        </a>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/tinyversestudio" target="_blank" class="footer-social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/tinyversestudio" target="_blank" class="footer-social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.tiktok.com/@tinyversestudio" target="_blank" class="footer-social-link"><i class="fa-brands fa-tiktok"></i></a>
         </div>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
-        <a href="service-web.html">Web &amp; Systems Development</a>
-        <a href="service-pm.html">Product Management</a>
-        <a href="service-ai.html">AI &amp; Automations</a>
-        <a href="service-seo.html">SEO &amp; Content</a>
-        <a href="service-ux.html">UI/UX Design</a>
-        <a href="service-graphics.html">Graphics Design</a>
+        <div class="footer-links">
+          <a href="/#works" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Website Development</a>
+          <a href="/#works" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Graphic Design</a>
+          <a href="/#works" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Social Media</a>
+          <a href="/#works" class="footer-link"><i class="fa-solid fa-chevron-right"></i> AI Automation</a>
+          <a href="/#works" class="footer-link"><i class="fa-solid fa-chevron-right"></i> UX/UI Design</a>
+          <a href="/#works" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Strategy & PM</a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="about.html">About Us</a>
-        <a href="work.html">Our Work</a>
-        <a href="blog.html">Blog</a>
-        <a href="contact.html">Contact</a>
+        <div class="footer-links">
+          <a href="/about.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> About Us</a>
+          <a href="/work.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Our Work</a>
+          <a href="/blog.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Blog</a>
+          <a href="/careers.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Careers</a>
+          <a href="/#book" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Contact</a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Get in touch</h4>
-        <a href="https://wa.me/254790784084" target="_blank" rel="noopener"><i class="fab fa-whatsapp" style="margin-right:6px;"></i>0790 784 084</a>
-        <a href="mailto:hello@tinyversesolutions.com"><i class="fas fa-envelope" style="margin-right:6px;"></i>hello@tinyversesolutions.com</a>
-        <div style="margin-top:20px;padding:14px;background:rgba(245,200,0,0.06);border:1px solid rgba(245,200,0,0.15);border-radius:8px;">
-          <div style="font-size:11px;font-weight:700;color:var(--fg-subtle);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;"><i class="fas fa-location-dot" style="color:var(--gold);margin-right:5px;"></i>Based in</div>
-          <div style="font-size:13px;font-weight:800;color:var(--fg-body);">Nairobi, Kenya</div>
-          <div style="font-size:12px;font-weight:600;color:var(--fg-muted);margin-top:2px;">Serving clients across East Africa</div>
+        <div class="footer-links">
+          <a href="https://wa.me/254790784084" class="footer-link" target="_blank"><i class="fa-brands fa-whatsapp"></i> 0790 784 084</a>
+          <a href="mailto:hello@mytinyverse.com" class="footer-link"><i class="fa-solid fa-envelope"></i> hello@mytinyverse.com</a>
+          <a href="/#book" class="footer-link"><i class="fa-solid fa-calendar-days"></i> Book a free call</a>
+        </div>
+        <div style="margin-top:20px;padding:14px;background:rgba(245,200,0,0.08);border:1px solid rgba(245,200,0,0.2);border-radius:8px;">
+          <div style="font-size:11px;font-weight:700;color:rgba(232,230,240,0.55);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;"><i class="fa-solid fa-location-dot" style="color:#F5C800;margin-right:5px;"></i>Based in</div>
+          <div style="font-size:13px;font-weight:800;color:rgba(255,255,255,0.88);">Nairobi, Kenya</div>
+          <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.35);margin-top:2px;">Serving clients across East Africa</div>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2026 Tinyverse Solutions. Built for global clients.</p>
-      <a href="privacy.html">Privacy Policy</a>
+      <div class="footer-copy">© 2025 Tinyverse Solutions. Built in Nairobi.</div>
+      <div class="footer-legal">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/cookies.html">Cookie Policy</a>
+      </div>
     </div>
   </div>
+<a href="tel:+254790784084" class="footer-link" style="display:none" onclick="(window.tvSendEvent||window.sendEvent||function(){})('cta_click','Phone: 0790784084')">Call us</a>
 </footer>
 <script>
-(function(){
-  var ham=document.getElementById('hamburger');
-  var drawer=document.getElementById('drawer');
-  var backdrop=document.getElementById('drawer-backdrop');
-  var closeBtn=document.getElementById('drawer-close');
-  function openDrawer(){drawer.classList.add('open');document.body.style.overflow='hidden';}
-  function closeDrawer(){drawer.classList.remove('open');document.body.style.overflow='';}
-  if(ham) ham.addEventListener('click',openDrawer);
-  if(backdrop) backdrop.addEventListener('click',closeDrawer);
-  if(closeBtn) closeBtn.addEventListener('click',closeDrawer);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeDrawer();});
-})();
-(function(){
-  var els=document.querySelectorAll('.reveal');
-  if(!els.length) return;
-  var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:0.1});
-  els.forEach(function(el){io.observe(el);});
+function toggleNav(){document.getElementById('nav-drawer').classList.toggle('open');document.getElementById('nav-hamburger').classList.toggle('open');}
+function closeNav(){document.getElementById('nav-drawer').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');}
+</script>
+
+<script>
+(function() {
+  // ── TINYVERSE STUDIO — ANALYTICS ────────────────────────────────────────────
+  var ANALYTICS_URL = 'https://script.google.com/macros/s/AKfycbwTJKOWFgae5Kr9807LXgS71uQf_5wxCfUUW5zM52Gjvbf-FSPkYvlSePMbO9JSYo-l/exec';
+
+  var sessionId = sessionStorage.getItem('tv_sid');
+  if (!sessionId) {
+    sessionId = Date.now().toString(36) + Math.random().toString(36).slice(2);
+    sessionStorage.setItem('tv_sid', sessionId);
+  }
+
+  function getDevice() {
+    var ua = navigator.userAgent;
+    if (/Mobi|Android/i.test(ua)) return 'Mobile';
+    if (/iPad|Tablet/i.test(ua)) return 'Tablet';
+    return 'Desktop';
+  }
+
+  function getSource() {
+    var ref = document.referrer;
+    if (!ref) return 'Direct';
+    if (/google/i.test(ref))    return 'Google';
+    if (/instagram/i.test(ref)) return 'Instagram';
+    if (/facebook/i.test(ref))  return 'Facebook';
+    if (/linkedin/i.test(ref))  return 'LinkedIn';
+    if (/tiktok/i.test(ref))    return 'TikTok';
+    if (/twitter|x\.com/i.test(ref)) return 'X/Twitter';
+    if (/wa\.me|whatsapp/i.test(ref)) return 'WhatsApp';
+    return 'Referral';
+  }
+
+  function getSourceWithUTM() {
+    var params = new URLSearchParams(window.location.search);
+    var utmSource = params.get('utm_source');
+    if (utmSource) return utmSource.charAt(0).toUpperCase() + utmSource.slice(1);
+    return getSource();
+  }
+
+  function getUTMs() {
+    var p = new URLSearchParams(window.location.search);
+    return {
+      utm_source:   p.get('utm_source')   || '',
+      utm_medium:   p.get('utm_medium')   || '',
+      utm_campaign: p.get('utm_campaign') || '',
+      utm_term:     p.get('utm_term')     || '',
+      utm_content:  p.get('utm_content')  || ''
+    };
+  }
+
+  window.tvSendEvent = function(event, buttonLabel) {
+    if (!ANALYTICS_URL) return;
+    var utms = getUTMs();
+    var payload = {
+      action: 'append',
+      sheet:  'Analytics',
+      row: [
+        new Date().toISOString(),
+        event,
+        buttonLabel || '',
+        getSourceWithUTM(),
+        getDevice(),
+        Intl.DateTimeFormat().resolvedOptions().timeZone || '',
+        sessionId,
+        window.location.pathname,
+        utms.utm_source,
+        utms.utm_medium,
+        utms.utm_campaign,
+        utms.utm_term,
+        utms.utm_content
+      ]
+    };
+    fetch(ANALYTICS_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(function() {});
+  };
+
+  // Auto-fire pageview on load
+  document.addEventListener('DOMContentLoaded', function() {
+    window.tvSendEvent('pageview', document.title);
+  });
+
+  // Track all outbound CTA clicks (WhatsApp / tel / mailto links)
+  document.addEventListener('click', function(e) {
+    var el = e.target.closest('a[href]');
+    if (!el) return;
+    var href = el.getAttribute('href') || '';
+    if (/^(https?:\/\/wa\.me|wa\.me|https?:\/\/api\.whatsapp|tel:|mailto:)/i.test(href)) {
+      window.tvSendEvent('cta_click', el.innerText.trim().slice(0, 80) || href.slice(0, 80));
+    }
+  });
 })();
 </script>
 </body>

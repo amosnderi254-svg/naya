@@ -1,719 +1,376 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>About Us | Tinyverse Solutions</title>
-  <meta name="description" content="Tinyverse Solutions: who we are, our mission, vision, values and where we are going.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js" defer></script>
-  <style>
-    /* ─── TOKENS ─── */
-    :root {
-      --bg-base:#07070F; --bg-card:#111120; --bg-raised:#1C1C2A;
-      --gold:#FFD000; --purple:#8B6BFF;
-      --fg-body:#F2F0FF; --fg-muted:rgba(242,240,255,0.72); --fg-subtle:rgba(242,240,255,0.45);
-      --border:rgba(242,240,255,0.12); --border-gold:rgba(245,200,0,0.25);
-      --bg-off-white:#F7F5EE; --bg-cream:#EDE9DF;
-      --on-light:#0D0D18; --on-light-muted:#56536E; --on-light-subtle:#9390A8;
-      --nav-h:64px; --r:12px;
-    }
-
-    /* ─── RESET ─── */
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    html{scroll-behavior:smooth}
-    body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--bg-base);color:var(--fg-body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
-    a{text-decoration:none;color:inherit}
-    ul{list-style:none}
-    img{max-width:100%;display:block}
-
-    /* ─── PROGRESS BAR ─── */
-    #progress-bar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,var(--gold),#FFAA00);z-index:999;transition:width .1s linear}
-
-    /* ─── LAYOUT ─── */
-    .wrap{max-width:1100px;margin-inline:auto;padding-inline:24px}
-    .section{padding-block:96px}
-    @media(max-width:768px){.section{padding-block:56px}}
-
-    /* ─── BUTTONS ─── */
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:50px;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;border:none;white-space:nowrap}
-    .btn-gold{background:var(--gold);color:#0D0D18}.btn-gold:hover{background:#FFD700;transform:translateY(-2px);box-shadow:0 8px 24px rgba(245,200,0,0.3)}
-    .btn-wa{background:#25D366;color:#fff}.btn-wa:hover{background:#20bd5a;transform:translateY(-2px)}
-    .btn-ghost{background:transparent;color:var(--fg-body);border:1px solid var(--border)}.btn-ghost:hover{border-color:var(--fg-muted)}
-    .btn-sm{padding:8px 18px;font-size:13px}
-
-    /* ─── TYPE ─── */
-    .eyebrow{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:16px}
-    .eyebrow-dark{font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:#C49A00;margin-bottom:16px}
-    .display-xl{font-size:clamp(36px,5vw,56px);font-weight:800;line-height:1.1;letter-spacing:-.02em}
-    .display-lg{font-size:clamp(28px,4vw,44px);font-weight:800;line-height:1.15;letter-spacing:-.02em}
-    .display-md{font-size:clamp(22px,3vw,34px);font-weight:800;line-height:1.2;letter-spacing:-.015em}
-    .gold{color:var(--gold)}
-
-    /* ─── NAV ─── */
-    nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:100;height:var(--nav-h);background:transparent;transition:background .25s,border-bottom .25s}
-    nav.scrolled{background:rgba(13,13,24,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border)}
-    .nav-inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:32px}
-    .logo{font-size:20px;font-weight:800;letter-spacing:-.02em;flex-shrink:0;color:var(--fg-body)}
-    .logo .logo-gold{color:var(--gold)}
-    .logo .logo-sub{font-size:9px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--fg-muted);margin-left:4px;vertical-align:middle}
-    .nav-links{display:flex;align-items:center;gap:28px;flex:1;justify-content:center}
-    .nav-links a{font-size:14px;font-weight:500;color:var(--fg-muted);transition:color .15s}
-    .nav-links a:hover,.nav-links a.active{color:var(--fg-body)}
-    .hamburger{display:none;flex-direction:column;gap:5px;padding:6px;cursor:pointer}
-    .hamburger span{display:block;width:22px;height:2px;background:var(--fg-body);border-radius:2px;transition:all .2s}
-    @media(max-width:768px){.nav-links{display:none}.nav-quote{display:none}.hamburger{display:flex}}
-
-    /* ─── DRAWER ─── */
-    .drawer{position:fixed;inset:0;z-index:200;display:none}
-    .drawer.open{display:block}
-    .drawer-backdrop{position:absolute;inset:0;background:rgba(13,13,24,0.7);backdrop-filter:blur(4px)}
-    .drawer-panel{position:absolute;top:0;right:0;width:min(320px,88vw);height:100%;background:var(--bg-card);border-left:1px solid var(--border);display:flex;flex-direction:column;padding:24px;gap:8px;transform:translateX(100%);transition:transform .25s ease}
-    .drawer.open .drawer-panel{transform:translateX(0)}
-    .drawer-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
-    .drawer-close{font-size:20px;color:var(--fg-muted);cursor:pointer;padding:4px 8px}
-    .drawer-close:hover{color:var(--fg-body)}
-    .drawer-links{display:flex;flex-direction:column;gap:4px;flex:1}
-    .drawer-links a{font-size:16px;font-weight:600;color:var(--fg-body);padding:12px 0;border-bottom:1px solid var(--border);transition:color .15s}
-    .drawer-links a:hover{color:var(--gold)}
-    .drawer-cta{margin-top:24px}
-
-    /* ─── PARTICLE CANVAS ─── */
-    #hero-canvas{position:absolute;inset:0;pointer-events:none;opacity:.4}
-
-    /* ─── HERO ─── */
-    .about-hero{position:relative;background:var(--bg-base);padding-block:110px 90px;overflow:hidden}
-    .hero-glow{position:absolute;width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(124,92,252,.18) 0%,transparent 70%);top:-200px;right:-100px;pointer-events:none;animation:pulse 6s ease-in-out infinite}
-    .hero-glow-2{position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(245,200,0,.08) 0%,transparent 70%);bottom:-100px;left:-50px;pointer-events:none;animation:pulse 8s ease-in-out infinite reverse}
-    @keyframes pulse{0%,100%{transform:scale(1);opacity:.7}50%{transform:scale(1.1);opacity:1}}
-    .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;position:relative;z-index:1}
-    @media(max-width:900px){.hero-inner{grid-template-columns:1fr;gap:40px}.about-hero{padding-block:72px 56px}}
-    .hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(124,92,252,.12);border:1px solid rgba(124,92,252,.25);border-radius:50px;padding:6px 16px;font-size:12px;font-weight:700;color:rgba(164,148,255,.9);letter-spacing:.05em;margin-bottom:24px}
-    .hero-tag i{font-size:11px}
-    .hero-bullets{display:flex;flex-direction:column;gap:10px;margin:24px 0 32px}
-    .hero-bullet{display:flex;align-items:center;gap:10px;font-size:15px;color:var(--fg-muted)}
-    .hero-bullet i{color:var(--gold);font-size:14px;width:16px;flex-shrink:0}
-    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
-    .hero-img-wrap{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/3}
-    @media(max-width:900px){.hero-img-wrap{order:-1;max-width:480px}}
-    .hero-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform 8s ease}
-    .hero-img-wrap:hover img{transform:scale(1.04)}
-    .hero-img-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(13,13,24,.3) 0%,transparent 60%)}
-    .hero-img-badge{position:absolute;bottom:20px;left:20px;background:rgba(13,13,24,.85);backdrop-filter:blur(12px);border:1px solid var(--border-gold);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:12px}
-    .badge-dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 3px rgba(34,197,94,.2);animation:blink 2s ease-in-out infinite}
-    @keyframes blink{0%,100%{box-shadow:0 0 0 3px rgba(34,197,94,.2)}50%{box-shadow:0 0 0 6px rgba(34,197,94,.1)}}
-    .badge-text{font-size:12px;font-weight:700;color:var(--fg-body)}
-    .badge-sub{font-size:11px;color:var(--fg-muted)}
-
-    /* ─── SCROLL REVEAL ─── */
-    .reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease}
-    .reveal.visible{opacity:1;transform:translateY(0)}
-    .reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .7s ease,transform .7s ease}
-    .reveal-left.visible{opacity:1;transform:translateX(0)}
-    .reveal-right{opacity:0;transform:translateX(40px);transition:opacity .7s ease,transform .7s ease}
-    .reveal-right.visible{opacity:1;transform:translateX(0)}
-    .reveal-scale{opacity:0;transform:scale(.92);transition:opacity .6s ease,transform .6s ease}
-    .reveal-scale.visible{opacity:1;transform:scale(1)}
-    .delay-1{transition-delay:.1s}.delay-2{transition-delay:.2s}.delay-3{transition-delay:.3s}.delay-4{transition-delay:.4s}.delay-5{transition-delay:.5s}
-
-
-    /* ─── MISSION / VISION ─── */
-    .light-section{background:var(--bg-off-white);color:var(--on-light)}
-    .light-section-alt{background:var(--bg-cream);color:var(--on-light)}
-    .section-hd{text-align:center;margin-bottom:56px}
-    .section-hd h2{font-size:clamp(26px,3.5vw,40px);font-weight:800;line-height:1.15;letter-spacing:-.02em;color:var(--on-light);margin-bottom:12px}
-    .section-hd p{font-size:15px;color:var(--on-light-muted);max-width:500px;margin-inline:auto;line-height:1.7}
-    .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-    @media(max-width:700px){.mv-grid{grid-template-columns:1fr}}
-    .mv-card{background:#fff;border-radius:20px;padding:36px;border:1px solid rgba(13,13,24,.07);position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
-    .mv-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(13,13,24,.12)}
-    .mv-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),#FFAA00)}
-    .mv-card .c-icon{width:52px;height:52px;border-radius:14px;background:rgba(245,200,0,.1);display:flex;align-items:center;justify-content:center;font-size:22px;color:#C49A00;margin-bottom:20px}
-    .mv-card h3{font-size:20px;font-weight:800;color:var(--on-light);margin-bottom:16px}
-    .mv-bullets{display:flex;flex-direction:column;gap:8px}
-    .mv-bullet{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:var(--on-light-muted);line-height:1.5}
-    .mv-bullet i{color:#C49A00;margin-top:2px;flex-shrink:0;font-size:13px}
-
-    /* ─── ORIGIN STORY (dark infographic) ─── */
-    .origin-section{background:var(--bg-base);position:relative;overflow:hidden}
-    .origin-section::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(124,92,252,.07) 0%,transparent 65%);pointer-events:none}
-    .origin-hd{text-align:center;margin-bottom:64px}
-    .origin-hd h2{font-size:clamp(28px,4vw,42px);font-weight:800;line-height:1.1;letter-spacing:-.02em;margin-bottom:16px}
-    .origin-hd p{font-size:15px;color:var(--fg-muted);max-width:480px;margin-inline:auto;line-height:1.7}
-
-    /* split panels */
-    .origin-split{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-bottom:56px}
-    @media(max-width:820px){.origin-split{grid-template-columns:1fr;gap:24px}}
-    .origin-panel{border-radius:20px;padding:36px 28px;border:1px solid var(--border);position:relative;overflow:hidden}
-    .origin-panel.chaos{background:var(--bg-card);border-color:rgba(239,68,68,.15)}
-    .origin-panel.clarity{background:var(--bg-card);border-color:var(--border-gold)}
-    .panel-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;border-radius:50px;padding:5px 14px;margin-bottom:20px}
-    .panel-label.before{background:rgba(239,68,68,.1);color:#f87171;border:1px solid rgba(239,68,68,.2)}
-    .panel-label.after{background:rgba(245,200,0,.1);color:var(--gold);border:1px solid var(--border-gold)}
-    .panel-label i{font-size:10px}
-    .panel-title{font-size:16px;font-weight:700;color:var(--fg-body);margin-bottom:6px}
-    .panel-sub{font-size:13px;color:var(--fg-muted);margin-bottom:24px;line-height:1.5}
-
-    /* chaos diagram */
-    .chaos-diagram{position:relative;height:200px}
-    .chaos-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:56px;height:56px;border-radius:50%;background:rgba(239,68,68,.12);border:2px dashed rgba(239,68,68,.3);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#f87171;text-align:center;line-height:1.1;z-index:2}
-    .chaos-node{position:absolute;width:48px;height:48px;border-radius:50%;background:var(--bg-raised);border:1px solid rgba(239,68,68,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;transition:transform .2s}
-    .chaos-node:hover{transform:scale(1.1)}
-    .chaos-node i{font-size:14px;color:#f87171}
-    .chaos-node span{font-size:8px;font-weight:700;color:var(--fg-subtle);text-align:center;line-height:1.1;max-width:38px}
-    /* 5 nodes scattered around center */
-    .cn1{top:8px;left:50%;transform:translateX(-50%);animation:float1 4s ease-in-out infinite}
-    .cn2{top:30px;right:10px;animation:float2 3.5s ease-in-out infinite}
-    .cn3{bottom:20px;right:16px;animation:float3 4.5s ease-in-out infinite}
-    .cn4{bottom:12px;left:10px;animation:float4 3.8s ease-in-out infinite}
-    .cn5{top:30px;left:10px;animation:float5 4.2s ease-in-out infinite}
-    @keyframes float1{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-8px)}}
-    @keyframes float2{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(6px) rotate(4deg)}}
-    @keyframes float3{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-7px) rotate(-3deg)}}
-    @keyframes float4{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
-    @keyframes float5{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-6px) rotate(3deg)}}
-    /* dashed connecting lines via SVG */
-    .chaos-svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
-    .chaos-line{stroke:rgba(239,68,68,.2);stroke-dasharray:4 4;stroke-dashoffset:0;animation:dash-move 3s linear infinite}
-    @keyframes dash-move{to{stroke-dashoffset:-16}}
-
-    /* clarity diagram */
-    .clarity-diagram{position:relative;height:200px}
-    .hub{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,rgba(245,200,0,.2),rgba(245,200,0,.05));border:2px solid var(--border-gold);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;box-shadow:0 0 32px rgba(245,200,0,.15);z-index:2;animation:hub-pulse 3s ease-in-out infinite}
-    @keyframes hub-pulse{0%,100%{box-shadow:0 0 24px rgba(245,200,0,.15)}50%{box-shadow:0 0 40px rgba(245,200,0,.28)}}
-    .hub i{font-size:18px;color:var(--gold)}
-    .hub span{font-size:7px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--fg-muted);text-align:center}
-    .service-node{position:absolute;width:44px;height:44px;border-radius:50%;background:var(--bg-raised);border:1px solid var(--border-gold);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;z-index:2}
-    .service-node i{font-size:12px;color:var(--gold)}
-    .service-node span{font-size:7px;font-weight:700;color:var(--fg-muted);text-align:center;line-height:1.1;max-width:36px}
-    /* 6 nodes in a ring */
-    .sn1{top:4px;left:50%;transform:translateX(-50%);animation:orbit-pop 0.5s ease both}
-    .sn2{top:22px;right:8px;animation:orbit-pop 0.5s .08s ease both}
-    .sn3{bottom:22px;right:8px;animation:orbit-pop 0.5s .16s ease both}
-    .sn4{bottom:4px;left:50%;transform:translateX(-50%);animation:orbit-pop 0.5s .24s ease both}
-    .sn5{bottom:22px;left:8px;animation:orbit-pop 0.5s .32s ease both}
-    .sn6{top:22px;left:8px;animation:orbit-pop 0.5s .4s ease both}
-    @keyframes orbit-pop{from{opacity:0;transform:scale(.5) translateX(-50%)}to{opacity:1;transform:scale(1) translateX(-50%)}}
-    .sn2,sn3,sn5,sn6{animation:orbit-pop2 0.5s ease both}
-    .sn2{animation-delay:.08s}.sn3{animation-delay:.16s}.sn5{animation-delay:.32s}.sn6{animation-delay:.4s}
-    @keyframes orbit-pop2{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
-    .orbit-line{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:1}
-    .orbit-segment{stroke:rgba(245,200,0,.2);stroke-dasharray:3 5;animation:orbit-spin 12s linear infinite}
-    @keyframes orbit-spin{from{stroke-dashoffset:0}to{stroke-dashoffset:200}}
-
-    /* bottom proof row */
-    .origin-proof{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-    @media(max-width:700px){.origin-proof{grid-template-columns:1fr;gap:12px}}
-    .proof-item{background:var(--bg-card);border:1px solid var(--border);border-radius:14px;padding:22px 20px;display:flex;align-items:flex-start;gap:14px;transition:border-color .2s,transform .2s}
-    .proof-item:hover{border-color:var(--border-gold);transform:translateY(-3px)}
-    .proof-icon{width:40px;height:40px;border-radius:10px;background:rgba(245,200,0,.1);display:flex;align-items:center;justify-content:center;font-size:16px;color:var(--gold);flex-shrink:0}
-    .proof-body h4{font-size:14px;font-weight:700;color:var(--fg-body);margin-bottom:4px}
-    .proof-body p{font-size:12px;color:var(--fg-muted);line-height:1.5}
-
-
-    /* ─── CEO MESSAGE ─── */
-    .ceo-section{background:var(--bg-off-white)}
-    .ceo-inner{display:grid;grid-template-columns:280px 1fr;gap:64px;align-items:center}
-    @media(max-width:820px){.ceo-inner{grid-template-columns:1fr;gap:36px}}
-    .ceo-photo-wrap{position:relative;flex-shrink:0}
-    .ceo-photo{width:100%;aspect-ratio:3/4;border-radius:20px;overflow:hidden;box-shadow:0 24px 56px rgba(13,13,24,.14)}
-    .ceo-photo img{width:100%;height:100%;object-fit:cover;object-position:top center}
-    .ceo-badge{position:absolute;bottom:-16px;left:50%;transform:translateX(-50%);background:#fff;border-radius:12px;padding:12px 20px;box-shadow:0 8px 28px rgba(13,13,24,.12);border:1px solid rgba(13,13,24,.07);white-space:nowrap;text-align:center}
-    .ceo-badge-name{font-size:14px;font-weight:800;color:var(--on-light)}
-    .ceo-badge-role{font-size:11px;font-weight:600;color:var(--on-light-muted);margin-top:2px}
-    @media(max-width:820px){.ceo-photo-wrap{max-width:240px;margin-inline:auto}}
-    .ceo-message{padding-bottom:8px}
-    .ceo-quote-mark{font-size:72px;line-height:.6;color:#C49A00;font-family:Georgia,serif;margin-bottom:20px;display:block;opacity:.5}
-    .ceo-message blockquote{font-size:clamp(17px,2.2vw,22px);font-weight:700;line-height:1.55;color:var(--on-light);letter-spacing:-.01em;margin-bottom:24px}
-    .ceo-message blockquote em{font-style:normal;color:#C49A00}
-    .ceo-body{display:flex;flex-direction:column;gap:12px}
-    .ceo-body p{font-size:14px;color:var(--on-light-muted);line-height:1.7}
-    .ceo-sig{margin-top:28px;display:flex;align-items:center;gap:14px}
-    .ceo-sig-line{width:40px;height:2px;background:linear-gradient(90deg,var(--gold),transparent)}
-    .ceo-sig-text{font-size:13px;font-weight:700;color:var(--on-light-muted);letter-spacing:.04em}
-
-    /* ─── CTA STRIP ─── */
-    .cta-strip{position:relative;background:var(--bg-card);border-top:1px solid var(--border);text-align:center;overflow:hidden}
-    .cta-glow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(245,200,0,.07) 0%,transparent 70%);pointer-events:none}
-    .cta-strip .wrap{position:relative;z-index:1}
-    .cta-strip h2{font-size:clamp(28px,4vw,42px);font-weight:800;line-height:1.15;letter-spacing:-.02em;margin-bottom:16px}
-    .cta-strip p{font-size:15px;color:var(--fg-muted);margin-bottom:32px;max-width:440px;margin-inline:auto;line-height:1.7}
-    .cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-
-    /* ─── FOOTER ─── */
-    footer{background:var(--bg-card);border-top:1px solid var(--border);padding-block:48px 32px}
-    .footer-inner{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:40px}
-    @media(max-width:900px){.footer-inner{grid-template-columns:1fr 1fr;gap:32px}}
-    @media(max-width:480px){.footer-inner{grid-template-columns:1fr}}
-    .footer-brand .logo{margin-bottom:12px}
-    .footer-tagline{font-size:13px;color:var(--fg-muted);line-height:1.6}
-    .footer-col h4{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--fg-subtle);margin-bottom:16px}
-    .footer-col a{display:block;font-size:14px;color:var(--fg-muted);margin-bottom:10px;transition:color .15s}
-    .footer-col a:hover{color:var(--fg-body)}
-    .footer-socials{display:flex;gap:12px;margin-top:4px}
-    .footer-socials a{width:36px;height:36px;border-radius:8px;background:var(--bg-raised);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--fg-muted);transition:all .15s;margin-bottom:0}
-    .footer-socials a:hover{background:var(--gold);border-color:var(--gold);color:#0D0D18}
-    .footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
-    .footer-bottom p{font-size:12px;color:var(--fg-subtle)}
-    .footer-bottom a{font-size:12px;color:var(--fg-subtle);transition:color .15s}
-    .footer-bottom a:hover{color:var(--fg-muted)}
-
-    /* ─── MARQUEE STRIP ─── */
-    .marquee-wrap{overflow:hidden;background:rgba(245,200,0,.05);border-top:1px solid var(--border-gold);border-bottom:1px solid var(--border-gold);padding-block:16px}
-    .marquee-track{display:flex;gap:0;animation:marquee 28s linear infinite;width:max-content}
-    .marquee-track:hover{animation-play-state:paused}
-    @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-    .marquee-item{display:flex;align-items:center;gap:12px;padding-inline:32px;font-size:13px;font-weight:700;color:var(--fg-muted);letter-spacing:.05em;white-space:nowrap}
-    .marquee-dot{width:4px;height:4px;border-radius:50%;background:var(--gold);flex-shrink:0}
-  
-/* ══ DESIGN LIFT ══ */
-.hero, section.hero {
-  background:
-    radial-gradient(ellipse 70% 60% at 20% 50%, rgba(255,208,0,0.16) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 80% at 80% 30%, rgba(139,107,255,0.2) 0%, transparent 55%),
-    linear-gradient(135deg, #07070F 0%, #0D0A1E 60%, #09090F 100%);
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag("js", new Date());
+  gtag("config", "G-XXXXXXXXXX"); // TODO: replace G-XXXXXXXXXX with your real GA4 Measurement ID
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Tinyverse Solutions | Nairobi Digital Agency</title>
+<meta name="description" content="We are a Nairobi-based productised digital agency. One team handling web, design, social, AI and strategy for one flat fee of KSh 49,999/month.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://mytinyverse.com/about.html">
+<meta property="og:title" content="About Tinyverse Solutions | Nairobi Digital Agency">
+<meta property="og:description" content="We are a Nairobi-based productised digital agency. One team handling web, design, social, AI and strategy for one flat fee of KSh 49,999/month.">
+<meta property="og:url" content="https://mytinyverse.com/about.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://mytinyverse.com/og-image.jpg">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230D0D18'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='18' fill='%23F5C800'>tv</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --yellow:#F5C800; --amber:#E0A800; --ink:#0D0D18; --card:#14141F;
+  --raised:#1C1C2A; --text:#FFFFFF; --body:#E8E6F0; --muted:#9896A8;
+  --border:rgba(245,200,0,0.12); --font:'Plus Jakarta Sans',system-ui,sans-serif;
+  --mono:'Space Mono',monospace;
 }
-.hero-glow { background: radial-gradient(ellipse at center, rgba(255,208,0,0.22) 0%, transparent 65%); width: 80%; height: 120%; }
-.hero-glow-right { background: radial-gradient(ellipse at center, rgba(139,107,255,0.25) 0%, transparent 65%); width: 60%; height: 90%; }
-.eyebrow { color: #FFD000; text-shadow: 0 0 12px rgba(255,208,0,0.35); }
-.btn-gold { background: linear-gradient(135deg,#FFD000 0%,#FFA500 100%); color: #07070F; box-shadow: 0 4px 20px rgba(255,208,0,0.25); }
-.btn-gold:hover { background: linear-gradient(135deg,#FFE040 0%,#FFB020 100%); box-shadow: 0 8px 32px rgba(255,208,0,0.4); transform: translateY(-2px); }
-.btn-wa { background: linear-gradient(135deg,#25D366 0%,#1DA851 100%); box-shadow: 0 4px 16px rgba(37,211,102,0.3); }
-.btn-wa:hover { background: linear-gradient(135deg,#2EDB72 0%,#20B558 100%); box-shadow: 0 8px 28px rgba(37,211,102,0.45); transform: translateY(-2px); }
-.gold { color: #FFD000; }
-h2.display-lg .gold, h1.display-xl .gold {
-  background: linear-gradient(135deg,#FFD000 0%,#FFA500 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
-}
-.section-title{background:linear-gradient(135deg,#FFD000 0%,#FFA500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.ceo-section .section-title,.stats-section .section-title{background:none;-webkit-text-fill-color:var(--on-light);color:var(--on-light);}
-.hero h1 em,.hero h1 .gold{background:linear-gradient(135deg,#FFD000 0%,#FFA500 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:normal;}
-.cta-strip { background: linear-gradient(135deg,#0D0A1E 0%,#120E25 50%,#0A1018 100%); border-top: 1px solid rgba(255,208,0,0.12); }
-.cta-glow { background: radial-gradient(ellipse at center, rgba(255,208,0,0.25) 0%, transparent 65%); width:100%; height:300%; top:-50%; }
-footer { background: linear-gradient(180deg,#0E0E1C 0%,#0A0A14 100%); }
-@keyframes waPulse { 0%,100%{box-shadow:0 8px 32px rgba(37,211,102,0.4),0 0 0 0 rgba(37,211,102,0.3)} 50%{box-shadow:0 12px 40px rgba(37,211,102,0.5),0 0 0 8px rgba(37,211,102,0)} }
-.wa-fab { animation: waPulse 3s ease-in-out infinite; }
+html{scroll-behavior:smooth;}
+body{
+  overflow-x: hidden;font-family:var(--font);background:var(--ink);color:var(--body);line-height:1.6;padding-top:3px;}
+body::before{content:'';display:block;height:3px;background:linear-gradient(90deg,#C89200,#F5C800,#FFED4A,#F5C800,#C89200);background-size:200% 100%;animation:shimmer 3s linear infinite;position:fixed;top:0;left:0;right:0;z-index:9999;}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
 
+/* NAV */
+nav{position:sticky;top:3px;z-index:100;background:rgba(8,8,16,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,200,0,0.1);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 2px 32px rgba(0,0,0,0.5);}
+.nav-logo{font-family:var(--font);font-size:20px;font-weight:900;color:#fff;text-decoration:none;letter-spacing:-0.5px;}
+.nav-logo span{color:var(--yellow);}
+.nav-studio{font-size:13px;font-weight:700;color:var(--muted);margin-left:2px;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-link{font-size:14px;font-weight:700;color:var(--muted);text-decoration:none;transition:color 0.15s;}
+.nav-link:hover,.nav-link.active{color:#fff;}
+.nav-cta{display:inline-flex;align-items:center;gap:7px;background:var(--yellow);color:var(--ink);font-family:var(--font);font-size:13px;font-weight:900;padding:9px 18px;border-radius:8px;text-decoration:none;transition:all 0.2s;box-shadow:0 0 20px rgba(245,200,0,0.25);}
+.nav-cta:hover{background:var(--amber);transform:translateY(-1px);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:1px;transition:all 0.2s;}
+.nav-drawer{display:none;position:fixed;top:67px;left:0;right:0;background:#0D0D18;border-bottom:1px solid rgba(245,200,0,0.12);padding:20px 24px;flex-direction:column;gap:4px;z-index:99;}
+.nav-drawer.open{display:flex;}
+.nav-drawer-link{font-size:15px;font-weight:700;color:var(--body);text-decoration:none;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.nav-drawer-wa{display:flex;align-items:center;gap:8px;background:rgba(37,211,102,0.12);color:#25D366;font-weight:800;font-size:14px;padding:12px 16px;border-radius:8px;text-decoration:none;margin-top:8px;}
+@media(max-width:768px){.nav-links{display:none;}.nav-hamburger{display:flex;}}
+
+/* FOOTER */
+.footer{background:linear-gradient(160deg,#080810 0%,#0D0D18 100%);border-top:1px solid rgba(245,200,0,0.1);padding:64px 48px 32px;}
+.footer-inner{max-width:1100px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;margin-bottom:48px;}
+.footer-logo{font-family:var(--font);font-size:22px;font-weight:900;color:#fff;text-decoration:none;display:block;margin-bottom:12px;}
+.footer-logo span{color:var(--yellow);}
+.footer-tagline{font-size:13px;font-weight:600;color:var(--muted);line-height:1.6;margin-bottom:20px;}
+.footer-wa-cta{display:inline-flex;align-items:center;gap:8px;background:rgba(37,211,102,0.12);border:1px solid rgba(37,211,102,0.25);color:#25D366;font-weight:800;font-size:13px;padding:10px 16px;border-radius:8px;text-decoration:none;margin-bottom:20px;transition:all 0.2s;}
+.footer-wa-cta:hover{background:rgba(37,211,102,0.2);}
+.footer-socials{display:flex;gap:10px;}
+.footer-social-link{width:36px;height:36px;border-radius:50%;background:rgba(245,200,0,0.08);border:1px solid rgba(245,200,0,0.15);display:flex;align-items:center;justify-content:center;color:rgba(245,200,0,0.5);text-decoration:none;font-size:14px;transition:all 0.2s;}
+.footer-social-link:hover{background:#F5C800;color:#0D0D18;}
+.footer-col h4{font-size:11px;font-weight:900;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:10px;}
+.footer-link{font-size:13px;font-weight:600;color:rgba(232,230,240,0.55);text-decoration:none;display:flex;align-items:center;gap:8px;transition:color 0.15s;}
+.footer-link:hover{color:var(--yellow);}
+.footer-link i{font-size:10px;color:rgba(255,255,255,0.2);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:12px;font-weight:600;color:rgba(255,255,255,0.25);}
+.footer-legal{display:flex;gap:20px;}
+.footer-legal a{font-size:12px;font-weight:600;color:rgba(255,255,255,0.25);text-decoration:none;transition:color 0.15s;}
+.footer-legal a:hover{color:var(--yellow);}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;gap:32px;}}
+@media(max-width:600px){nav{padding:0 20px;}.footer{padding:48px 20px 24px;}.footer-top{grid-template-columns:1fr;gap:24px;}}
+
+/* SHARED INNER PAGE STYLES */
+.page-hero{padding:100px 48px 80px;max-width:1100px;margin:0 auto;}
+.page-hero-label{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;color:var(--yellow);background:rgba(245,200,0,0.1);border-left:3px solid var(--yellow);padding:4px 12px 4px 10px;border-radius:0 4px 4px 0;margin-bottom:24px;}
+.page-hero h1{font-size:clamp(36px,5vw,64px);font-weight:900;color:#fff;line-height:1.05;letter-spacing:-2px;margin-bottom:20px;}
+.page-hero h1 .accent{color:var(--yellow);}
+.page-hero p{font-size:18px;font-weight:500;color:var(--muted);max-width:560px;line-height:1.7;}
+.glow-line{width:60px;height:4px;background:var(--yellow);border-radius:2px;box-shadow:0 0 16px rgba(245,200,0,0.5);margin-bottom:20px;}
+.section{padding:80px 48px;max-width:1100px;margin:0 auto;}
+.section-sweep{height:1px;background:linear-gradient(90deg,transparent,rgba(245,200,0,0.2),transparent);}
+@media(max-width:600px){.page-hero{padding:64px 20px 48px;}.section{padding:48px 20px;}}
+
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start;}
+.about-stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:40px 0;}
+.about-stat{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center;}
+.about-stat-num{font-family:var(--mono);font-size:36px;font-weight:700;color:var(--yellow);letter-spacing:-1px;line-height:1;}
+.about-stat-label{font-size:12px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:6px;}
+.about-values{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:40px;}
+.about-value{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px;transition:border-color 0.2s;}
+.about-value:hover{border-color:rgba(245,200,0,0.3);}
+.about-value-icon{font-size:22px;color:var(--yellow);margin-bottom:10px;}
+.about-value h3{font-size:15px;font-weight:900;color:#fff;margin-bottom:6px;}
+.about-value p{font-size:13px;font-weight:600;color:var(--muted);line-height:1.6;}
+.about-team-band{background:var(--card);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:64px 48px;margin:0;}
+.about-team-inner{max-width:1100px;margin:0 auto;}
+.cta-band{background:linear-gradient(135deg,rgba(245,200,0,0.08) 0%,transparent 60%);border:1px solid var(--border);border-radius:20px;padding:64px;text-align:center;margin:80px 48px;}
+.cta-band h2{font-size:clamp(28px,3.5vw,44px);font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:12px;}
+.cta-band p{font-size:16px;color:var(--muted);margin-bottom:32px;}
+.cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-yellow{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#0D0D18;font-family:var(--font);font-size:15px;font-weight:900;padding:14px 28px;border-radius:10px;text-decoration:none;transition:all 0.2s;box-shadow:0 0 24px rgba(245,200,0,0.25);}
+.btn-yellow:hover{background:var(--amber);transform:translateY(-2px);}
+.btn-outline-y{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--yellow);border:2px solid rgba(245,200,0,0.4);font-family:var(--font);font-size:15px;font-weight:900;padding:14px 28px;border-radius:10px;text-decoration:none;transition:all 0.2s;}
+.btn-outline-y:hover{border-color:var(--yellow);background:rgba(245,200,0,0.06);}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr;gap:32px;}.about-stat-grid{grid-template-columns:repeat(3,1fr);}.about-values{grid-template-columns:1fr;}.cta-band{padding:40px 24px;margin:48px 20px;}.about-team-band{padding:48px 20px;}}
 </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9NEV7YBMBD"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-9NEV7YBMBD",{cookie_flags:"SameSite=None;Secure"});</script>
 </head>
-<body>
-
-<div id="progress-bar"></div>
-
-<!-- NAV -->
-<nav id="main-nav">
-  <div class="wrap nav-inner">
-    <a href="index.html" class="logo" aria-label="Tinyverse Solutions home">
-      tiny<span class="logo-gold">verse</span><span class="logo-sub">Solutions</span>
-    </a>
-    <ul class="nav-links" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="index.html#services">Services</a></li>
-      <li><a href="work.html">Our Work</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <a class="btn btn-gold btn-sm nav-quote" href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Solutions!%20I'd%20like%20to%20learn%20more%20about%20your%20services" target="_blank" rel="noopener">Get a quote</a>
-    <div class="hamburger" id="hamburger" role="button" aria-label="Open menu" tabindex="0">
-      <span></span><span></span><span></span>
-    </div>
+<body class="">
+<nav>
+  <a href="/" class="nav-logo">tiny<span>verse</span> <span class="nav-studio">Solutions</span></a>
+  <div class="nav-links">
+    <a href="/#works" class="nav-link">Services</a>
+    <a href="/work.html" class="nav-link">Work</a>
+    <a href="/about.html" class="nav-link">About</a>
+    <a href="/#book" class="nav-link">Contact</a>
   </div>
+  <a href="/#book" class="nav-cta"><i class="fa-solid fa-calendar-check"></i> Book free call</a>
+  <button class="nav-hamburger" id="nav-hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="/" class="nav-drawer-link" onclick="closeNav()">Home</a>
+  <a href="/#works" class="nav-drawer-link" onclick="closeNav()">Services</a>
+  <a href="/work.html" class="nav-drawer-link" onclick="closeNav()">Work</a>
+  <a href="/about.html" class="nav-drawer-link" onclick="closeNav()">About</a>
+  <a href="/blog.html" class="nav-drawer-link" onclick="closeNav()">Blog</a>
+  <a href="https://wa.me/254790784084" class="nav-drawer-wa" target="_blank" onclick="closeNav()">
+    <i class="fa-brands fa-whatsapp"></i> WhatsApp us
+  </a>
+</div>
 
-<!-- MOBILE DRAWER -->
-<div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Navigation">
-  <div class="drawer-backdrop" id="drawer-backdrop"></div>
-  <div class="drawer-panel">
-    <div class="drawer-header">
-      <span class="logo">tiny<span class="logo-gold">verse</span><span class="logo-sub">Solutions</span></span>
-      <span class="drawer-close" id="drawer-close" tabindex="0" role="button" aria-label="Close menu">&#x2715;</span>
+<div class="page-hero">
+  <div class="page-hero-label"><i class="fa-solid fa-building"></i> About us</div>
+  <h1>We do the work.<br><span class="accent">You grow.</span></h1>
+  <p>A Nairobi-based productised agency. Six services. One team. One price. Built for SMEs who are done juggling.</p>
+</div>
+<div class="section-sweep"></div>
+
+<!-- STATS -->
+<div class="section" style="padding-top:48px;padding-bottom:48px;">
+  <div class="about-stat-grid">
+    <div class="about-stat"><div class="about-stat-num">48h</div><div class="about-stat-label">Task turnaround</div></div>
+    <div class="about-stat"><div class="about-stat-num">6</div><div class="about-stat-label">Services bundled</div></div>
+    <div class="about-stat"><div class="about-stat-num">0</div><div class="about-stat-label">Contracts ever</div></div>
+  </div>
+</div>
+<div class="section-sweep"></div>
+
+<!-- STORY + VALUES -->
+<div class="section">
+  <div class="about-grid">
+    <div>
+      <div class="glow-line"></div>
+      <h2 style="font-size:clamp(24px,3vw,36px);font-weight:900;color:#fff;letter-spacing:-0.8px;margin-bottom:20px;">Why we built this</h2>
+      <p style="font-size:15px;color:var(--body);line-height:1.8;margin-bottom:16px;">Every Nairobi SME owner we spoke to had the same problem. Five freelancers. Five invoices. Nobody talking to each other. A website that looks nothing like the Instagram. Social media that goes quiet when the person is sick.</p>
+      <p style="font-size:15px;color:var(--body);line-height:1.8;margin-bottom:16px;">We built Tinyverse Solutions as the fix. One team that handles everything: your website, design, social, automation, UX and strategy: delivered month after month for one predictable price.</p>
+      <p style="font-size:15px;color:var(--body);line-height:1.8;">No project briefs. No quotes. No chasing. You submit a task, we deliver it. That is the deal.</p>
     </div>
-    <nav class="drawer-links">
-      <a href="index.html" class="drawer-link">Home</a>
-      <a href="about.html" class="drawer-link">About</a>
-      <a href="index.html#services" class="drawer-link">Services</a>
-      <a href="work.html" class="drawer-link">Our Work</a>
-      <a href="contact.html" class="drawer-link">Contact</a>
-    </nav>
-    <div class="drawer-cta">
-      <a class="btn btn-wa" href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Solutions!%20I'd%20like%20to%20learn%20more%20about%20your%20services" target="_blank" rel="noopener" style="width:100%;justify-content:center;">
-        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-      </a>
+    <div>
+      <div class="glow-line"></div>
+      <h2 style="font-size:clamp(24px,3vw,36px);font-weight:900;color:#fff;letter-spacing:-0.8px;margin-bottom:20px;">How we work</h2>
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="width:36px;height:36px;border-radius:9px;background:rgba(245,200,0,0.12);border:1px solid rgba(245,200,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--mono);font-size:13px;font-weight:700;color:var(--yellow);">01</div>
+          <div><div style="font-size:15px;font-weight:900;color:#fff;margin-bottom:4px;">You submit. We build.</div><div style="font-size:13px;color:var(--muted);">Your client portal is live from day one. Submit tasks directly: no meetings, no briefs.</div></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="width:36px;height:36px;border-radius:9px;background:rgba(245,200,0,0.12);border:1px solid rgba(245,200,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--mono);font-size:13px;font-weight:700;color:var(--yellow);">02</div>
+          <div><div style="font-size:15px;font-weight:900;color:#fff;margin-bottom:4px;">Delivered in 48 to 72 hours.</div><div style="font-size:13px;color:var(--muted);">Every task picked up, drafted, approved and shipped within the window.</div></div>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;">
+          <div style="width:36px;height:36px;border-radius:9px;background:rgba(245,200,0,0.12);border:1px solid rgba(245,200,0,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--mono);font-size:13px;font-weight:700;color:var(--yellow);">03</div>
+          <div><div style="font-size:15px;font-weight:900;color:#fff;margin-bottom:4px;">One price. Every month.</div><div style="font-size:13px;color:var(--muted);">KSh 49,999/month. All six services. No add-ons, no surprises, no lock-in.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VALUES -->
+  <div style="margin-top:64px;">
+    <div class="glow-line"></div>
+    <h2 style="font-size:clamp(22px,2.5vw,32px);font-weight:900;color:#fff;letter-spacing:-0.6px;margin-bottom:24px;">What we stand for</h2>
+    <div class="about-values">
+      <div class="about-value"><div class="about-value-icon"><i class="fa-solid fa-bolt"></i></div><h3>Speed without corners cut</h3><p>48 to 72 hours is a commitment, not an estimate. We are built for it.</p></div>
+      <div class="about-value"><div class="about-value-icon"><i class="fa-solid fa-eye"></i></div><h3>Radical transparency</h3><p>You know exactly what we are building, when, and why. No black boxes.</p></div>
+      <div class="about-value"><div class="about-value-icon"><i class="fa-solid fa-handshake"></i></div><h3>Honest fit</h3><p>We tell you upfront if we are the wrong team for you. No overselling.</p></div>
+      <div class="about-value"><div class="about-value-icon"><i class="fa-solid fa-chart-line"></i></div><h3>Results, not reports</h3><p>We measure what grows your business. Not vanity metrics.</p></div>
     </div>
   </div>
 </div>
 
-<!-- ─── HERO ─── -->
-<section class="about-hero">
-  <canvas id="hero-canvas"></canvas>
-  <div class="hero-glow"></div>
-  <div class="hero-glow-2"></div>
-  <div class="wrap">
-    <div class="hero-inner">
-      <div class="hero-content">
-        <div class="hero-tag reveal"><i class="fas fa-bolt"></i> Who we are</div>
-        <h1 class="display-xl reveal delay-1">Built for businesses<br>that <span class="gold">mean business.</span></h1>
-        <div class="hero-bullets reveal delay-2">
-          <div class="hero-bullet"><i class="fas fa-check-circle"></i><span>Specialist teams across six digital disciplines</span></div>
-          <div class="hero-bullet"><i class="fas fa-check-circle"></i><span>Pick exactly what you need, nothing more</span></div>
-          <div class="hero-bullet"><i class="fas fa-check-circle"></i><span>Enterprise-grade quality for growing businesses</span></div>
-          <div class="hero-bullet"><i class="fas fa-check-circle"></i><span>One accountable team, start to finish</span></div>
-        </div>
-        <div class="hero-actions reveal delay-3">
-          <a class="btn btn-gold" href="contact.html">Work with us</a>
-          <a class="btn btn-ghost" href="index.html#services">Explore services</a>
-        </div>
-      </div>
-      <div class="hero-img-wrap reveal-right delay-2">
-        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80&auto=format&fit=crop" alt="Tinyverse Solutions" loading="eager">
-        <div class="hero-img-overlay"></div>
-        <div class="hero-img-badge">
-          <div>
-            <div class="badge-dot"></div>
-          </div>
-          <div>
-            <div class="badge-text">East Africa's digital team</div>
-            <div class="badge-sub">Serving clients globally</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<div class="section-sweep"></div>
 
-<!-- ─── MARQUEE ─── -->
-<div class="marquee-wrap">
-  <div class="marquee-track" id="marquee-track">
-    <div class="marquee-item"><span class="marquee-dot"></span>Web Development</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>Product Management</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>AI &amp; Automations</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>SEO &amp; Content</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>UI/UX Design</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>Graphics Design</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>East Africa</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>Global Clients</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>Web Development</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>Product Management</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>AI &amp; Automations</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>SEO &amp; Content</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>UI/UX Design</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>Graphics Design</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>East Africa</div>
-    <div class="marquee-item"><span class="marquee-dot"></span>Global Clients</div>
+<div class="cta-band">
+  <h2>Ready to stop juggling?</h2>
+  <p>20 minutes. We look at your business and tell you honestly if we are the right fit.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Studio!%20I%20read%20your%20About%20page%20and%20would%20like%20to%20chat" class="btn-yellow" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+    <a href="/#book" class="btn-outline-y"><i class="fa-solid fa-calendar-check"></i> Book a free call</a>
   </div>
 </div>
 
-<!-- ─── MISSION & VISION ─── -->
-<section class="section light-section">
-  <div class="wrap">
-    <div class="section-hd reveal">
-      <div class="eyebrow-dark">What drives us</div>
-      <h2>Mission &amp; Vision</h2>
-    </div>
-    <div class="mv-grid">
-      <div class="mv-card reveal-left delay-1">
-        <div class="c-icon"><i class="fas fa-bullseye"></i></div>
-        <h3>Our Mission</h3>
-        <div class="mv-bullets">
-          <div class="mv-bullet"><i class="fas fa-arrow-right"></i>Enterprise-grade digital work, accessible to every business</div>
-          <div class="mv-bullet"><i class="fas fa-arrow-right"></i>Specialist skills delivered with discipline, every time</div>
-          <div class="mv-bullet"><i class="fas fa-arrow-right"></i>No padding. Real output that moves businesses forward</div>
-        </div>
-      </div>
-      <div class="mv-card reveal-right delay-2">
-        <div class="c-icon"><i class="fas fa-binoculars"></i></div>
-        <h3>Our Vision</h3>
-        <div class="mv-bullets">
-          <div class="mv-bullet"><i class="fas fa-arrow-right"></i>Business size does not limit digital quality</div>
-          <div class="mv-bullet"><i class="fas fa-arrow-right"></i>East Africa's most trusted digital services team</div>
-          <div class="mv-bullet"><i class="fas fa-arrow-right"></i>A continent-wide benchmark for craft and accountability</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── OUR STORY ─── -->
-<section class="section origin-section">
-  <div class="wrap">
-
-    <div class="origin-hd reveal">
-      <div class="eyebrow">Our story</div>
-      <h2>Why we built <span class="gold">Tinyverse</span></h2>
-      <p>We saw the same problem everywhere: great businesses, stuck managing chaos. So we fixed it.</p>
-    </div>
-
-    <div class="origin-split">
-
-      <!-- BEFORE panel -->
-      <div class="origin-panel chaos reveal-left">
-        <div class="panel-label before"><i class="fas fa-circle-xmark"></i> The old way</div>
-        <div class="panel-title">Five freelancers. Zero clarity.</div>
-        <div class="panel-sub">Scattered teams, missed briefs, no one accountable.</div>
-        <div class="chaos-diagram">
-          <svg class="chaos-svg" viewBox="0 0 340 200" preserveAspectRatio="none">
-            <!-- lines from center (170,100) to each node -->
-            <line class="chaos-line" x1="170" y1="100" x2="170" y2="32" stroke-width="1.5"/>
-            <line class="chaos-line" x1="170" y1="100" x2="296" y2="54" stroke-width="1.5"/>
-            <line class="chaos-line" x1="170" y1="100" x2="276" y2="154" stroke-width="1.5"/>
-            <line class="chaos-line" x1="170" y1="100" x2="58" y2="148" stroke-width="1.5"/>
-            <line class="chaos-line" x1="170" y1="100" x2="54" y2="54" stroke-width="1.5"/>
-          </svg>
-          <div class="chaos-center">Your<br>brand</div>
-          <div class="chaos-node cn1"><i class="fas fa-pen-nib"></i><span>Designer</span></div>
-          <div class="chaos-node cn2"><i class="fas fa-code"></i><span>Dev</span></div>
-          <div class="chaos-node cn3"><i class="fas fa-bullhorn"></i><span>Marketer</span></div>
-          <div class="chaos-node cn4"><i class="fas fa-camera"></i><span>Photog.</span></div>
-          <div class="chaos-node cn5"><i class="fas fa-pencil"></i><span>Copywriter</span></div>
-        </div>
-      </div>
-
-      <!-- AFTER panel -->
-      <div class="origin-panel clarity reveal-right delay-1">
-        <div class="panel-label after"><i class="fas fa-circle-check"></i> The Tinyverse way</div>
-        <div class="panel-title">One team. Every capability.</div>
-        <div class="panel-sub">Six specialisms, one point of contact, zero fragmentation.</div>
-        <div class="clarity-diagram">
-          <svg class="orbit-line" viewBox="0 0 340 200" preserveAspectRatio="none">
-            <!-- circle orbit path -->
-            <ellipse cx="170" cy="100" rx="110" ry="82" fill="none" stroke="rgba(245,200,0,.12)" stroke-width="1" stroke-dasharray="3 6"/>
-            <!-- spokes from hub (170,100) to each service node -->
-            <line class="orbit-segment" x1="170" y1="100" x2="170" y2="22" stroke-width="1.5"/>
-            <line class="orbit-segment" x1="170" y1="100" x2="272" y2="46" stroke-width="1.5"/>
-            <line class="orbit-segment" x1="170" y1="100" x2="272" y2="154" stroke-width="1.5"/>
-            <line class="orbit-segment" x1="170" y1="100" x2="170" y2="178" stroke-width="1.5"/>
-            <line class="orbit-segment" x1="170" y1="100" x2="68" y2="154" stroke-width="1.5"/>
-            <line class="orbit-segment" x1="170" y1="100" x2="68" y2="46" stroke-width="1.5"/>
-          </svg>
-          <div class="hub"><i class="fas fa-star"></i><span>Tinyverse</span></div>
-          <div class="service-node sn1"><i class="fas fa-paint-brush"></i><span>Design</span></div>
-          <div class="service-node sn2"><i class="fas fa-code"></i><span>Dev</span></div>
-          <div class="service-node sn3"><i class="fas fa-chart-line"></i><span>SEO</span></div>
-          <div class="service-node sn4"><i class="fas fa-bullhorn"></i><span>Social</span></div>
-          <div class="service-node sn5"><i class="fas fa-camera"></i><span>Media</span></div>
-          <div class="service-node sn6"><i class="fas fa-pencil"></i><span>Copy</span></div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- 3 proof points -->
-    <div class="origin-proof">
-      <div class="proof-item reveal delay-1">
-        <div class="proof-icon"><i class="fas fa-layer-group"></i></div>
-        <div class="proof-body">
-          <h4>Built for focus</h4>
-          <p>One specialist team means every deliverable ties back to your brand, not six separate freelancer briefs.</p>
-        </div>
-      </div>
-      <div class="proof-item reveal delay-2">
-        <div class="proof-icon"><i class="fas fa-handshake"></i></div>
-        <div class="proof-body">
-          <h4>One roof, full accountability</h4>
-          <p>When everyone is on the same team, there is no finger-pointing. We own the outcome end to end.</p>
-        </div>
-      </div>
-      <div class="proof-item reveal delay-3">
-        <div class="proof-icon"><i class="fas fa-rocket"></i></div>
-        <div class="proof-body">
-          <h4>Tiny team, universe-sized ambition</h4>
-          <p>The name is the promise. Small and agile by design, with range that punches well above our size.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ─── CEO MESSAGE ─── -->
-<section class="section ceo-section">
-  <div class="wrap">
-    <div class="ceo-inner">
-
-      <div class="ceo-photo-wrap reveal-scale">
-        <div class="ceo-photo">
-          <img src="ceo-amos.jpg" alt="Amos Muriuki, Founder and CEO, Tinyverse Solutions" loading="lazy">
-        </div>
-        <div class="ceo-badge">
-          <div class="ceo-badge-name">Amos Muriuki</div>
-          <div class="ceo-badge-role">Founder &amp; CEO, Tinyverse Solutions</div>
-        </div>
-      </div>
-
-      <div class="ceo-message reveal-right delay-1">
-        <span class="ceo-quote-mark">&ldquo;</span>
-        <blockquote>
-          Clients do not pay us to try.<br>
-          They pay us to <em>deliver.</em> That is a standard we hold on every project, at every size.
-        </blockquote>
-        <div class="ceo-body">
-          <p>We are a small team, and that is deliberate. Small means every person on your project is someone who cares about the outcome, not someone managing a ticket queue. There is nowhere to hide, so we do not.</p>
-          <p>What I ask of every person at Tinyverse is simple: relentless execution. Not perfection on day one, but shipping, iterating, and never leaving a client wondering where things stand. Communication is a deliverable too.</p>
-          <p>If you work with us, you will hear from us. You will see progress. And when something is not right, we will tell you before you have to ask.</p>
-        </div>
-        <div class="ceo-sig">
-          <div class="ceo-sig-line"></div>
-          <div class="ceo-sig-text">Amos Muriuki &nbsp;|&nbsp; Founder &amp; CEO</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ─── CTA ─── -->
-<section class="section cta-strip">
-  <div class="cta-glow"></div>
-  <div class="wrap">
-    <div class="eyebrow reveal">Start the conversation</div>
-    <h2 class="reveal delay-1">Ready to work with a<br><span class="gold">team that means it?</span></h2>
-    <p class="reveal delay-2">Tell us what you are building. We will tell you honestly whether we are the right team for it.</p>
-    <div class="cta-btns reveal delay-3">
-      <a class="btn btn-wa" href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Solutions!%20I'd%20like%20to%20learn%20more%20about%20your%20services" target="_blank" rel="noopener">
-        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-      </a>
-      <a class="btn btn-ghost" href="contact.html">Book a call</a>
-    </div>
-  </div>
-</section>
-
-<!-- ─── FOOTER ─── -->
-<footer>
-  <div class="wrap">
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <div class="logo">tiny<span class="logo-gold">verse</span><span class="logo-sub">Solutions</span></div>
-        <p class="footer-tagline">One team. Everything digital.<br>Results you can measure.</p>
-        <div class="footer-socials" style="margin-top:20px;">
-          <a href="https://www.instagram.com/tinyversestudio" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.linkedin.com/company/tinyversestudio" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-          <a href="https://www.facebook.com/tinyversestudio" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-col footer-brand">
+        <a href="/" class="footer-logo">tiny<span>verse</span> <span class="nav-studio">Solutions</span></a>
+        <p class="footer-tagline">One team. Everything digital.<br>One flat fee.</p>
+        <a href="https://wa.me/254790784084?text=Hi%20Tinyverse%20Studio%21%20I%27m%20interested%20in%20The%20Works" class="footer-wa-cta" target="_blank">
+          <i class="fa-brands fa-whatsapp"></i> Start on WhatsApp
+        </a>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/tinyversestudio" target="_blank" class="footer-social-link"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/tinyversestudio" target="_blank" class="footer-social-link"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://www.tiktok.com/@tinyversestudio" target="_blank" class="footer-social-link"><i class="fa-brands fa-tiktok"></i></a>
         </div>
       </div>
       <div class="footer-col">
         <h4>Services</h4>
-        <a href="service-web.html">Web &amp; Systems Development</a>
-        <a href="service-pm.html">Product Management</a>
-        <a href="service-ai.html">AI &amp; Automations</a>
-        <a href="service-seo.html">SEO &amp; Content</a>
-        <a href="service-ux.html">UI/UX Design</a>
-        <a href="service-graphics.html">Graphics Design</a>
+        <div class="footer-links">
+          <a href="/#works" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Website Development</a>
+          <a href="/#works" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Graphic Design</a>
+          <a href="/#works" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Social Media</a>
+          <a href="/#works" class="footer-link"><i class="fa-solid fa-chevron-right"></i> AI Automation</a>
+          <a href="/#works" class="footer-link"><i class="fa-solid fa-chevron-right"></i> UX/UI Design</a>
+          <a href="/#works" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Strategy & PM</a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Company</h4>
-        <a href="about.html">About Us</a>
-        <a href="work.html">Our Work</a>
-        <a href="blog.html">Blog</a>
-        <a href="index.html#how">How it works</a>
-        <a href="index.html#faq">FAQ</a>
+        <div class="footer-links">
+          <a href="/about.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> About Us</a>
+          <a href="/work.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Our Work</a>
+          <a href="/blog.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Blog</a>
+          <a href="/careers.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Careers</a>
+          <a href="/#book" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Contact</a>
+        </div>
       </div>
       <div class="footer-col">
         <h4>Get in touch</h4>
-        <a href="https://wa.me/254790784084" target="_blank" rel="noopener"><i class="fab fa-whatsapp" style="margin-right:6px;"></i>0790 784 084</a>
-        <a href="mailto:hello@tinyversesolutions.com"><i class="fas fa-envelope" style="margin-right:6px;"></i>hello@tinyversesolutions.com</a>
-        <a href="contact.html"><i class="fas fa-calendar-days" style="margin-right:6px;"></i>Book a free call</a>
-        <div style="margin-top:20px;padding:14px;background:rgba(245,200,0,0.06);border:1px solid rgba(245,200,0,0.15);border-radius:8px;">
-          <div style="font-size:11px;font-weight:700;color:var(--fg-subtle);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;"><i class="fas fa-location-dot" style="color:var(--gold);margin-right:5px;"></i>Based in</div>
-          <div style="font-size:13px;font-weight:800;color:var(--fg-body);">Nairobi, Kenya</div>
-          <div style="font-size:12px;font-weight:600;color:var(--fg-subtle);margin-top:2px;">Serving clients across East Africa</div>
+        <div class="footer-links">
+          <a href="https://wa.me/254790784084" class="footer-link" target="_blank"><i class="fa-brands fa-whatsapp"></i> 0790 784 084</a>
+          <a href="mailto:hello@mytinyverse.com" class="footer-link"><i class="fa-solid fa-envelope"></i> hello@mytinyverse.com</a>
+          <a href="/#book" class="footer-link"><i class="fa-solid fa-calendar-days"></i> Book a free call</a>
+        </div>
+        <div style="margin-top:20px;padding:14px;background:rgba(245,200,0,0.08);border:1px solid rgba(245,200,0,0.2);border-radius:8px;">
+          <div style="font-size:11px;font-weight:700;color:rgba(232,230,240,0.55);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;"><i class="fa-solid fa-location-dot" style="color:#F5C800;margin-right:5px;"></i>Based in</div>
+          <div style="font-size:13px;font-weight:800;color:rgba(255,255,255,0.88);">Nairobi, Kenya</div>
+          <div style="font-size:12px;font-weight:600;color:rgba(255,255,255,0.35);margin-top:2px;">Serving clients across East Africa</div>
         </div>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&#169; 2026 Tinyverse Solutions. Built for global clients.</p>
-      <a href="privacy.html">Privacy Policy</a>
+      <div class="footer-copy">© 2025 Tinyverse Solutions. Built in Nairobi.</div>
+      <div class="footer-legal">
+        <a href="/privacy.html">Privacy Policy</a>
+        <a href="/terms.html">Terms of Service</a>
+        <a href="/cookies.html">Cookie Policy</a>
+      </div>
     </div>
   </div>
+<a href="tel:+254790784084" class="footer-link" style="display:none" onclick="(window.tvSendEvent||window.sendEvent||function(){})('cta_click','Phone: 0790784084')">Call us</a>
 </footer>
+<script>
+function toggleNav(){document.getElementById('nav-drawer').classList.toggle('open');document.getElementById('nav-hamburger').classList.toggle('open');}
+function closeNav(){document.getElementById('nav-drawer').classList.remove('open');document.getElementById('nav-hamburger').classList.remove('open');}
+</script>
 
 <script>
-// ─── PROGRESS BAR
-(function(){
-  var bar=document.getElementById('progress-bar');
-  if(!bar)return;
-  window.addEventListener('scroll',function(){
-    var h=document.documentElement;
-    var pct=(h.scrollTop/(h.scrollHeight-h.clientHeight))*100;
-    bar.style.width=Math.min(pct,100)+'%';
-  },{passive:true});
-})();
+(function() {
+  // ── TINYVERSE STUDIO — ANALYTICS ────────────────────────────────────────────
+  var ANALYTICS_URL = 'https://script.google.com/macros/s/AKfycbwTJKOWFgae5Kr9807LXgS71uQf_5wxCfUUW5zM52Gjvbf-FSPkYvlSePMbO9JSYo-l/exec';
 
-// ─── NAV SCROLL
-(function(){
-  var nav=document.getElementById('main-nav');
-  if(!nav)return;
-  window.addEventListener('scroll',function(){
-    nav.classList.toggle('scrolled',window.scrollY>80);
-  },{passive:true});
-})();
-
-// ─── DRAWER
-(function(){
-  var burger=document.getElementById('hamburger');
-  var drawer=document.getElementById('drawer');
-  var backdrop=document.getElementById('drawer-backdrop');
-  var closeBtn=document.getElementById('drawer-close');
-  var links=document.querySelectorAll('.drawer-link');
-  if(!burger||!drawer)return;
-  function open(){drawer.classList.add('open');document.body.style.overflow='hidden';setTimeout(function(){if(closeBtn)closeBtn.focus();},50);}
-  function close(){drawer.classList.remove('open');document.body.style.overflow='';}
-  burger.addEventListener('click',open);
-  burger.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')open();});
-  if(closeBtn){closeBtn.addEventListener('click',close);closeBtn.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')close();});}
-  if(backdrop)backdrop.addEventListener('click',close);
-  links.forEach(function(a){a.addEventListener('click',close);});
-})();
-
-// ─── SCROLL REVEAL
-(function(){
-  var els=document.querySelectorAll('.reveal,.reveal-left,.reveal-right,.reveal-scale');
-  if(!('IntersectionObserver' in window)){
-    els.forEach(function(el){el.classList.add('visible');});return;
+  var sessionId = sessionStorage.getItem('tv_sid');
+  if (!sessionId) {
+    sessionId = Date.now().toString(36) + Math.random().toString(36).slice(2);
+    sessionStorage.setItem('tv_sid', sessionId);
   }
-  var obs=new IntersectionObserver(function(entries){
-    entries.forEach(function(entry){
-      if(entry.isIntersecting){entry.target.classList.add('visible');obs.unobserve(entry.target);}
-    });
-  },{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
-  els.forEach(function(el){obs.observe(el);});
-})();
 
+  function getDevice() {
+    var ua = navigator.userAgent;
+    if (/Mobi|Android/i.test(ua)) return 'Mobile';
+    if (/iPad|Tablet/i.test(ua)) return 'Tablet';
+    return 'Desktop';
+  }
 
-// ─── PARTICLE CANVAS
-(function(){
-  var canvas=document.getElementById('hero-canvas');
-  if(!canvas)return;
-  var ctx=canvas.getContext('2d');
-  var W,H,particles=[];
-  function resize(){W=canvas.width=canvas.parentElement.offsetWidth;H=canvas.height=canvas.parentElement.offsetHeight;}
-  resize();
-  window.addEventListener('resize',resize);
-  for(var i=0;i<55;i++){
-    particles.push({
-      x:Math.random()*1400,y:Math.random()*800,
-      r:Math.random()*1.5+0.3,
-      vx:(Math.random()-.5)*0.3,vy:(Math.random()-.5)*0.3,
-      a:Math.random()
-    });
+  function getSource() {
+    var ref = document.referrer;
+    if (!ref) return 'Direct';
+    if (/google/i.test(ref))    return 'Google';
+    if (/instagram/i.test(ref)) return 'Instagram';
+    if (/facebook/i.test(ref))  return 'Facebook';
+    if (/linkedin/i.test(ref))  return 'LinkedIn';
+    if (/tiktok/i.test(ref))    return 'TikTok';
+    if (/twitter|x\.com/i.test(ref)) return 'X/Twitter';
+    if (/wa\.me|whatsapp/i.test(ref)) return 'WhatsApp';
+    return 'Referral';
   }
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-    particles.forEach(function(p){
-      p.x+=p.vx;p.y+=p.vy;
-      if(p.x<0)p.x=W;if(p.x>W)p.x=0;
-      if(p.y<0)p.y=H;if(p.y>H)p.y=0;
-      ctx.beginPath();
-      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
-      ctx.fillStyle='rgba(245,200,0,'+p.a*0.5+')';
-      ctx.fill();
-    });
-    requestAnimationFrame(draw);
+
+  function getSourceWithUTM() {
+    var params = new URLSearchParams(window.location.search);
+    var utmSource = params.get('utm_source');
+    if (utmSource) return utmSource.charAt(0).toUpperCase() + utmSource.slice(1);
+    return getSource();
   }
-  draw();
+
+  function getUTMs() {
+    var p = new URLSearchParams(window.location.search);
+    return {
+      utm_source:   p.get('utm_source')   || '',
+      utm_medium:   p.get('utm_medium')   || '',
+      utm_campaign: p.get('utm_campaign') || '',
+      utm_term:     p.get('utm_term')     || '',
+      utm_content:  p.get('utm_content')  || ''
+    };
+  }
+
+  window.tvSendEvent = function(event, buttonLabel) {
+    if (!ANALYTICS_URL) return;
+    var utms = getUTMs();
+    var payload = {
+      action: 'append',
+      sheet:  'Analytics',
+      row: [
+        new Date().toISOString(),
+        event,
+        buttonLabel || '',
+        getSourceWithUTM(),
+        getDevice(),
+        Intl.DateTimeFormat().resolvedOptions().timeZone || '',
+        sessionId,
+        window.location.pathname,
+        utms.utm_source,
+        utms.utm_medium,
+        utms.utm_campaign,
+        utms.utm_term,
+        utms.utm_content
+      ]
+    };
+    fetch(ANALYTICS_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload)
+    }).catch(function() {});
+  };
+
+  // Auto-fire pageview on load
+  document.addEventListener('DOMContentLoaded', function() {
+    window.tvSendEvent('pageview', document.title);
+  });
+
+  // Track all outbound CTA clicks (WhatsApp / tel / mailto links)
+  document.addEventListener('click', function(e) {
+    var el = e.target.closest('a[href]');
+    if (!el) return;
+    var href = el.getAttribute('href') || '';
+    if (/^(https?:\/\/wa\.me|wa\.me|https?:\/\/api\.whatsapp|tel:|mailto:)/i.test(href)) {
+      window.tvSendEvent('cta_click', el.innerText.trim().slice(0, 80) || href.slice(0, 80));
+    }
+  });
 })();
 </script>
 </body>
