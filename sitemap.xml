@@ -2,124 +2,118 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+          http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
   <!-- Homepage -->
   <url>
-    <loc>https://tinyversesolutions.com/</loc>
-    <lastmod>2026-09-30</lastmod>
+    <loc>https://mytinyverse.com/</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Service Pages -->
+  <!-- Service Pages — highest commercial intent -->
   <url>
-    <loc>https://tinyversesolutions.com/service-web.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://mytinyverse.com/services/web-development.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tinyversesolutions.com/service-ai.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://mytinyverse.com/services/ai-automation.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tinyversesolutions.com/service-graphics.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://mytinyverse.com/services/erp-systems.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tinyversesolutions.com/service-pm.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://mytinyverse.com/services/branding.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://tinyversesolutions.com/service-seo.html</loc>
-    <lastmod>2026-10-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://tinyversesolutions.com/service-ux.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://mytinyverse.com/services/social-media.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
-  <!-- Contact -->
+  <!-- Core Pages -->
   <url>
-    <loc>https://tinyversesolutions.com/contact.html</loc>
-    <lastmod>2026-10-16</lastmod>
+    <loc>https://mytinyverse.com/about.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- About -->
-  <url>
-    <loc>https://tinyversesolutions.com/about.html</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Work / Portfolio -->
-  <url>
-    <loc>https://tinyversesolutions.com/work.html</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Careers -->
-  <url>
-    <loc>https://tinyversesolutions.com/careers.html</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Blog -->
   <url>
-    <loc>https://tinyversesolutions.com/blog.html</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>weekly</changefreq>
+    <loc>https://mytinyverse.com/work.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-
-  <!-- Referral Programme -->
   <url>
-    <loc>https://tinyversesolutions.com/referral.html</loc>
-    <lastmod>2026-09-30</lastmod>
+    <loc>https://mytinyverse.com/blog.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mytinyverse.com/careers.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
+    <priority>0.5</priority>
   </url>
 
-  <!-- Privacy Policy -->
+  <!-- Blog Articles — high-value organic content -->
   <url>
-    <loc>https://tinyversesolutions.com/privacy.html</loc>
-    <lastmod>2026-09-30</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://mytinyverse.com/blog/ai-automation-small-business.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mytinyverse.com/blog/custom-web-development-vs-website-builder.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mytinyverse.com/blog/when-does-your-business-need-erp.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://mytinyverse.com/blog/social-media-random-posting.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
   </url>
 
-  <!-- Terms of Service -->
+  <!-- Legal Pages — low priority, still indexed -->
   <url>
-    <loc>https://tinyversesolutions.com/terms.html</loc>
-    <lastmod>2026-09-30</lastmod>
+    <loc>https://mytinyverse.com/privacy.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.2</priority>
   </url>
-
-  <!-- Cookie Policy -->
   <url>
-    <loc>https://tinyversesolutions.com/cookies.html</loc>
-    <lastmod>2026-09-30</lastmod>
+    <loc>https://mytinyverse.com/terms.html</loc>
+    <lastmod>2026-10-20</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <priority>0.2</priority>
+  </url>
+  <url>
+    <loc>https://mytinyverse.com/cookies.html</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
   </url>
 
 </urlset>
