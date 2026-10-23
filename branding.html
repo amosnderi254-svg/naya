@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag("js",new Date());gtag("config","G-XXXXXXXXXX");</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Branding &amp; Design | Tinyverse Solutions</title>
+<meta name="description" content="Brand identity and design systems that make businesses look like the best version of themselves. Logo, visual identity, and design language built to last.">
+<link rel="canonical" href="https://mytinyverse.com/services/branding.html">
+<meta property="og:title" content="Branding &amp; Design | Tinyverse Solutions">
+<meta property="og:description" content="Identity systems that communicate who you are before you say a word. Built for businesses that take their brand seriously.">
+<meta property="og:url" content="https://mytinyverse.com/services/branding.html">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://mytinyverse.com/images/og-branding.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230D0D18'/><text x='50%' y='54%' dominant-baseline='middle' text-anchor='middle' font-family='system-ui,sans-serif' font-weight='900' font-size='18' fill='%23F5C800'>tv</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Service","name":"Branding and Design","provider":{"@type":"Organization","name":"Tinyverse Solutions","url":"https://mytinyverse.com"},"serviceType":"Brand Identity Design","description":"Logo design, visual identity systems, and brand guidelines that make businesses look like the best version of themselves.","url":"https://mytinyverse.com/services/branding.html","areaServed":"Worldwide"}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --yellow:#F5C800;--amber:#E0A800;--ink:#0D0D18;--card:#14141F;
+  --raised:#1C1C2A;--text:#FFFFFF;--body:#E8E6F0;--muted:#9896A8;
+  --border:rgba(245,200,0,0.12);--green:#25D366;
+  --font:'Plus Jakarta Sans',system-ui,sans-serif;--mono:'Space Mono',monospace;
+}
+html{scroll-behavior:smooth;}
+body{overflow-x:hidden;font-family:var(--font);background:var(--ink);color:var(--body);line-height:1.6;padding-top:3px;}
+body::before{content:'';display:block;height:3px;background:linear-gradient(90deg,#C89200,#F5C800,#FFED4A,#F5C800,#C89200);background-size:200% 100%;animation:shimmer 3s linear infinite;position:fixed;top:0;left:0;right:0;z-index:9999;}
+@keyframes shimmer{0%{background-position:200% 0}100%{background-position:-200% 0}}
+img{max-width:100%;display:block;}
+a{text-decoration:none;color:inherit;}
+
+/* LIGHT */
+:root[data-theme="light"]{--ink:#F7F5EE;--card:#FFFFFF;--raised:#F0EDE3;--body:#1A1A2E;--text:#0D0D18;--muted:#5A5870;--border:rgba(180,140,0,0.18);color-scheme:light;}
+:root[data-theme="light"] body{background:var(--ink);}
+:root[data-theme="light"] nav{background:rgba(247,245,238,0.94);border-bottom:1px solid rgba(245,200,0,0.2);}
+:root[data-theme="light"] .nav-logo{color:var(--text);}
+:root[data-theme="light"] .nav-link{color:var(--muted);}
+:root[data-theme="light"] .nav-link:hover,:root[data-theme="light"] .nav-link.active{color:var(--text);}
+:root[data-theme="light"] .nav-dropdown-menu{background:#fff;border-color:rgba(245,200,0,0.3);box-shadow:0 12px 40px rgba(0,0,0,0.12);}
+:root[data-theme="light"] .nav-dd-item{color:#333;}
+:root[data-theme="light"] .nav-drawer{background:#fff;}
+:root[data-theme="light"] .nav-hamburger span{background:var(--text);}
+:root[data-theme="light"] h1,:root[data-theme="light"] h2{color:var(--text);}
+:root[data-theme="light"] .pkg-card{background:#fff;border-color:rgba(180,140,0,0.18);}
+:root[data-theme="light"] .pkg-card.featured{background:var(--yellow);border-color:var(--yellow);}
+:root[data-theme="light"] .pkg-card.featured .pkg-name{color:#0D0D18;}
+:root[data-theme="light"] .pkg-card.featured .pkg-desc{color:rgba(13,13,24,0.65);}
+:root[data-theme="light"] .pkg-card.featured .pkg-deliverable{color:#0D0D18;}
+:root[data-theme="light"] .brand-element{background:#fff;border-color:rgba(180,140,0,0.18);}
+:root[data-theme="light"] .step-card{background:#fff;border-color:rgba(180,140,0,0.18);}
+:root[data-theme="light"] .faq-item{border-color:rgba(180,140,0,0.15);}
+:root[data-theme="light"] footer{background:#1A1A2E;color:#E8E6F0;}
+:root[data-theme="light"] .wyg-table thead th{background:#f5f0dc;color:#0D0D18;}
+:root[data-theme="light"] .wyg-table td{border-color:rgba(180,140,0,0.12);}
+:root[data-theme="light"] .wyg-section-row td{background:rgba(245,200,0,0.08);color:#0D0D18;}
+
+/* NAV */
+nav{position:sticky;top:3px;z-index:100;background:rgba(8,8,16,0.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(245,200,0,0.1);padding:0 48px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:24px;box-shadow:0 2px 32px rgba(0,0,0,0.5);}
+.nav-logo{font-family:var(--font);font-size:20px;font-weight:900;color:#fff;letter-spacing:-0.5px;}
+.nav-logo span{color:var(--yellow);}
+.nav-studio{font-size:13px;font-weight:700;color:var(--muted);margin-left:2px;}
+.nav-links{display:flex;align-items:center;gap:28px;}
+.nav-link{font-size:14px;font-weight:700;color:var(--muted);transition:color 0.15s;}
+.nav-link:hover,.nav-link.active{color:#fff;}
+.nav-cta{display:inline-flex;align-items:center;gap:7px;background:var(--yellow);color:var(--ink);font-family:var(--font);font-size:13px;font-weight:900;padding:9px 18px;border-radius:8px;transition:all 0.2s;box-shadow:0 0 20px rgba(245,200,0,0.25);white-space:nowrap;}
+.nav-cta:hover{background:var(--amber);transform:translateY(-1px);}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:1px;}
+.nav-drawer{display:none;position:fixed;top:67px;left:0;right:0;background:#0D0D18;border-bottom:1px solid rgba(245,200,0,0.12);padding:20px 24px;flex-direction:column;gap:4px;z-index:99;}
+.nav-drawer.open{display:flex;}
+.nav-drawer-link{font-size:15px;font-weight:700;color:var(--body);padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.05);}
+.nav-drawer-wa{display:flex;align-items:center;gap:8px;background:rgba(37,211,102,0.12);color:#25D366;font-weight:800;font-size:14px;padding:12px 16px;border-radius:8px;margin-top:8px;}
+.nav-drawer-section{font-size:11px;font-weight:900;letter-spacing:0.1em;color:var(--yellow);padding:10px 0 4px;text-transform:uppercase;}
+.nav-drawer-sub{font-size:14px;font-weight:600;color:var(--muted);display:block;padding:8px 0 8px 12px;border-bottom:1px solid rgba(255,255,255,0.04);}
+.nav-drawer-sub.active{color:#fff;}
+.nav-dropdown{position:relative;}
+.nav-dropdown-toggle{display:flex;align-items:center;gap:5px;cursor:pointer;}
+.nav-dropdown-toggle i{font-size:10px;transition:transform 0.2s;}
+.nav-dropdown:hover .nav-dropdown-toggle i{transform:rotate(180deg);}
+.nav-dropdown-menu{position:absolute;top:calc(100% + 16px);left:50%;transform:translateX(-50%);background:#0f0f1e;border:1px solid rgba(245,200,0,0.15);border-radius:12px;padding:8px;min-width:220px;display:none;flex-direction:column;gap:2px;box-shadow:0 16px 48px rgba(0,0,0,0.6);z-index:200;}
+.nav-dropdown:hover .nav-dropdown-menu{display:flex;}
+.nav-dd-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;font-size:13px;font-weight:700;color:var(--muted);transition:all 0.15s;}
+.nav-dd-item:hover{background:rgba(245,200,0,0.07);color:#fff;}
+.nav-dd-item i{width:16px;text-align:center;color:var(--yellow);font-size:12px;}
+.nav-dd-item.active{color:#fff;background:rgba(245,200,0,0.07);}
+.theme-toggle{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;border:1.5px solid rgba(245,200,0,0.25);background:transparent;cursor:pointer;color:var(--muted);font-size:15px;transition:all 0.2s;flex-shrink:0;}
+.theme-toggle:hover{border-color:var(--yellow);color:var(--yellow);}
+.theme-toggle .icon-sun{display:none;}
+.theme-toggle .icon-moon{display:inline;}
+:root[data-theme="light"] .theme-toggle .icon-sun{display:inline;}
+:root[data-theme="light"] .theme-toggle .icon-moon{display:none;}
+@media(max-width:768px){.nav-links{display:none;}.nav-hamburger{display:flex;}}
+@media(max-width:600px){nav{padding:0 16px;height:56px;}.nav-logo{font-size:17px;}.nav-cta{font-size:0;padding:8px 10px;}.nav-cta i{font-size:14px;}.nav-cta .nav-cta-label{display:none;}}
+
+/* ANIMATION */
+.fade-up{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-up.show{opacity:1;transform:translateY(0);}
+.fade-left{opacity:0;transform:translateX(-28px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-left.show{opacity:1;transform:translateX(0);}
+.fade-right{opacity:0;transform:translateX(28px);transition:opacity 0.6s ease,transform 0.6s ease;}
+.fade-right.show{opacity:1;transform:translateX(0);}
+
+/* SHARED */
+.section-sweep{height:1px;background:linear-gradient(90deg,transparent,rgba(245,200,0,0.18),transparent);}
+.label-chip{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;color:var(--yellow);background:rgba(245,200,0,0.1);border-left:3px solid var(--yellow);padding:4px 12px 4px 10px;border-radius:0 4px 4px 0;margin-bottom:20px;}
+.btn-yellow{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#0D0D18;font-family:var(--font);font-size:14px;font-weight:900;padding:12px 24px;border-radius:10px;transition:all 0.2s;box-shadow:0 0 24px rgba(245,200,0,0.25);}
+.btn-yellow:hover{background:var(--amber);transform:translateY(-2px);}
+.btn-wa{display:inline-flex;align-items:center;gap:8px;background:rgba(37,211,102,0.12);color:#25D366;border:1px solid rgba(37,211,102,0.25);font-family:var(--font);font-size:14px;font-weight:900;padding:12px 24px;border-radius:10px;transition:all 0.2s;}
+.btn-wa:hover{background:rgba(37,211,102,0.2);}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--body);border:1.5px solid rgba(255,255,255,0.15);font-family:var(--font);font-size:14px;font-weight:700;padding:12px 24px;border-radius:10px;transition:all 0.2s;}
+.btn-ghost:hover{border-color:rgba(245,200,0,0.4);color:#fff;}
+.section-h{font-size:clamp(24px,3vw,38px);font-weight:900;color:#fff;letter-spacing:-1px;margin-bottom:10px;}
+.section-sub{font-size:15px;font-weight:500;color:var(--muted);line-height:1.7;max-width:560px;}
+
+/* HERO */
+.svc-hero{padding:0;position:relative;overflow:hidden;min-height:520px;display:flex;flex-direction:column;}
+.svc-hero-bg{position:absolute;inset:0;background:var(--ink);z-index:0;}
+.svc-hero-bg::before{content:'';position:absolute;inset:0;background-image:linear-gradient(rgba(245,200,0,0.03) 1px,transparent 1px),linear-gradient(90deg,rgba(245,200,0,0.03) 1px,transparent 1px);background-size:48px 48px;}
+.svc-hero-bg::after{content:'';position:absolute;right:-10%;top:-20%;width:60%;height:140%;background:radial-gradient(ellipse at center,rgba(245,200,0,0.07) 0%,transparent 65%);pointer-events:none;}
+.svc-hero-inner{max-width:1200px;width:100%;margin:0 auto;padding:56px 48px 0;position:relative;z-index:1;flex:1;display:flex;flex-direction:column;}
+.svc-breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;color:var(--muted);margin-bottom:40px;}
+.svc-breadcrumb a{color:var(--muted);transition:color 0.15s;}
+.svc-breadcrumb a:hover{color:var(--yellow);}
+.svc-breadcrumb i{font-size:9px;}
+/* Hero layout */
+.hero-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;padding-bottom:56px;}
+.hero-left{display:flex;flex-direction:column;}
+.hero-label-row{display:flex;align-items:center;gap:10px;margin-bottom:20px;}
+.svc-h1{font-size:clamp(42px,5.5vw,80px);font-weight:900;color:#fff;line-height:0.95;letter-spacing:-3px;margin-bottom:16px;}
+.svc-h1 .accent{color:var(--yellow);}
+.svc-lede{font-size:15px;font-weight:500;color:var(--muted);line-height:1.75;margin-bottom:32px;max-width:420px;}
+.svc-hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:40px;}
+.hero-stats{display:flex;gap:0;border-top:1px solid rgba(245,200,0,0.12);}
+.hstat{padding:20px 0;flex:1;text-align:center;}
+.hstat:not(:last-child){border-right:1px solid rgba(245,200,0,0.08);}
+.hstat-val{font-family:var(--mono);font-size:clamp(28px,3.5vw,48px);font-weight:700;color:var(--yellow);line-height:1;letter-spacing:-2px;display:block;}
+.hstat-sup{font-size:0.55em;letter-spacing:-1px;vertical-align:super;opacity:0.7;}
+.hstat-lab{font-size:10px;font-weight:800;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-top:4px;display:block;}
+
+/* HERO RIGHT: BRAND CANVAS GRAPHIC */
+.hero-right{position:relative;display:flex;align-items:center;justify-content:center;padding:24px 0 24px 24px;}
+.brand-canvas{position:relative;width:100%;max-width:460px;aspect-ratio:1/1;}
+
+/* Logo construction ring */
+.brand-ring-outer{position:absolute;inset:0;border-radius:50%;border:1px solid rgba(245,200,0,0.08);}
+.brand-ring-mid{position:absolute;inset:14%;border-radius:50%;border:1px dashed rgba(245,200,0,0.12);animation:brandSpin 24s linear infinite;}
+@keyframes brandSpin{to{transform:rotate(360deg);}}
+
+/* Central logo mark */
+.brand-center{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);z-index:10;width:120px;height:120px;display:flex;align-items:center;justify-content:center;}
+.brand-mark{width:100px;height:100px;position:relative;animation:markFloat 6s ease-in-out infinite;}
+@keyframes markFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+
+/* Logo shape: overlapping geometry */
+.bm-circle{position:absolute;top:50%;left:50%;width:64px;height:64px;border-radius:50%;transform:translate(-50%,-50%);border:3px solid var(--yellow);opacity:0.85;}
+.bm-square{position:absolute;top:50%;left:50%;width:44px;height:44px;transform:translate(-50%,-50%) rotate(45deg);border:3px solid rgba(245,200,0,0.5);}
+.bm-dot{position:absolute;top:50%;left:50%;width:12px;height:12px;border-radius:50%;background:var(--yellow);transform:translate(-50%,-50%);}
+.bm-glow{position:absolute;inset:-16px;border-radius:50%;background:radial-gradient(circle,rgba(245,200,0,0.14) 0%,transparent 70%);}
+
+/* Construction lines */
+.brand-line{position:absolute;z-index:5;background:rgba(245,200,0,0.18);transform-origin:center center;}
+.bl-h{top:50%;left:10%;right:10%;height:1px;}
+.bl-v{left:50%;top:10%;bottom:10%;width:1px;}
+.bl-d1{top:15%;left:15%;width:70%;height:1px;transform:rotate(45deg);transform-origin:left center;opacity:0.6;}
+.bl-d2{top:85%;left:15%;width:70%;height:1px;transform:rotate(-45deg);transform-origin:left center;opacity:0.6;}
+
+/* Corner rulers */
+.brand-corner{position:absolute;z-index:6;width:18px;height:18px;}
+.brand-corner::before,.brand-corner::after{content:'';position:absolute;background:rgba(245,200,0,0.4);}
+.brand-corner::before{width:100%;height:1.5px;top:0;left:0;}
+.brand-corner::after{width:1.5px;height:100%;top:0;left:0;}
+.bc-tl{top:7%;left:7%;}
+.bc-tr{top:7%;right:7%;transform:scaleX(-1);}
+.bc-bl{bottom:7%;left:7%;transform:scaleY(-1);}
+.bc-br{bottom:7%;right:7%;transform:scale(-1,-1);}
+
+/* Floating brand chips */
+.brand-chip{position:absolute;z-index:12;background:var(--card);border:1px solid rgba(245,200,0,0.18);border-radius:8px;padding:6px 10px;display:flex;align-items:center;gap:6px;white-space:nowrap;}
+.brand-chip-label{font-size:10px;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;}
+.bc-colors{top:5%;right:5%;animation:chipFloat 4s ease-in-out infinite 0s;}
+.bc-type{bottom:10%;right:2%;animation:chipFloat 4s ease-in-out infinite 1.4s;}
+.bc-grid{top:38%;left:0%;animation:chipFloat 4s ease-in-out infinite 2.8s;}
+@keyframes chipFloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+
+/* Color swatches inside chip */
+.swatch-row{display:flex;gap:3px;}
+.swatch{width:10px;height:10px;border-radius:3px;}
+
+/* Typeface preview inside chip */
+.type-preview{font-family:var(--font);font-weight:900;font-size:14px;color:var(--yellow);letter-spacing:-0.5px;line-height:1;}
+.type-preview-sub{font-family:var(--mono);font-size:8px;color:var(--muted);margin-top:1px;}
+
+/* Grid icon */
+.grid-icon{display:grid;grid-template-columns:repeat(3,6px);gap:2px;}
+.grid-icon span{width:6px;height:6px;border-radius:1px;background:rgba(245,200,0,0.4);}
+.grid-icon span:nth-child(5){background:var(--yellow);}
+
+@media(max-width:900px){.hero-right{display:none;}.hero-split{grid-template-columns:1fr;}.svc-hero-inner{padding:48px 24px 0;}}
+
+/* BRAND ELEMENTS STRIP */
+.elements-section{padding:80px 48px;}
+.elements-inner{max-width:1200px;margin:0 auto;}
+.elements-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px;}
+.brand-element{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px 24px;position:relative;overflow:hidden;transition:border-color 0.2s,transform 0.2s;}
+.brand-element:hover{border-color:rgba(245,200,0,0.3);transform:translateY(-3px);}
+.brand-element::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--yellow);opacity:0;transition:opacity 0.2s;}
+.brand-element:hover::before{opacity:1;}
+.be-icon{width:44px;height:44px;border-radius:10px;background:rgba(245,200,0,0.1);display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
+.be-icon i{font-size:20px;color:var(--yellow);}
+.be-title{font-size:14px;font-weight:900;color:#fff;margin-bottom:6px;}
+.be-body{font-size:12px;color:var(--muted);line-height:1.6;}
+@media(max-width:1000px){.elements-grid{grid-template-columns:repeat(2,1fr);}}
+@media(max-width:600px){.elements-section{padding:56px 20px;}.elements-grid{grid-template-columns:1fr;}}
+
+/* PACKAGES */
+.packages-section{padding:80px 48px;background:var(--card);}
+.packages-inner{max-width:1200px;margin:0 auto;}
+.packages-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px;}
+.pkg-card{background:var(--raised);border:1px solid var(--border);border-radius:20px;padding:32px;display:flex;flex-direction:column;position:relative;transition:transform 0.2s,border-color 0.2s;}
+.pkg-card:hover{transform:translateY(-4px);}
+.pkg-card.featured{background:var(--yellow);border-color:var(--yellow);}
+.pkg-badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#0D0D18;color:var(--yellow);font-size:10px;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;padding:4px 14px;border-radius:20px;white-space:nowrap;}
+.pkg-name{font-size:11px;font-weight:900;letter-spacing:0.12em;text-transform:uppercase;color:var(--yellow);margin-bottom:8px;}
+.pkg-card.featured .pkg-name{color:rgba(13,13,24,0.6);}
+.pkg-title{font-size:clamp(20px,2vw,26px);font-weight:900;color:#fff;letter-spacing:-0.5px;margin-bottom:10px;}
+.pkg-card.featured .pkg-title{color:#0D0D18;}
+.pkg-desc{font-size:13px;color:var(--muted);line-height:1.6;margin-bottom:24px;}
+.pkg-card.featured .pkg-desc{color:rgba(13,13,24,0.55);}
+.pkg-divider{height:1px;background:rgba(245,200,0,0.12);margin-bottom:20px;}
+.pkg-card.featured .pkg-divider{background:rgba(13,13,24,0.15);}
+.pkg-list{display:flex;flex-direction:column;gap:8px;flex:1;}
+.pkg-deliverable{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--body);}
+.pkg-card.featured .pkg-deliverable{color:#0D0D18;}
+.pkg-deliverable i{font-size:11px;color:var(--yellow);margin-top:3px;flex-shrink:0;}
+.pkg-card.featured .pkg-deliverable i{color:#0D0D18;}
+.pkg-cta{margin-top:28px;}
+.pkg-btn{display:flex;align-items:center;justify-content:center;gap:8px;font-family:var(--font);font-size:13px;font-weight:900;padding:11px 20px;border-radius:10px;transition:all 0.2s;}
+.pkg-btn-outline{border:1.5px solid rgba(245,200,0,0.25);color:var(--yellow);background:transparent;}
+.pkg-btn-outline:hover{border-color:var(--yellow);background:rgba(245,200,0,0.07);}
+.pkg-btn-dark{background:#0D0D18;color:#F5C800;border:none;}
+.pkg-btn-dark:hover{background:rgba(13,13,24,0.8);}
+@media(max-width:900px){.packages-grid{grid-template-columns:1fr;max-width:480px;margin-left:auto;margin-right:auto;}}
+@media(max-width:600px){.packages-section{padding:56px 20px;}}
+
+/* WYG TABLE */
+.wyg-section{padding:80px 48px;}
+.wyg-inner{max-width:960px;margin:0 auto;}
+.wyg-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;gap:12px;flex-wrap:wrap;}
+.wyg-count{font-family:var(--mono);font-size:12px;color:var(--yellow);font-weight:700;}
+.wyg-print-btn{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:800;color:var(--muted);background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:6px;padding:6px 12px;cursor:pointer;transition:all 0.15s;}
+.wyg-print-btn:hover{color:#fff;border-color:rgba(245,200,0,0.3);}
+.wyg-table-wrap{overflow-x:auto;border-radius:12px;border:1px solid var(--border);}
+.wyg-table{width:100%;border-collapse:collapse;font-size:13px;}
+.wyg-table thead th{padding:12px 14px;text-align:left;font-size:10px;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);background:rgba(255,255,255,0.03);border-bottom:1px solid var(--border);}
+.wyg-table thead th:first-child{width:40px;}
+.wyg-table thead th:nth-child(3),.wyg-table thead th:nth-child(4){text-align:center;width:100px;}
+.wyg-table td{padding:11px 14px;border-bottom:1px solid rgba(245,200,0,0.05);color:var(--body);}
+.wyg-table td:nth-child(3),.wyg-table td:nth-child(4){text-align:center;}
+.wyg-table tbody tr:hover td{background:rgba(245,200,0,0.025);}
+.wyg-num{font-family:var(--mono);font-size:10px;color:var(--muted);font-weight:700;}
+.wyg-section-row td{background:rgba(245,200,0,0.06);font-size:10px;font-weight:900;letter-spacing:0.1em;text-transform:uppercase;color:var(--yellow);padding:10px 14px;}
+.check-yes{color:var(--yellow);font-size:14px;font-weight:900;}
+.check-no{color:rgba(255,255,255,0.2);font-size:14px;}
+@media(max-width:600px){.wyg-section{padding:56px 20px;}}
+
+/* PRINT */
+@media print{
+  nav,body::before,.svc-hero-bg,.svc-breadcrumb,.svc-hero-btns,.section-sweep,.elements-section,.packages-section,.faq-section,.cta-band,footer,.wyg-toolbar,.wyg-print-btn{display:none!important;}
+  body{background:#fff!important;color:#000!important;}
+  .wyg-section{padding:0!important;}
+  .wyg-inner{max-width:100%!important;}
+  .wyg-table{font-size:11px;}
+  .wyg-table thead th{color:#555;}
+  .wyg-table td{color:#000;}
+  .wyg-section-row td{color:#000;background:#f5f0dc!important;}
+  .check-yes{color:#000;}
+  .print-header{display:block!important;}
+}
+
+/* PROCESS */
+.process-section{padding:80px 48px;}
+.process-inner{max-width:1200px;margin:0 auto;}
+.process-track{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:0;margin-top:56px;}
+.process-track::before{content:'';position:absolute;top:26px;left:calc(10% + 4px);right:calc(10% + 4px);height:1px;background:linear-gradient(to right,transparent,rgba(245,200,0,0.2) 10%,rgba(245,200,0,0.2) 90%,transparent);}
+.process-step{display:flex;flex-direction:column;align-items:center;text-align:center;padding:0 8px;}
+.ps-num{width:52px;height:52px;border-radius:50%;border:1px solid rgba(245,200,0,0.25);display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:14px;font-weight:700;color:var(--yellow);background:var(--ink);position:relative;z-index:2;margin-bottom:16px;transition:all 0.2s;}
+.process-step:hover .ps-num{background:rgba(245,200,0,0.1);border-color:var(--yellow);}
+.ps-title{font-size:13px;font-weight:900;color:#fff;margin-bottom:6px;}
+.ps-body{font-size:11px;color:var(--muted);line-height:1.55;}
+@media(max-width:900px){.process-track{grid-template-columns:repeat(2,1fr);gap:32px;}.process-track::before{display:none;}.process-step:last-child{grid-column:1/-1;max-width:200px;margin:0 auto;}}
+@media(max-width:600px){.process-section{padding:56px 20px;}}
+
+/* FAQ */
+.faq-section{padding:80px 48px;}
+.faq-inner{max-width:720px;margin:0 auto;}
+.faq-list{margin-top:48px;display:flex;flex-direction:column;}
+.faq-item{border-bottom:1px solid rgba(245,200,0,0.1);}
+.faq-q{width:100%;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 0;font-family:var(--font);font-size:15px;font-weight:700;color:#fff;text-align:left;transition:color 0.15s;}
+.faq-q:hover{color:var(--yellow);}
+.faq-q i{font-size:13px;color:var(--yellow);transition:transform 0.25s;flex-shrink:0;}
+.faq-item.open .faq-q i{transform:rotate(45deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,padding 0.3s;font-size:14px;color:var(--muted);line-height:1.75;padding:0;}
+.faq-item.open .faq-a{max-height:300px;padding-bottom:20px;}
+:root[data-theme="light"] .faq-q{color:var(--text);}
+@media(max-width:600px){.faq-section{padding:56px 20px;}}
+
+/* CTA BAND */
+.cta-band{padding:80px 48px;background:var(--card);position:relative;overflow:hidden;}
+.cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 60% 50%,rgba(245,200,0,0.07) 0%,transparent 60%);}
+.cta-band-inner{max-width:700px;margin:0 auto;text-align:center;position:relative;z-index:1;}
+.cta-band-inner h2{font-size:clamp(28px,4vw,52px);font-weight:900;color:#fff;letter-spacing:-2px;line-height:1.05;margin-bottom:16px;}
+.cta-band-inner p{font-size:15px;color:var(--muted);margin-bottom:32px;max-width:480px;margin-left:auto;margin-right:auto;}
+.cta-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+:root[data-theme="light"] .cta-band{background:var(--raised);}
+:root[data-theme="light"] .cta-band-inner h2{color:var(--text);}
+@media(max-width:600px){.cta-band{padding:56px 20px;}}
+
+/* FOOTER */
+footer.footer{background:#0A0A14;border-top:1px solid rgba(245,200,0,0.08);padding:64px 48px 32px;}
+.footer-inner{max-width:1200px;margin:0 auto;}
+.footer-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:48px;}
+.footer-logo{font-family:var(--font);font-size:22px;font-weight:900;color:#fff;display:inline-block;margin-bottom:12px;}
+.footer-logo span{color:var(--yellow);}
+.footer-tagline{font-size:13px;color:var(--muted);line-height:1.6;max-width:240px;margin-bottom:20px;}
+.footer-wa-cta{display:inline-flex;align-items:center;gap:7px;background:rgba(37,211,102,0.1);color:#25D366;border:1px solid rgba(37,211,102,0.2);font-size:13px;font-weight:800;padding:8px 14px;border-radius:8px;margin-bottom:20px;transition:background 0.2s;}
+.footer-wa-cta:hover{background:rgba(37,211,102,0.18);}
+.footer-socials{display:flex;gap:10px;}
+.footer-social-link{width:34px;height:34px;border-radius:8px;border:1px solid rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:14px;transition:all 0.2s;}
+.footer-social-link:hover{border-color:rgba(245,200,0,0.3);color:var(--yellow);}
+.footer-col h4{font-size:12px;font-weight:900;letter-spacing:0.08em;text-transform:uppercase;color:#fff;margin-bottom:16px;}
+.footer-links{display:flex;flex-direction:column;gap:8px;}
+.footer-link{display:flex;align-items:center;gap:7px;font-size:13px;color:var(--muted);transition:color 0.15s;}
+.footer-link:hover{color:var(--yellow);}
+.footer-link i{font-size:9px;opacity:0.5;}
+.footer-bottom{display:flex;align-items:center;justify-content:space-between;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06);}
+.footer-copy{font-size:12px;color:var(--muted);}
+.footer-legal{display:flex;gap:20px;}
+.footer-legal a{font-size:12px;color:var(--muted);transition:color 0.15s;}
+.footer-legal a:hover{color:#fff;}
+@media(max-width:900px){.footer-top{grid-template-columns:1fr 1fr;}.footer-bottom{flex-direction:column;gap:12px;text-align:center;}}
+@media(max-width:600px){footer.footer{padding:48px 20px 24px;}.footer-top{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<script>
+(function(){try{var t=localStorage.getItem('tv-theme');if(t==='light')document.documentElement.setAttribute('data-theme','light');}catch(e){}})();
+</script>
+
+<!-- NAV -->
+<nav>
+  <a href="/" class="nav-logo">tiny<span>verse</span><span class="nav-studio"> Solutions</span></a>
+  <div class="nav-links">
+    <div class="nav-dropdown">
+      <span class="nav-link active nav-dropdown-toggle">Services <i class="fa-solid fa-chevron-down"></i></span>
+      <div class="nav-dropdown-menu">
+        <a href="/services/web-development.html" class="nav-dd-item"><i class="fa-solid fa-code"></i> Web Development</a>
+        <a href="/services/ai-automation.html" class="nav-dd-item"><i class="fa-solid fa-robot"></i> AI Automation</a>
+        <a href="/services/erp-systems.html" class="nav-dd-item"><i class="fa-solid fa-layer-group"></i> ERP Systems</a>
+        <a href="/services/branding.html" class="nav-dd-item active"><i class="fa-solid fa-palette"></i> Branding &amp; Design</a>
+        <a href="/services/social-media.html" class="nav-dd-item"><i class="fa-solid fa-chart-line"></i> Social Media</a>
+      </div>
+    </div>
+    <a href="/work.html" class="nav-link">Work</a>
+    <a href="/about.html" class="nav-link">About</a>
+    <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
+      <i class="fa-solid fa-sun icon-sun"></i>
+      <i class="fa-solid fa-moon icon-moon"></i>
+    </button>
+    <a href="https://wa.me/254790784084?text=Hi%20Tinyverse!%20I%27d%20like%20to%20talk%20about%20branding%20for%20my%20business." class="nav-cta" target="_blank" onclick="tvSendEvent('cta_click','Nav: WA')">
+      <i class="fa-brands fa-whatsapp"></i>
+      <span class="nav-cta-label">Let's talk</span>
+    </a>
+  </div>
+  <button class="nav-hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div id="nav-drawer" class="nav-drawer">
+  <a href="/" class="nav-drawer-link">Home</a>
+  <span class="nav-drawer-section">Services</span>
+  <a href="/services/web-development.html" class="nav-drawer-sub">Web Development</a>
+  <a href="/services/ai-automation.html" class="nav-drawer-sub">AI Automation</a>
+  <a href="/services/erp-systems.html" class="nav-drawer-sub">ERP Systems</a>
+  <a href="/services/branding.html" class="nav-drawer-sub active" style="color:#fff;">Branding &amp; Design</a>
+  <a href="/services/social-media.html" class="nav-drawer-sub">Social Media</a>
+  <a href="/work.html" class="nav-drawer-link">Work</a>
+  <a href="/about.html" class="nav-drawer-link">About</a>
+  <a href="https://wa.me/254790784084" class="nav-drawer-wa" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+</div>
+
+<!-- HERO -->
+<section class="svc-hero">
+  <div class="svc-hero-bg"></div>
+  <div class="svc-hero-inner">
+    <nav class="svc-breadcrumb" aria-label="breadcrumb">
+      <a href="/">Home</a>
+      <i class="fa-solid fa-chevron-right"></i>
+      <a href="/#services">Services</a>
+      <i class="fa-solid fa-chevron-right"></i>
+      <span style="color:var(--yellow);">Branding &amp; Design</span>
+    </nav>
+    <div class="hero-split">
+      <div class="hero-left fade-left">
+        <div class="hero-label-row">
+          <div class="label-chip" style="margin-bottom:0;">Brand Identity</div>
+        </div>
+        <h1 class="svc-h1">Nobody remembers<br>the second-best <span class="accent">brand.</span></h1>
+        <p class="svc-lede">Your brand is the first thing people judge. We build identity systems that signal credibility, command attention, and make competitors look generic.</p>
+        <div class="svc-hero-btns">
+          <a href="https://wa.me/254790784084?text=Hi%20Tinyverse!%20I%27d%20like%20to%20talk%20about%20branding%20for%20my%20business." class="btn-wa" target="_blank" onclick="tvSendEvent('cta_click','Hero: WA')">
+            <i class="fa-brands fa-whatsapp"></i> Start a brand project
+          </a>
+          <a href="#packages" class="btn-ghost">
+            <i class="fa-solid fa-arrow-down"></i> See packages
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hstat">
+            <span class="hstat-val">48<span class="hstat-sup">hr</span></span>
+            <span class="hstat-lab">First concepts</span>
+          </div>
+          <div class="hstat">
+            <span class="hstat-val">3<span class="hstat-sup">x</span></span>
+            <span class="hstat-lab">Revision rounds</span>
+          </div>
+          <div class="hstat">
+            <span class="hstat-val">100<span class="hstat-sup">%</span></span>
+            <span class="hstat-lab">Source files yours</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right fade-right">
+        <div class="brand-canvas">
+          <div class="brand-ring-outer"></div>
+          <div class="brand-ring-mid"></div>
+          <!-- Construction lines -->
+          <div class="brand-line bl-h"></div>
+          <div class="brand-line bl-v"></div>
+          <div class="brand-line bl-d1"></div>
+          <div class="brand-line bl-d2"></div>
+          <!-- Corner rulers -->
+          <div class="brand-corner bc-tl"></div>
+          <div class="brand-corner bc-tr"></div>
+          <div class="brand-corner bc-bl"></div>
+          <div class="brand-corner bc-br"></div>
+          <!-- Logo mark -->
+          <div class="brand-center">
+            <div class="brand-mark">
+              <div class="bm-glow"></div>
+              <div class="bm-circle"></div>
+              <div class="bm-square"></div>
+              <div class="bm-dot"></div>
+            </div>
+          </div>
+          <!-- Floating chips -->
+          <div class="brand-chip bc-colors">
+            <div class="swatch-row">
+              <div class="swatch" style="background:#F5C800;"></div>
+              <div class="swatch" style="background:#0D0D18;"></div>
+              <div class="swatch" style="background:#E8E6F0;"></div>
+              <div class="swatch" style="background:#9896A8;"></div>
+            </div>
+            <span class="brand-chip-label" style="color:var(--muted);">Palette</span>
+          </div>
+          <div class="brand-chip bc-type">
+            <div>
+              <div class="type-preview">Aa</div>
+              <div class="type-preview-sub">Typography</div>
+            </div>
+          </div>
+          <div class="brand-chip bc-grid">
+            <div class="grid-icon">
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+              <span></span><span></span><span></span>
+            </div>
+            <span class="brand-chip-label" style="color:var(--muted);">Grid</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sweep"></div>
+
+<!-- BRAND ELEMENTS -->
+<section class="elements-section">
+  <div class="elements-inner">
+    <div class="fade-up" style="text-align:center;max-width:560px;margin:0 auto;">
+      <div class="label-chip">What we build</div>
+      <h2 class="section-h">Every piece of your visual identity.</h2>
+    </div>
+    <div class="elements-grid">
+      <div class="brand-element fade-up" style="transition-delay:0.05s;">
+        <div class="be-icon"><i class="fa-solid fa-star"></i></div>
+        <div class="be-title">Logo System</div>
+        <div class="be-body">Primary mark, horizontal lockup, icon variant, monochrome versions. Built for every context from business cards to billboards.</div>
+      </div>
+      <div class="brand-element fade-up" style="transition-delay:0.1s;">
+        <div class="be-icon"><i class="fa-solid fa-palette"></i></div>
+        <div class="be-title">Colour Palette</div>
+        <div class="be-body">Primary and secondary colours with hex, RGB, and CMYK values. Chosen for psychology, contrast ratios, and print accuracy.</div>
+      </div>
+      <div class="brand-element fade-up" style="transition-delay:0.15s;">
+        <div class="be-icon"><i class="fa-solid fa-font"></i></div>
+        <div class="be-title">Typography System</div>
+        <div class="be-body">Heading and body typeface pairs with weight and size scales. Specified for web, print, and presentation use.</div>
+      </div>
+      <div class="brand-element fade-up" style="transition-delay:0.2s;">
+        <div class="be-icon"><i class="fa-solid fa-book-open"></i></div>
+        <div class="be-title">Brand Guidelines</div>
+        <div class="be-body">A PDF rulebook covering logo usage, don'ts, spacing rules, colour application, and voice guidance your team can actually use.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sweep"></div>
+
+<!-- PACKAGES -->
+<section class="packages-section" id="packages">
+  <div class="packages-inner">
+    <div class="fade-up" style="text-align:center;max-width:560px;margin:0 auto;">
+      <div class="label-chip">Packages</div>
+      <h2 class="section-h">Pick the depth you need.</h2>
+      <p class="section-sub" style="margin:0 auto;">From a clean launch logo to a full identity system. Every package delivers production-ready files, not just pretty concepts.</p>
+    </div>
+    <div class="packages-grid">
+      <!-- STARTER -->
+      <div class="pkg-card fade-up" style="transition-delay:0.05s;">
+        <div class="pkg-name">Starter</div>
+        <h3 class="pkg-title">Brand Launch</h3>
+        <p class="pkg-desc">Everything you need to show up and look sharp. Fast turnaround for new businesses and rebrands.</p>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> Logo mark + 2 lockup variants</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> Primary colour palette (4 colours)</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> 1 typeface recommendation</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> PNG, SVG, PDF exports</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> 2 revision rounds</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> All source files (Illustrator/Figma)</li>
+        </ul>
+        <div class="pkg-cta">
+          <a href="https://wa.me/254790784084?text=Hi%20Tinyverse!%20I%27m%20interested%20in%20the%20Brand%20Launch%20package." class="pkg-btn pkg-btn-outline" target="_blank" onclick="tvSendEvent('cta_click','Pkg: Starter WA')">
+            <i class="fa-brands fa-whatsapp"></i> Get a quote
+          </a>
+        </div>
+      </div>
+      <!-- BRAND IDENTITY (featured) -->
+      <div class="pkg-card featured fade-up" style="transition-delay:0.1s;">
+        <div class="pkg-badge">Most popular</div>
+        <div class="pkg-name">Identity</div>
+        <h3 class="pkg-title">Full Identity System</h3>
+        <p class="pkg-desc">A complete brand identity your team can run with. Built for businesses ready to compete at the next level.</p>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> Logo system (primary, icon, mono, reverse)</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> Extended colour palette with usage rules</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> 2 typeface system with scale</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> Brand guidelines PDF (20+ pages)</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> Business card design</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> Email signature template</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> 3 revision rounds</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> All source files</li>
+        </ul>
+        <div class="pkg-cta">
+          <a href="https://wa.me/254790784084?text=Hi%20Tinyverse!%20I%27m%20interested%20in%20the%20Full%20Identity%20System%20package." class="pkg-btn pkg-btn-dark" target="_blank" onclick="tvSendEvent('cta_click','Pkg: Identity WA')">
+            <i class="fa-brands fa-whatsapp"></i> Get a quote
+          </a>
+        </div>
+      </div>
+      <!-- DESIGN SYSTEM -->
+      <div class="pkg-card fade-up" style="transition-delay:0.15s;">
+        <div class="pkg-name">Design System</div>
+        <h3 class="pkg-title">Brand + Digital System</h3>
+        <p class="pkg-desc">Brand identity plus a full digital design system. For businesses building products, platforms, or large-scale digital presence.</p>
+        <div class="pkg-divider"></div>
+        <ul class="pkg-list">
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> Everything in Full Identity System</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> UI component library (Figma)</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> Icon set (24 custom icons)</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> Social media templates (6 formats)</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> Pitch deck template</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> Design token documentation</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> 3 revision rounds</li>
+          <li class="pkg-deliverable"><i class="fa-solid fa-check"></i> All source files</li>
+        </ul>
+        <div class="pkg-cta">
+          <a href="https://wa.me/254790784084?text=Hi%20Tinyverse!%20I%27m%20interested%20in%20the%20Brand%20%2B%20Digital%20System%20package." class="pkg-btn pkg-btn-outline" target="_blank" onclick="tvSendEvent('cta_click','Pkg: Design System WA')">
+            <i class="fa-brands fa-whatsapp"></i> Get a quote
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sweep"></div>
+
+<!-- WYG TABLE -->
+<section class="wyg-section">
+  <div class="wyg-inner">
+    <div class="fade-up" style="text-align:center;max-width:560px;margin:0 auto;margin-bottom:40px;">
+      <div class="label-chip">What you get</div>
+      <h2 class="section-h">Exactly what's in the build.</h2>
+    </div>
+    <!-- Print header (hidden until print) -->
+    <div class="print-header" style="display:none;padding:20px 0 16px;border-bottom:2px solid #e8d000;margin-bottom:16px;">
+      <div style="font-size:18pt;font-weight:900;color:#0D0D18;">Tinyverse Solutions</div>
+      <div style="font-size:13pt;font-weight:600;color:#555;">Branding: Deliverables</div>
+    </div>
+    <div class="wyg-toolbar fade-up" style="transition-delay:0.05s;">
+      <span class="wyg-count">17 deliverables included</span>
+      <button class="wyg-print-btn" onclick="window.print();tvSendEvent('cta_click','WYG: Print');">
+        <i class="fa-solid fa-download"></i> Save as PDF
+      </button>
+    </div>
+    <div class="wyg-table-wrap fade-up" style="transition-delay:0.1s;">
+      <table class="wyg-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Deliverable</th>
+            <th>Included</th>
+            <th>Not included</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Discovery & Strategy -->
+          <tr class="wyg-section-row"><td colspan="4">Discovery &amp; Strategy</td></tr>
+          <tr><td><span class="wyg-num">01</span></td><td>Brand discovery questionnaire</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <tr><td><span class="wyg-num">02</span></td><td>Competitive landscape review (up to 5 competitors)</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <tr><td><span class="wyg-num">03</span></td><td>Mood board and direction presentation</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <!-- Logo Design -->
+          <tr class="wyg-section-row"><td colspan="4">Logo Design</td></tr>
+          <tr><td><span class="wyg-num">04</span></td><td>3 initial logo concepts</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <tr><td><span class="wyg-num">05</span></td><td>Logo refinement to chosen concept</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <tr><td><span class="wyg-num">06</span></td><td>Final logo: primary, horizontal, icon, reversed variants</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <tr><td><span class="wyg-num">07</span></td><td>Logo files in PNG, SVG, PDF, EPS</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <!-- Visual Identity -->
+          <tr class="wyg-section-row"><td colspan="4">Visual Identity</td></tr>
+          <tr><td><span class="wyg-num">08</span></td><td>Primary and extended colour palette</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <tr><td><span class="wyg-num">09</span></td><td>Colour codes: Hex, RGB, CMYK, Pantone reference</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <tr><td><span class="wyg-num">10</span></td><td>Typography system with heading and body pairings</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <tr><td><span class="wyg-num">11</span></td><td>Iconography and illustration style direction</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <!-- Brand Guidelines -->
+          <tr class="wyg-section-row"><td colspan="4">Brand Guidelines</td></tr>
+          <tr><td><span class="wyg-num">12</span></td><td>Brand guidelines document (PDF, 20+ pages)</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <tr><td><span class="wyg-num">13</span></td><td>Logo usage rules and prohibited uses</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <tr><td><span class="wyg-num">14</span></td><td>Brand voice and tone guidance</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <!-- Production -->
+          <tr class="wyg-section-row"><td colspan="4">Production</td></tr>
+          <tr><td><span class="wyg-num">15</span></td><td>Business card design (front and back)</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <tr><td><span class="wyg-num">16</span></td><td>Email signature template (HTML + image versions)</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <tr><td><span class="wyg-num">17</span></td><td>All source files (Illustrator AI, Figma)</td><td><span class="check-yes">&#10003;</span></td><td></td></tr>
+          <!-- Not included -->
+          <tr class="wyg-section-row"><td colspan="4">Not included</td></tr>
+          <tr><td></td><td>Print production costs (business cards, signage, merchandise)</td><td></td><td><span class="check-no">&#10005;</span></td></tr>
+          <tr><td></td><td>Photography or stock image licensing</td><td></td><td><span class="check-no">&#10005;</span></td></tr>
+          <tr><td></td><td>Website design or development</td><td></td><td><span class="check-no">&#10005;</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<div class="section-sweep"></div>
+
+<!-- PROCESS -->
+<section class="process-section">
+  <div class="process-inner">
+    <div class="fade-up" style="text-align:center;max-width:560px;margin:0 auto;">
+      <div class="label-chip">How it works</div>
+      <h2 class="section-h">From brief to brand in five stages.</h2>
+    </div>
+    <div class="process-track">
+      <div class="process-step fade-up" style="transition-delay:0.05s;">
+        <div class="ps-num">01</div>
+        <div class="ps-title">Discovery</div>
+        <div class="ps-body">We learn your business, audience, and competitors through our brand questionnaire.</div>
+      </div>
+      <div class="process-step fade-up" style="transition-delay:0.1s;">
+        <div class="ps-num">02</div>
+        <div class="ps-title">Direction</div>
+        <div class="ps-body">We present a mood board and visual direction for your sign-off before any design starts.</div>
+      </div>
+      <div class="process-step fade-up" style="transition-delay:0.15s;">
+        <div class="ps-num">03</div>
+        <div class="ps-title">Concepts</div>
+        <div class="ps-body">Three logo concepts delivered within 48 hours for your review and feedback.</div>
+      </div>
+      <div class="process-step fade-up" style="transition-delay:0.2s;">
+        <div class="ps-num">04</div>
+        <div class="ps-title">Refine</div>
+        <div class="ps-body">We refine the chosen direction through revision rounds until it is exactly right.</div>
+      </div>
+      <div class="process-step fade-up" style="transition-delay:0.25s;">
+        <div class="ps-num">05</div>
+        <div class="ps-title">Handover</div>
+        <div class="ps-body">All files, brand guidelines, and templates packaged and delivered. Everything is yours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-sweep"></div>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="fade-up" style="text-align:center;max-width:540px;margin:0 auto;">
+      <div class="label-chip">FAQ</div>
+      <h2 class="section-h">Questions we hear often.</h2>
+    </div>
+    <div class="faq-list fade-up" style="transition-delay:0.1s;">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do I own the logo and all the files after the project?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-a">Yes, fully. When the project is complete you receive every source file in AI, SVG, PDF, and PNG formats. Full commercial rights are transferred to you. We keep nothing, license nothing back to you, and place no restrictions on use.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How many logo concepts will I see?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-a">You receive three distinct logo concepts in the first round. After you choose a direction we refine that one concept through your included revision rounds. This keeps feedback focused and avoids diluting the strongest direction.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How long does the full process take?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-a">The Brand Launch package typically completes in 7 to 10 business days. The Full Identity System takes 2 to 3 weeks. The Brand + Digital System takes 3 to 5 weeks depending on scope. Timelines assume prompt feedback at each review stage.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What if I already have a logo and just need it updated?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-a">Logo refresh projects are handled as a custom scope. Send us your existing files and we will assess what is worth keeping, what needs updating, and give you a clear recommendation and quote before any work starts.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can you design both the brand and the website?
+          <i class="fa-solid fa-plus"></i>
+        </button>
+        <div class="faq-a">Yes. Many clients start with brand identity and move straight into web development. We build both in-house and the handoff is seamless because the same design language carries from your brand guidelines directly into the site build.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <div class="fade-up">
+      <div class="label-chip" style="justify-content:center;">Ready to build your brand?</div>
+      <h2>Stop looking like<br>everyone else.</h2>
+      <p>Tell us about your business and what you want people to feel when they see your brand. We will take it from there.</p>
+      <div class="cta-btns">
+        <a href="https://wa.me/254790784084?text=Hi%20Tinyverse!%20I%27d%20like%20to%20start%20a%20brand%20identity%20project." class="btn-wa" target="_blank" onclick="tvSendEvent('cta_click','Brand CTA: WA')">
+          <i class="fa-brands fa-whatsapp"></i> Start on WhatsApp
+        </a>
+        <a href="/#book" class="btn-yellow" onclick="tvSendEvent('cta_click','Brand CTA: Book')">
+          <i class="fa-solid fa-calendar-check"></i> Book free call
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <a href="/" class="footer-logo">tiny<span>verse</span><span style="font-size:13px;font-weight:700;color:var(--muted);margin-left:2px;"> Solutions</span></a>
+        <p class="footer-tagline">We build the digital infrastructure that makes businesses run faster.</p>
+        <a href="https://wa.me/254790784084" class="footer-wa-cta" target="_blank" onclick="tvSendEvent('cta_click','Footer: WA')">
+          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+        </a>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" class="footer-social-link" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <div class="footer-links">
+          <a href="/services/web-development.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Web Development</a>
+          <a href="/services/ai-automation.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> AI Automation</a>
+          <a href="/services/erp-systems.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> ERP Systems</a>
+          <a href="/services/branding.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Branding &amp; Design</a>
+          <a href="/services/social-media.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Social Media</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <div class="footer-links">
+          <a href="/about.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> About us</a>
+          <a href="/work.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Our work</a>
+          <a href="/#book" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Book a call</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <div class="footer-links">
+          <a href="https://wa.me/254790784084" class="footer-link" target="_blank"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          <a href="mailto:hello@mytinyverse.com" class="footer-link"><i class="fa-solid fa-envelope"></i> hello@mytinyverse.com</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">&#169; 2026 Tinyverse Solutions. Built to perform.</div>
+      <div class="footer-legal">
+        <a href="/privacy.html">Privacy</a>
+        <a href="/terms.html">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleNav(){document.getElementById('nav-drawer').classList.toggle('open');}
+function closeNav(){document.getElementById('nav-drawer').classList.remove('open');}
+function toggleTheme(){
+  var r=document.documentElement;
+  var cur=r.getAttribute('data-theme');
+  var next=cur==='light'?null:'light';
+  if(next)r.setAttribute('data-theme','light');
+  else r.removeAttribute('data-theme');
+  try{if(next)localStorage.setItem('tv-theme','light');else localStorage.removeItem('tv-theme');}catch(e){}
+}
+function toggleFaq(btn){
+  var item=btn.closest('.faq-item');
+  var wasOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});
+  if(!wasOpen)item.classList.add('open');
+}
+(function(){
+  var els=document.querySelectorAll('.fade-up,.fade-left,.fade-right');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('show');});return;}
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('show');obs.unobserve(en.target);}});
+  },{threshold:0.12});
+  els.forEach(function(e){obs.observe(e);});
+})();
+window.tvSendEvent=function(ev,lb){
+  try{if(typeof gtag==='function')gtag('event',ev,{event_label:lb});}catch(e){}
+};
+document.addEventListener('DOMContentLoaded',function(){tvSendEvent('pageview',document.title);});
+</script>
+</body>
+</html>
